@@ -15,8 +15,7 @@ import { photosFor } from '../data/photos';
 
   <section class="wrap ab-body">
     <div class="ab-photo">
-      <!-- Add a portrait of Pritam to the manifest and set its id here (see CONTENT_GUIDE.md). Until then the strongest frame from the archive stands in. -->
-      <Photo id="fakira-dsc-0823" ratio="4/5" sizes="(max-width: 860px) 100vw, 40vw" lightbox caption />
+      <Photo id="pritam-haldar-portrait" ratio="4/5" sizes="(max-width: 860px) 100vw, 40vw" lightbox caption />
     </div>
     <div class="ab-text prose">
       <p class="lede">I photograph live music, and I think about every frame as something with a job to do once the show is over.</p>
@@ -65,7 +64,7 @@ import { photosFor } from '../data/photos';
 <style>
   .ab-head { padding: clamp(40px, 6vw, 90px) var(--gutter) clamp(30px, 4vw, 60px); }
   .h { font-size: clamp(60px, 13vw, 220px); line-height: 0.85; letter-spacing: -0.04em; margin-top: 16px; }
-  .sub { font-family: var(--serif); font-style: italic; font-size: clamp(22px, 2.4vw, 34px); color: var(--accent); margin: 18px 0 0; max-width: 32ch; }
+  .sub { font-family: var(--sans); font-style: italic; font-weight: 700; font-stretch: 112%; font-size: clamp(22px, 2.4vw, 34px); color: var(--accent); margin: 18px 0 0; max-width: 32ch; }
   .ab-body { display: grid; grid-template-columns: 5fr 7fr; gap: clamp(30px, 6vw, 100px); align-items: start; }
   .ab-photo { position: sticky; top: 90px; }
   .ab-text { max-width: 60ch; }
@@ -74,9 +73,9 @@ import { photosFor } from '../data/photos';
   .sec { border-top: 1px solid var(--ink); color: var(--ink); padding-top: 10px; margin: 48px 0 16px; }
   .beliefs { list-style: none; padding: 0; margin: 0; }
   .beliefs li { padding: 12px 0; border-bottom: 1px solid var(--rule); }
-  .beliefs b { font-family: var(--serif); font-weight: 450; font-size: 20px; display: block; }
+  .beliefs b { font-family: var(--display); font-weight: 400; text-transform: uppercase; font-size: 24px; letter-spacing: 0.01em; display: block; }
   .shows { list-style: none; padding: 0; margin: 0; }
-  .shows a { display: flex; justify-content: space-between; align-items: baseline; gap: 10px; padding: 10px 0; border-bottom: 1px solid var(--rule); text-decoration: none; font-family: var(--serif); font-size: 24px; }
+  .shows a { display: flex; justify-content: space-between; align-items: baseline; gap: 10px; padding: 10px 0; border-bottom: 1px solid var(--rule); text-decoration: none; font-family: var(--display); text-transform: uppercase; font-size: 30px; }
   .shows a:hover { color: var(--accent); }
   .btns { margin-top: 26px; }
   @media (max-width: 860px) {

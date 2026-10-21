@@ -23,8 +23,9 @@ copied from any site. The principles used:
 - **Paper** `#F4EFE4`, **ink** `#171513`, **grey** `#6D665C`, one accent: **stage red** `#C4361C`, taken from the
   red and orange rig light in the Fakira, Fossils and Cactus sets. The near-black `#100F0E` is used for the
   "approach" section and footer, like a dark stage.
-- **Type:** Fraunces (variable serif, optical size 144, soft and "wonky" italics) for display;
-  Inter Tight for body and navigation; JetBrains Mono for index numbers, captions and metadata.
+- **Type:** gig-poster typography. **Anton** (condensed, all caps) for every headline, number and artist name, with
+  outlined Anton (`.ol`) used once for emphasis in the hero. **Archivo** (variable width and weight) for body text,
+  with heavy, slightly wide italic sub-lines for taglines. **JetBrains Mono** for index numbers, captions and metadata.
   All are self-hosted through Fontsource (OFL licence).
 - **Layout:** a 12-column grid that is deliberately broken. The hero headline overlaps the photo column, the
   selected-work rows alternate between three compositions, the approach cards step down, and the contact sheets are

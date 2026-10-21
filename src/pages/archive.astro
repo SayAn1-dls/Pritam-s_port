@@ -11,9 +11,9 @@ const byArtist = artists.map((a) => photos.filter((p) => p.project === a.slug));
 const mixed: typeof photos = [];
 for (let i = 0; byArtist.some((l) => l[i]); i++) byArtist.forEach((l) => l[i] && mixed.push(l[i]));
 ---
-<Base title="Archive" description={`${photos.length} concert photographs by Pritam Haldar: Fakira, Cactus, Jeet Ganguly, Fossils, Monali Thakur and Anupam Roy.`}>
+<Base title="Archive" description={`${mixed.length} concert photographs by Pritam Haldar: Fakira, Cactus, Jeet Ganguly, Fossils, Monali Thakur and Anupam Roy.`}>
   <section class="wrap head">
-    <p class="meta">The archive — {photos.length} frames, {artists.length} artists</p>
+    <p class="meta">The archive — {mixed.length} frames, {artists.length} artists</p>
     <h1 class="display h">Everything that <em>made the edit.</em></h1>
     <p class="lede">Every frame is from a live show I photographed. Select one to see it at full resolution; use the arrow keys or swipe to move through the series.</p>
   </section>

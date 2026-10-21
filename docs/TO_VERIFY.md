@@ -21,7 +21,6 @@ The site only states what the files and your message confirm. These gaps are hid
    public stage advertising, but check the sponsor is happy to be shown.
 
 ## Please supply
-- A **portrait of yourself** (the About page uses a crowd photo as a stand-in).
 - **Resume PDF** → `public/resume.pdf`, then set `resume: '/resume.pdf'`.
 - **Instagram** URL (optional) and the **location** you want shown (optional).
 - **Verified outcomes**: shows covered for each company, any sponsorship amounts you worked on (and whether they

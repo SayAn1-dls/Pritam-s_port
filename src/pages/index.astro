@@ -10,28 +10,32 @@ const featured = published.filter((p) => p.featured);
 const artists = [...new Set(published.map((p) => p.artist))];
 // Real counts, computed from the content files (not typed in by hand).
 const framesDelivered = published.reduce((n, p) => n + Number(p.outcomes.verified[0]?.match(/\d+/)?.[0] ?? 0), 0);
+const archiveCount = photos.filter((p) => p.project !== 'pritam').length;
 const sheet = ['cactus-dsc-0393', 'fossils-dsc-2023-l', 'monali-thakur-img-0952-l', 'jeet-ganguly-dsc-0103', 'fakira-dsc-0823', 'anupam-roy-220569', 'cactus-dsc-0241', 'fossils-dsc-2339-l']
   .map(photoById).filter(Boolean);
 ---
 <Base>
   <!-- ============ COVER ============ -->
   <section class="cover wrap">
-    <div class="cover-meta meta rv">
+    <div class="cover-meta meta">
       <span>Portfolio — Live music, marketing &amp; partnerships</span>
       <span>Vol. {new Date().getFullYear()}</span>
     </div>
 
-    <h1 class="display cover-h rv">
-      The show lasts three hours.
+    <h1 class="display cover-h">
+      The show lasts <span class="ol">three hours.</span>
       <em>The pictures sell the next one.</em>
     </h1>
 
-    <div class="cover-photo rv">
-      <Photo id="fakira-dsc-0600" ratio="4/5" eager sizes="(max-width: 860px) 100vw, 40vw" lightbox />
-      <p class="cover-tag meta"><span class="accent">●</span> Fakira, live — Ph. {site.name}</p>
+    <div class="cover-photo">
+      <div class="cover-frame">
+        <Photo id="pritam-haldar-portrait" eager sizes="(max-width: 860px) 100vw, 40vw" lightbox />
+        <p class="stamp" aria-hidden="true">Shoots it.<br />Sells it.</p>
+      </div>
+      <p class="cover-tag meta"><span class="accent">●</span> {site.name}, usually the one behind the camera</p>
     </div>
 
-    <div class="cover-intro rv">
+    <div class="cover-intro">
       <p class="lede">
         I’m {site.shortName}. I photograph concerts and turn those nights into marketing: content artists post,
         proof sponsors report on, and the frames promoters use to sell the next date.
@@ -124,7 +128,7 @@ const sheet = ['cactus-dsc-0393', 'fossils-dsc-2023-l', 'monali-thakur-img-0952-
 
   <!-- ============ ARCHIVE PREVIEW (contact sheet) ============ -->
   <section class="sheet wrap">
-    <div class="label"><span class="meta">No. 05</span><span class="meta">From the archive</span><span class="meta">{photos.length} frames online</span></div>
+    <div class="label"><span class="meta">No. 05</span><span class="meta">From the archive</span><span class="meta">{archiveCount} frames online</span></div>
     <div class="sheet-grid">
       {sheet.map((p, i) => (
         <figure class:list={['sh', `sh-${i}`, 'rv']}>
@@ -158,6 +162,13 @@ const sheet = ['cactus-dsc-0393', 'fossils-dsc-2023-l', 'monali-thakur-img-0952-
   .cover-h em { display: block; color: var(--accent); }
   .cover-photo { grid-column: 8 / 13; grid-row: 2 / 4; align-self: start; margin-top: clamp(0px, 6vw, 90px); }
   .cover-tag { margin: 10px 0 0; }
+  .cover-frame { position: relative; }
+  .stamp {
+    position: absolute; right: -22px; top: 30px; margin: 0; z-index: 3;
+    background: var(--accent); color: var(--accent-ink);
+    font-family: var(--display); text-transform: uppercase; font-size: clamp(22px, 2vw, 32px); line-height: 0.95;
+    padding: 12px 16px 10px; rotate: 5deg; box-shadow: 6px 6px 0 var(--ink);
+  }
   .cover-intro { grid-column: 1 / 7; grid-row: 3; margin-top: clamp(28px, 4vw, 56px); }
   .cover-with { color: var(--grey); max-width: 46ch; margin: 18px 0 28px; }
   .cover-with strong { color: var(--ink); font-weight: 500; }
@@ -169,8 +180,8 @@ const sheet = ['cactus-dsc-0393', 'fossils-dsc-2023-l', 'monali-thakur-img-0952-
   }
   .proof-row > div { padding: 20px 28px 22px 0; margin-right: 28px; border-right: 1px solid var(--rule); }
   .proof-row > div:last-child { border-right: 0; margin-right: 0; }
-  .proof-row dd { margin: 6px 0 0; font-family: var(--serif); font-size: clamp(44px, 5vw, 72px); line-height: 1; font-variation-settings: 'opsz' 144; }
-  .proof-names dd { font-size: clamp(20px, 2vw, 28px); line-height: 1.25; font-style: italic; }
+  .proof-row dd { margin: 6px 0 0; font-family: var(--display); font-size: clamp(52px, 6vw, 88px); line-height: 1; }
+  .proof-names dd { font-size: clamp(24px, 2.4vw, 34px); line-height: 1.15; text-transform: uppercase; }
   .proof-names i { color: var(--accent); font-style: normal; }
 
   /* work */
@@ -187,7 +198,7 @@ const sheet = ['cactus-dsc-0393', 'fossils-dsc-2023-l', 'monali-thakur-img-0952-
   .wk-txt .h2 a { text-decoration: none; }
   .wk-txt .h2 a:hover { color: var(--accent); }
   .wk-n { margin: 0 0 12px; }
-  .wk-kick { font-family: var(--serif); font-style: italic; font-size: 21px; line-height: 1.3; margin: 14px 0 10px; }
+  .wk-kick { font-family: var(--sans); font-style: italic; font-weight: 700; font-stretch: 112%; font-size: 21px; line-height: 1.3; margin: 14px 0 10px; }
   .wk-sum { color: var(--ink-2); margin: 0 0 14px; }
   .wk-more { display: inline-block; margin-top: 8px; }
   .work-all { margin: -40px 0 0; }
@@ -198,7 +209,7 @@ const sheet = ['cactus-dsc-0393', 'fossils-dsc-2023-l', 'monali-thakur-img-0952-
   .label.inv .meta { color: var(--paper); }
   .label.inv .meta:last-child { color: #9b9387; }
   .ap-h { max-width: 16ch; margin-bottom: clamp(40px, 6vw, 80px); }
-  .ap-h em { color: var(--accent); font-style: italic; }
+  .ap-h em { color: var(--accent); font-style: normal; }
   .ap-list { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(3, 1fr); gap: clamp(20px, 3vw, 44px); }
   .ap-list li:nth-child(2) { margin-top: 60px; }
   .ap-list li:nth-child(3) { margin-top: 120px; }
@@ -227,7 +238,7 @@ const sheet = ['cactus-dsc-0393', 'fossils-dsc-2023-l', 'monali-thakur-img-0952-
     .cover-meta { gap: 12px; }
     .cover-meta span:last-child { white-space: nowrap; }
     .cover-photo { margin: 24px 0 0; order: 2; }
-    .cover-photo :global(.ph) { aspect-ratio: 4 / 3 !important; }
+    .stamp { right: 10px; top: 16px; }
     .cover-intro { order: 3; margin-top: 24px; }
     .proof-row { grid-template-columns: 1fr 1fr; }
     .proof-row > div { padding: 16px 12px 16px 0; margin-right: 12px; border-bottom: 1px solid var(--rule); }

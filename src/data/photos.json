@@ -2,6 +2,28 @@
   "_readme": "Edit captions/alt/category/public here. Run `npm run images` after adding photos. width/height/widths are written by the script.",
   "photos": [
     {
+      "id": "pritam-haldar-portrait",
+      "original": "PRITAM/pritam-haldar-portrait.jpg",
+      "artist": "Pritam Haldar",
+      "project": "pritam",
+      "category": "Portrait",
+      "tone": "colour",
+      "caption": "Off duty, for once on the other side of the lens",
+      "alt": "Pritam Haldar in sunglasses and a navy and white knit sweater, looking over the shoulder in a pine forest",
+      "focus": "50% 40%",
+      "credit": "",
+      "public": true,
+      "downloadable": false,
+      "width": 1500,
+      "height": 2000,
+      "originalSize": "1500x2000",
+      "widths": [
+        480,
+        960
+      ],
+      "enhancement": "Resized only (Lanczos3), sRGB, EXIF stripped. No re-grading, no upscaling, no generative edits."
+    },
+    {
       "id": "fakira-dsc-0600",
       "original": "FAKIRA/DSC_0600.jpg",
       "artist": "Fakira",

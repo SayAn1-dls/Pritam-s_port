@@ -116,8 +116,8 @@ const s = (a: number, b?: number) => seq.slice(a, b);
 <style>
   .cs-head { padding-top: clamp(30px, 5vw, 70px); }
   .crumbs { margin: 0 0 20px; }
-  .cs-t { font-size: clamp(64px, 15vw, 260px); line-height: 0.85; letter-spacing: -0.04em; }
-  .cs-kick { font-family: var(--serif); font-style: italic; font-size: clamp(22px, 2.6vw, 36px); color: var(--accent); margin: 16px 0 clamp(28px, 4vw, 50px); max-width: 30ch; }
+  .cs-t { font-size: clamp(72px, 17vw, 300px); line-height: 0.84; }
+  .cs-kick { font-family: var(--sans); font-style: italic; font-weight: 700; font-stretch: 112%; font-size: clamp(22px, 2.6vw, 36px); color: var(--accent); margin: 16px 0 clamp(28px, 4vw, 50px); max-width: 30ch; }
   .cs-cover :global(.ph) { max-height: 88vh; }
   .cs-intro { display: grid; grid-template-columns: 1fr 1.4fr; gap: clamp(30px, 6vw, 100px); padding-top: clamp(30px, 4vw, 60px); }
   .facts { margin: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 0; border-top: 1px solid var(--ink); align-self: start; }
@@ -128,8 +128,8 @@ const s = (a: number, b?: number) => seq.slice(a, b);
   .chap { display: grid; grid-template-columns: 1fr 2fr; gap: 30px; padding-top: clamp(60px, 8vw, 120px); }
   .chap-n { margin: 6px 0 0; color: var(--ink); border-top: 1px solid var(--ink); padding-top: 10px; align-self: start; }
   .chap .prose p { font-size: clamp(19px, 1.6vw, 23px); line-height: 1.5; margin: 0; }
-  .idea { font-size: clamp(30px, 3.6vw, 56px); line-height: 1.08; }
-  .note { font-size: clamp(28px, 3.2vw, 48px); line-height: 1.1; font-style: italic; }
+  .idea { font-size: clamp(32px, 3.8vw, 60px); line-height: 1; }
+  .note { font-size: clamp(30px, 3.4vw, 52px); line-height: 1; }
 
   .duo { display: grid; grid-template-columns: 1.3fr 1fr; gap: 16px; align-items: start; padding-top: clamp(50px, 6vw, 90px); }
   .duo > :nth-child(2) { margin-top: 15%; }
@@ -146,12 +146,12 @@ const s = (a: number, b?: number) => seq.slice(a, b);
   .outcome h2 { margin: 0 0 10px; }
   .outcome h2 + ul { margin-bottom: 28px; }
   .outcome ul { padding: 0; list-style: none; margin: 0; }
-  .outcome li { font-family: var(--serif); font-size: 22px; line-height: 1.3; padding: 10px 0; border-bottom: 1px solid var(--rule); }
+  .outcome li { font-weight: 650; font-size: 20px; line-height: 1.35; padding: 10px 0; border-bottom: 1px solid var(--rule); }
 
   .pn { display: grid; grid-template-columns: 1fr 1fr; margin-top: clamp(70px, 9vw, 130px); border-top: 1px solid var(--ink); }
   .pn-a { display: grid; gap: 6px; padding: 22px 0; text-decoration: none; }
   .pn-next { text-align: right; border-left: 1px solid var(--rule); }
-  .pn-t { font-family: var(--serif); font-size: clamp(30px, 4vw, 60px); line-height: 1; transition: color 0.2s; }
+  .pn-t { font-family: var(--display); text-transform: uppercase; font-size: clamp(30px, 4vw, 60px); line-height: 1; transition: color 0.2s; }
   .pn-a:hover .pn-t { color: var(--accent); }
 
   @media (max-width: 860px) {

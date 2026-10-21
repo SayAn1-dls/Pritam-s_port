@@ -58,6 +58,10 @@ After editing, run `npm run dev` to check, then commit and push. The host rebuil
    It only resizes and converts to sRGB: no re-grading, no smoothing, no AI upscaling, and EXIF/GPS data is stripped.
 4. Commit the manifest and the new files in `public/assets/photos/`.
 
+**Pritam's portrait** is the manifest entry `pritam-haldar-portrait` (project `pritam`). It is used on the home hero and
+the About page and is kept out of the archive. To swap it, replace `originals/PRITAM/pritam-haldar-portrait.jpg` and run
+`npm run images`.
+
 **Hide a photo:** set `"public": false`. It disappears from every page but stays in the manifest.
 **Change a caption:** edit `caption` / `alt`. No rebuild of images is needed.
 **Add several photos to an existing project:** add entries with the same `project`, then add their ids to that

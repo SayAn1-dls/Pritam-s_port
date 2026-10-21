@@ -277,3 +277,6 @@ export const projects: Project[] = [
 
 export const published = projects.filter((p) => !p.draft);
 export const projectBySlug = (slug: string) => published.find((p) => p.slug === slug);
+
+/** Edited frames for a show, read from its first verified outcome ("54 frames in the …"). 0 if not stated. */
+export const editedFrames = (p: Project) => Number(p.outcomes.verified[0]?.match(/^(\d+) frames\b/)?.[1] ?? 0);

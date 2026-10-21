@@ -37,7 +37,7 @@
       <rule>One theme: paper / ink / stage red, League Gothic + Archivo. No new colours, no new fonts.</rule>
       <rule>Banned: bento grids, glass or blur panels, gradient blobs, emoji, flat or line icons, tag-pill walls, drop-shadow cards.</rule>
       <rule>Infographics are built from real frames and real counts (photo annotations, filmstrip bars), never icons.</rule>
-      <rule>One accent use per view: the outcome words in the H1 and the primary button.</rule>
+      <rule>One accent per view: the callout markers, the pass label and the primary button. Headlines stay one colour (docs/TYPE_RESEARCH.md).</rule>
       <rule>Square corners, thick ink rules for structure (existing system).</rule>
       <rule>Text never overlaps a busy part of a photo without a solid backing; callout labels sit on solid ink or paper.</rule>
     </design>

@@ -1,0 +1,111 @@
+---
+// One real concert frame, annotated with who each part of it works for.
+// The marks are a real list (read by screen readers and shown as a legend on phones);
+// on wider screens each item is placed beside its numbered marker on the photo.
+import Photo from '../Photo.astro';
+import { photoById } from '../../data/photos';
+import type { FrameMark } from '../../data/home';
+
+interface Props {
+  photo: string;
+  caption: string;
+  marks: FrameMark[];
+  pass: { photo: string; label: string; name: string };
+}
+const { photo, caption, marks, pass } = Astro.props;
+const p = photoById(photo);
+// Height of the photo as a share of its width, so the pass can be pinned to the photo's bottom edge
+// even when the legend sits below it.
+const ratio = p ? p.height / p.width : 0.625;
+---
+<figure class="af">
+  <div class="af-stage" style={`--ratio:${ratio}`}>
+    <Photo id={photo} eager sizes="(max-width: 860px) 100vw, 58vw" lightbox />
+    {marks.map((m) => (
+      <span class="af-dot" style={`--x:${m.x}%;--fy:${m.y / 100}`} aria-hidden="true">{m.n}</span>
+    ))}
+    <ol class="af-marks">
+      {marks.map((m) => (
+        <li class:list={['af-mark', `af-${m.side}`]} style={`--x:${m.x}%;--fy:${m.y / 100}`}>
+          <span class="af-n" aria-hidden="true">{m.n}</span>
+          <span class="af-txt"><b>{m.who}</b> <span>{m.job}</span></span>
+        </li>
+      ))}
+    </ol>
+    <div class="af-pass" aria-label={`${pass.label} pass: ${pass.name}`} role="img">
+      <span class="af-pass-l" aria-hidden="true">{pass.label}</span>
+      <Photo id={pass.photo} ratio="4/5" sizes="120px" eager />
+      <span class="af-pass-n" aria-hidden="true">{pass.name}</span>
+    </div>
+  </div>
+  <figcaption class="meta af-cap">{caption}</figcaption>
+</figure>
+
+<style>
+  .af { margin: 0; min-width: 0; }
+  /* Vertical positions use the photo's own height (100cqw × ratio), not the box, which also holds the legend on phones. */
+  .af-stage { position: relative; container-type: inline-size; }
+
+  /* numbered marker on the photo */
+  .af-dot {
+    position: absolute; left: var(--x); top: calc(100cqw * var(--ratio) * var(--fy)); z-index: 2;
+    translate: -50% -50%;
+    display: grid; place-items: center;
+    width: 30px; height: 30px;
+    background: var(--accent); color: var(--accent-ink);
+    outline: 2px solid var(--paper);
+    font-family: var(--display); font-size: 19px; line-height: 1;
+    pointer-events: none;
+  }
+
+  .af-marks { list-style: none; margin: 0; padding: 0; }
+  .af-mark { display: flex; align-items: baseline; gap: 10px; }
+  .af-n {
+    flex: none; display: grid; place-items: center; width: 24px; height: 24px;
+    background: var(--accent); color: var(--accent-ink);
+    font-family: var(--display); font-size: 16px; line-height: 1;
+  }
+  .af-txt b { font-family: var(--display); font-weight: 400; text-transform: uppercase; font-size: 21px; letter-spacing: 0.02em; }
+  .af-txt span { font-size: 15px; font-weight: 500; }
+
+  /* photo pass: Pritam's portrait clipped to the frame */
+  .af-pass {
+    position: absolute; z-index: 3; right: clamp(10px, 2vw, 24px);
+    top: calc(100cqw * var(--ratio)); translate: 0 -62%;
+    width: clamp(84px, 8.4vw, 124px);
+    background: var(--paper); border: 1.5px solid var(--ink);
+    rotate: 3deg;
+  }
+  .af-pass-l {
+    display: block; background: var(--accent); color: var(--accent-ink); text-align: center;
+    font-family: var(--display); text-transform: uppercase; font-size: 15px; letter-spacing: 0.12em; padding: 3px 0 2px;
+  }
+  .af-pass :global(.photo) { padding: 6px 6px 0; }
+  .af-pass-n {
+    display: block; padding: 5px 6px 6px; text-align: center;
+    font-family: var(--display); text-transform: uppercase; font-size: 14px; line-height: 1; letter-spacing: 0.03em;
+  }
+  .af-cap { margin: 12px 0 0; padding-right: 150px; }
+
+  /* wide screens: labels sit on the photo, beside their marker */
+  @media (min-width: 700px) {
+    .af-mark {
+      position: absolute; top: calc(100cqw * var(--ratio) * var(--fy)); z-index: 2; translate: 0 -50%;
+      background: var(--ink); color: var(--paper);
+      padding: 7px 11px 6px; white-space: nowrap;
+      pointer-events: none;
+    }
+    .af-right { left: calc(var(--x) + 22px); }
+    .af-left { right: calc(100% - var(--x) + 22px); }
+    .af-n { display: none; }
+    .af-txt span { color: #d9d1c4; }
+  }
+
+  /* phones: a numbered legend under the frame */
+  @media (max-width: 699.98px) {
+    .af-marks { display: grid; gap: 8px; margin-top: 14px; }
+    .af-mark:nth-child(-n + 2) { padding-right: 96px; } /* clear the pass, which hangs below the photo */
+    .af-dot { width: 26px; height: 26px; font-size: 17px; }
+    .af-cap { padding-right: 0; margin-top: 10px; }
+  }
+</style>

@@ -8,10 +8,10 @@ export const site = {
   name: 'Pritam Haldar',
   shortName: 'Pritam',
   // Shown in <title>, Open Graph and the footer.
-  role: 'Concert photography & show marketing',
+  role: 'Concert photographer & event marketer',
   url: 'https://pritam-haldar.vercel.app', // change to your final domain before deploying
   description:
-    'Pritam Haldar photographs concerts and turns live nights into marketing: artist content, sponsor visibility and promotion, working with Eventures Entertainment and Hottogol.',
+    'Pritam Haldar shoots concerts for marketing: frames for the artist’s feed, the sponsor’s report and the promoter’s next poster. With Eventures Entertainment and Hottogol.',
 
   availability: {
     // Set `open` to false and the header / hire page will stop saying you are available.

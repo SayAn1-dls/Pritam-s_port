@@ -2,7 +2,7 @@
 import Base from '../../layouts/Base.astro';
 import Photo from '../../components/Photo.astro';
 import HireCta from '../../components/HireCta.astro';
-import { published, type Project } from '../../data/projects';
+import { published, editedFrames, type Project } from '../../data/projects';
 import { photoById, fullSrc } from '../../data/photos';
 
 export function getStaticPaths() {
@@ -14,9 +14,11 @@ const next = published[(idx + 1) % published.length];
 const prev = published[(idx - 1 + published.length) % published.length];
 const seq = p.sequence.filter((id) => photoById(id));
 const cover = photoById(p.cover);
+const frames = editedFrames(p);
+// The spec a buyer of event photography reads first: who, what, how much, for whom.
 const facts = [
-  ['Artist', p.artist],
   ['Role', p.role],
+  ['Edited frames', frames ? String(frames) : ''],
   ['Production', p.company],
   ['Year', p.year],
   ['Venue', p.venue],
@@ -31,6 +33,9 @@ const s = (a: number, b?: number) => seq.slice(a, b);
       <p class="meta crumbs"><a class="link-u" href="/work/">Work</a> / {p.artist}</p>
       <h1 class="display cs-t">{p.artist}</h1>
       <p class="cs-kick">{p.kicker}</p>
+      <dl class="facts">
+        {facts.map(([k, v]) => <div><dt class="meta">{k}</dt><dd>{v}</dd></div>)}
+      </dl>
     </header>
 
     <div class="cs-cover wrap">
@@ -38,9 +43,6 @@ const s = (a: number, b?: number) => seq.slice(a, b);
     </div>
 
     <section class="wrap cs-intro">
-      <dl class="facts">
-        {facts.map(([k, v]) => <div><dt class="meta">{k}</dt><dd>{v}</dd></div>)}
-      </dl>
       <p class="lede cs-sum">{p.summary}</p>
     </section>
 
@@ -117,13 +119,16 @@ const s = (a: number, b?: number) => seq.slice(a, b);
   .cs-head { padding-top: clamp(30px, 5vw, 70px); }
   .crumbs { margin: 0 0 20px; }
   .cs-t { font-size: clamp(72px, 17vw, 300px); line-height: 0.84; }
-  .cs-kick { font-family: var(--sans); font-weight: 600; font-size: clamp(22px, 2.6vw, 36px); color: var(--accent); margin: 16px 0 clamp(28px, 4vw, 50px); max-width: 30ch; }
+  .cs-kick { font-family: var(--sans); font-weight: 600; font-size: clamp(22px, 2.6vw, 36px); color: var(--accent); margin: 16px 0 clamp(20px, 3vw, 34px); max-width: 30ch; }
   .cs-cover :global(.ph) { max-height: 88vh; }
-  .cs-intro { display: grid; grid-template-columns: 1fr 1.4fr; gap: clamp(30px, 6vw, 100px); padding-top: clamp(30px, 4vw, 60px); }
-  .facts { margin: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 0; border-top: 6px solid var(--ink); align-self: start; }
-  .facts div { padding: 12px 0; }
-  .facts dd { margin: 4px 0 0; font-size: 16px; }
-  .cs-sum { max-width: 40ch; margin: 0; }
+  .facts {
+    margin: 0 0 clamp(24px, 3vw, 40px); display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    column-gap: 28px; border-top: 6px solid var(--ink); max-width: 980px;
+  }
+  .facts div { padding: 12px 0 0; min-width: 0; }
+  .facts dd { margin: 4px 0 0; font-size: 17px; font-weight: 650; }
+  .cs-intro { padding-top: clamp(30px, 4vw, 60px); }
+  .cs-sum { max-width: 46ch; margin: 0; }
 
   .chap { display: grid; grid-template-columns: 1fr 2fr; gap: 30px; padding-top: clamp(60px, 8vw, 120px); }
   .chap-n { margin: 6px 0 0; color: var(--ink); border-top: 6px solid var(--ink); padding-top: 10px; align-self: start; }
@@ -155,7 +160,8 @@ const s = (a: number, b?: number) => seq.slice(a, b);
   .pn-a:hover .pn-t { color: var(--accent); }
 
   @media (max-width: 860px) {
-    .cs-intro, .chap, .out-grid { grid-template-columns: 1fr; }
+    .chap, .out-grid { grid-template-columns: 1fr; }
+    .facts { grid-template-columns: 1fr 1fr; }
     .duo, .trio { grid-template-columns: 1fr; }
     .duo > :nth-child(2), .trio > :nth-child(2) { margin-top: 0; }
     .sheet { grid-template-columns: 1fr 1fr; }

@@ -17,7 +17,9 @@ The site only states what the files and your message confirm. These gaps are hid
 6. **About page wording**, including the line about moving further into marketing. Make sure it sounds like you.
 7. **Monali Thakur files** list "Rupanwaya Karmakar" as the creator in their metadata, alongside your watermark.
    If someone else edited or co-shot that set, add a `credit` and it will show in captions.
-8. **Sponsor branding.** The Jeet Ganguly set shows a school's branding and phone numbers on the LED screen. It is
+8. **Positioning label.** The home page and page titles now call you a **"Concert photographer & event marketer"**
+   (`site.role` in `src/data/site.ts`). It matches the hire categories, but change it if you'd describe yourself differently.
+9. **Sponsor branding.** The Jeet Ganguly set shows a school's branding and phone numbers on the LED screen. It is
    public stage advertising, but check the sponsor is happy to be shown.
 
 ## Please supply

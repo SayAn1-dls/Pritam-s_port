@@ -9,7 +9,7 @@
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "check": "astro check && astro build && node scripts/check-site.mjs",
+    "check": "astro check && astro build && node scripts/check-site.mjs && node scripts/check-copy.mjs",
     "images": "node scripts/build-images.mjs",
     "scan": "node scripts/scan-originals.mjs",
     "astro": "astro"

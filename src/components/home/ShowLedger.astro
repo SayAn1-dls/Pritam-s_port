@@ -1,0 +1,67 @@
+---
+// The show ledger: one row per show. Each bar is a strip of that show's own frames,
+// and its length is the number of edited frames delivered (longest show = full width).
+import { photosFor, fullSrc } from '../../data/photos';
+
+interface Row { slug: string; artist: string; year: string; frames: number }
+interface Props { id: string; label: string; note: string; heading: string; rows: Row[] }
+const { id, label, note, heading, rows } = Astro.props;
+
+const TILES = 9; // enough thumbnails to fill the longest bar
+const max = Math.max(1, ...rows.map((r) => r.frames));
+const strips = rows.map((r) => ({ ...r, share: r.frames / max, tiles: photosFor(r.slug).slice(0, TILES) }));
+---
+<section id={id} class="ledger wrap" aria-labelledby={`${id}-h`}>
+  <div class="label"><span class="meta">{label}</span><span class="meta">{note}</span></div>
+  <h2 class="h2 lg-h" id={`${id}-h`}>{heading}</h2>
+  <ol class="lg-rows">
+    {strips.map((r) => (
+      <li>
+        <a class="lg-row" href={`/work/${r.slug}/`}>
+          <span class="lg-name">{r.artist}{r.year && <span class="meta lg-year">{r.year}</span>}</span>
+          <span class="lg-track">
+            <span class="lg-bar" style={`--share:${r.share}`} aria-hidden="true">
+              {r.tiles.map((p) => (
+                <img src={fullSrc(p, 480)} alt="" width={p.width} height={p.height} loading="lazy" decoding="async"
+                  style={p.focus ? `object-position:${p.focus}` : undefined} />
+              ))}
+            </span>
+          </span>
+          <span class="lg-n">{r.frames}<span class="meta"> frames</span></span>
+        </a>
+      </li>
+    ))}
+  </ol>
+</section>
+
+<style>
+  .ledger { padding-top: clamp(70px, 9vw, 130px); }
+  .lg-h { margin-bottom: clamp(26px, 3.5vw, 48px); }
+  .lg-rows { list-style: none; margin: 0; padding: 0; }
+  .lg-rows li + li { border-top: 1.5px solid var(--ink); }
+  .lg-row {
+    display: grid; grid-template-columns: minmax(150px, 15rem) minmax(0, 1fr) 7.5rem;
+    align-items: center; gap: clamp(14px, 2vw, 28px);
+    padding: 12px 0; text-decoration: none;
+  }
+  .lg-name { font-family: var(--display); text-transform: uppercase; font-size: clamp(28px, 2.6vw, 40px); line-height: 1; transition: color 0.2s; }
+  .lg-year { display: block; margin-top: 4px; font-family: var(--sans); text-transform: none; }
+  .lg-track { display: block; min-width: 0; }
+  .lg-bar {
+    display: flex; gap: 3px; height: clamp(46px, 4.6vw, 64px);
+    width: calc(var(--share) * 100%); overflow: hidden;
+    background: var(--ink);
+  }
+  .lg-bar img { flex: none; height: 100%; width: auto; aspect-ratio: 3 / 2; object-fit: cover; }
+  .lg-n { font-family: var(--display); font-size: clamp(34px, 3.2vw, 50px); line-height: 1; text-align: right; }
+  .lg-n .meta { font-family: var(--sans); font-size: 14px; }
+  .lg-row:hover .lg-name, .lg-row:focus-visible .lg-name { color: var(--accent); }
+
+  @media (max-width: 700px) {
+    .ledger { padding-top: 24px; }
+    .lg-row { grid-template-columns: minmax(0, 1fr) auto; row-gap: 8px; }
+    .lg-track { grid-column: 1 / -1; grid-row: 2; }
+    .lg-name { font-size: 28px; }
+    .lg-n { font-size: 30px; }
+  }
+</style>

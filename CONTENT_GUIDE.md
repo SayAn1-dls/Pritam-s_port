@@ -7,6 +7,7 @@ Everything on the site comes from three files. You never need to touch the page 
 | `src/data/site.ts` | Name, availability, phone/WhatsApp, email, LinkedIn, Instagram, resume, location, hire categories, production partners |
 | `src/data/projects.ts` | Case studies (`/work/<slug>/`) and which ones are featured on the home page |
 | `src/data/photos.json` | Every photo: artist, project, caption, alt text, category, public/private |
+| `src/data/home.ts` | Home page first screen: headline, sub-line, the annotated hero frame, the show ledger |
 
 After editing, run `npm run dev` to check, then commit and push. The host rebuilds automatically.
 
@@ -58,8 +59,8 @@ After editing, run `npm run dev` to check, then commit and push. The host rebuil
    It only resizes and converts to sRGB: no re-grading, no smoothing, no AI upscaling, and EXIF/GPS data is stripped.
 4. Commit the manifest and the new files in `public/assets/photos/`.
 
-**Pritam's portrait** is the manifest entry `pritam-haldar-portrait` (project `pritam`). It is used on the home hero and
-the About page and is kept out of the archive. To swap it, replace `originals/PRITAM/pritam-haldar-portrait.jpg` and run
+**Pritam's portrait** is the manifest entry `pritam-haldar-portrait` (project `pritam`). It is used as the photo pass on
+the home hero and on the About page and is kept out of the archive. To swap it, replace `originals/PRITAM/pritam-haldar-portrait.jpg` and run
 `npm run images`.
 
 **Hide a photo:** set `"public": false`. It disappears from every page but stays in the manifest.
@@ -88,3 +89,18 @@ Copy an existing entry and change:
 Add them to `outcomes.verified` on the relevant project, written exactly as true:
 "Photographed for Eventures Entertainment", "Set used in the sponsor's recap deck", "₹X raised in sponsorship (team total)".
 Separate team results from your own contribution.
+
+## Home page first screen (`src/data/home.ts`)
+
+The first screen has one job: in about three seconds a visitor should know who you are, what you do, who you've
+worked with, and how to reach you. See `docs/plan/first-3-seconds.plan.xml` for the rules.
+
+- **Headline and sub-line:** `hero.title` and `hero.sub`. Keep the headline to 8 words or fewer, and the sub-line to 28.
+  `npm run check` fails if they grow past that.
+- **Annotated frame:** `frame.photo` is the concert photo. Each entry in `frame.marks` puts a numbered marker at `x`/`y`
+  (percent of the photo's width and height), with its label on the `side` you choose. Keep markers off faces.
+- **Show ledger:** built automatically from `projects.ts`. The bar length is the number in each show's first
+  `outcomes.verified` line ("54 frames in the final edited set").
+- **Copy rules:** `npm run check` also runs `scripts/check-copy.mjs`. It fails on any paragraph over 40 words, on
+  stock marketing words (elevate, seamless, passionate…), on emoji, and on a hero that loses your name, role or partners.
+

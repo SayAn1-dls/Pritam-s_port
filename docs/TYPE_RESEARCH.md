@@ -55,7 +55,7 @@ for headlines** (League Gothic). The generic sites use Inter, Montserrat and Ope
 
 Changes made to follow the research:
 - Anton and JetBrains Mono removed: two faces only, and no monospace "technical" voice.
-- Outlined and red accent words removed from headlines. Red is kept for the stamp and buttons.
+- Outlined and red accent words removed from headlines. Red is kept for the hero frame's callout markers, the photo-pass label and the primary button.
 - Italic taglines are now roman weight 600.
 - Removed the index numbering (No. 02, 01 —, #001), the "Vol. 2026" line, the eyebrow line above the hero, and
   the pulsing status dot.

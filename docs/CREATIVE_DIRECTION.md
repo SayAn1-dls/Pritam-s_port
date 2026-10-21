@@ -1,4 +1,4 @@
-# Creative direction: "The pictures sell the next one"
+# Creative direction: "Concert photos that sell the next show"
 
 ## The idea
 Pritam's real asset is the archive: concert photographs Pritam shot, signed "Pritam Haldar Photography", of Fakira, Cactus,
@@ -13,7 +13,9 @@ event and partnership roles as well as photography work.
 Drawn from general familiarity with editorial and photographer portfolios. The reference sites suggested in the brief
 (Awwwards, Behance, websitebuilderexpert.com, founderjar.com) were **not** opened during this build, and nothing was
 copied from any site. The principles used:
-- Lead with one confident sentence and one great image instead of a skills grid.
+- Lead with one confident sentence and one great image instead of a skills grid. Since the first-3-seconds pass
+  (`docs/research/`), that sentence classifies first ("Concert photos that sell the next show.") and the image is a real
+  frame annotated with who each part of it is for.
 - Use type as the main graphic element and let photos carry the colour.
 - Number things like a printed index (No. 02, 03, …) so the page reads as a publication.
 - Case studies should read as stories (context, challenge, idea, execution, outcome, lesson), not galleries.

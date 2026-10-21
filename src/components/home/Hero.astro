@@ -1,0 +1,61 @@
+---
+// The first screen. It has to answer, before any scroll: who (name, role), what (the H1),
+// for whom and with whom (sub-line), proof (artists), and what to do next (two actions).
+// No reveal animation here: everything is visible on first paint, with or without JS.
+import AnnotatedFrame from './AnnotatedFrame.astro';
+import { hero, frame, artists } from '../../data/home';
+const external = /^https?:/.test(hero.secondary.href);
+---
+<section class="hero wrap" data-hero aria-labelledby="hero-h">
+  <div class="hero-txt">
+    <p class="hero-who"><b>{hero.name}</b><span aria-hidden="true"> · </span><span>{hero.role}</span></p>
+    <h1 class="display hero-h" id="hero-h">{hero.title}</h1>
+    <p class="lede hero-sub" data-hero-sub>{hero.sub}</p>
+    <p class="hero-proof">
+      <span class="meta">{hero.proofLabel}</span>
+      <span class="hero-names">{artists.map((a, i) => <><span>{a}</span>{i < artists.length - 1 && <i aria-hidden="true"> / </i>}</>)}</span>
+    </p>
+    <div class="btns">
+      <a class="btn red" href={hero.primary.href}>{hero.primary.label} <span class="arr" aria-hidden="true">↓</span></a>
+      <a class="btn ghost" href={hero.secondary.href} {...(external ? { target: '_blank', rel: 'noopener' } : {})}>
+        {hero.secondary.label} <span class="arr" aria-hidden="true">→</span>
+      </a>
+    </div>
+  </div>
+  <div class="hero-frame">
+    <AnnotatedFrame photo={frame.photo} caption={frame.caption} marks={frame.marks} pass={{ ...frame.pass, name: hero.name }} />
+  </div>
+</section>
+
+<style>
+  .hero {
+    display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+    column-gap: clamp(28px, 3.5vw, 56px); align-items: center;
+    padding-top: clamp(18px, 3vh, 40px); padding-bottom: clamp(50px, 6vw, 90px);
+    min-height: calc(100svh - 72px);
+  }
+  .hero-who { margin: 0 0 clamp(14px, 2vh, 22px); font-size: 16px; font-weight: 500; color: var(--ink-2); }
+  .hero-who b { font-weight: 700; color: var(--ink); }
+  .hero-h { font-size: clamp(54px, min(6.3vw, 11.5vh), 104px); }
+  .hero-sub { margin: clamp(14px, 2.4vh, 24px) 0 0; max-width: 38ch; font-size: clamp(18px, 1.45vw, 21px); }
+  .hero-proof { margin: clamp(14px, 2.4vh, 22px) 0 clamp(18px, 3vh, 28px); max-width: 44ch; }
+  .hero-proof .meta { display: block; margin-bottom: 4px; }
+  .hero-names { font-weight: 650; font-size: 17px; line-height: 1.45; }
+  .hero-names > span { white-space: nowrap; }
+  .hero-names i { font-style: normal; color: var(--grey); }
+  .hero-frame { min-width: 0; }
+
+  @media (max-width: 860px) {
+    .hero { grid-template-columns: minmax(0, 1fr); min-height: 0; padding-top: 14px; }
+    .hero-h { font-size: clamp(46px, 13.4vw, 84px); }
+    .hero-frame { margin-top: 34px; }
+  }
+  /* short phones (e.g. 320x568): tighten so the actions still land in the first screen */
+  @media (max-width: 400px) and (max-height: 640px) {
+    .hero-who { font-size: 14px; margin-bottom: 10px; }
+    .hero-h { font-size: 40px; }
+    .hero-sub { font-size: 16px; margin-top: 10px; }
+    .hero-proof { margin: 10px 0 14px; }
+    .hero-names { font-size: 15px; }
+  }
+</style>

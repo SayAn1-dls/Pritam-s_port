@@ -78,8 +78,11 @@ Copy an existing entry and change:
 
 - `slug` (URL), `artist`, `title`, `kicker` (one-line poster tagline), `category`, `cover` (a photo id).
 - `year`, `venue`, `company`: **leave as `''` until confirmed.** Empty fields are hidden on the page.
-- Story fields: `summary`, `context`, `challenge`, `idea`, `execution` (list), `deliverables` (list),
-  `outcomes.verified` (only facts you can back up: counts, confirmed numbers), `outcomes.qualitative`, `notes`.
+- Story fields: `summary`, `context`, `challenge`, `idea`, `execution` (list),
+  `outcomes.verified` (only facts you can back up: counts, file metadata, confirmed numbers),
+  `outcomes.shows` (what the photos visibly show), `notes` (your opinion).
+- Write only what the photos or the files prove. Don't say who used the photos, what was delivered, or what it achieved,
+  unless you can back it up.
 - `sequence`: photo ids in the order they appear on the page. The first two form the pair after "The context",
   the next three the trio, then one full-width image, and the rest become the contact sheet.
 - `featured: true` puts it on the home page (the first five featured are shown). `draft: true` hides it everywhere.

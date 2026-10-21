@@ -34,7 +34,7 @@ const ratio = p ? p.height / p.width : 0.625;
     </ol>
     <div class="af-pass" aria-label={`${pass.label} pass: ${pass.name}`} role="img">
       <span class="af-pass-l" aria-hidden="true">{pass.label}</span>
-      <Photo id={pass.photo} ratio="4/5" sizes="120px" eager />
+      <Photo id={pass.photo} sizes="120px" eager />
       <span class="af-pass-n" aria-hidden="true">{pass.name}</span>
     </div>
   </div>

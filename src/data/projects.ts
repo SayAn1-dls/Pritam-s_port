@@ -1,8 +1,12 @@
 /**
  * Case studies. One entry = one page at /work/<slug>/.
  *
- * Honesty rules used for this file:
- * - Every photo was shot by Pritam (the "Pritam Haldar Photography" signature is on each frame).
+ * Honesty rules used for this file (checked against the photos and their file metadata, October 2026):
+ * - Every sentence describes something visible in the photos, something in the file metadata
+ *   (camera, date, editing software), or the approach the photos show. No claims about who used
+ *   the photos afterwards, what was delivered to whom, or results.
+ * - Every frame carries the "Pritam Haldar Photography" signature. The Monali Thakur files also list
+ *   another creator in their metadata: see docs/TO_VERIFY.md before sharing that set widely.
  * - Facts that are not confirmed yet (exact date, venue, which production company, numbers)
  *   are left as '' or []. Empty fields are hidden on the page. Fill them in when confirmed.
  * - `draft: true` hides a whole project from the site.
@@ -24,9 +28,9 @@ export interface Project {
   challenge: string;
   idea: string;
   execution: string[];
-  deliverables: string[];
-  outcomes: { verified: string[]; qualitative: string[] };
-  notes: string; // "what I took from it"
+  // verified: facts that can be checked (counts, file metadata). shows: what the photos show.
+  outcomes: { verified: string[]; shows: string[] };
+  notes: string; // "what I took from it": an opinion, in Pritam's voice
   sequence: string[]; // photo ids shown in the case study, in order
   draft?: boolean;
   featured?: boolean;
@@ -37,7 +41,7 @@ export const projects: Project[] = [
     slug: 'fakira',
     artist: 'Fakira',
     title: 'Fakira, live',
-    kicker: 'Fire on the screen, folk in the room.',
+    kicker: 'Fire on the screen, white kurtas on stage.',
     year: '',
     venue: '',
     company: '',
@@ -45,29 +49,28 @@ export const projects: Project[] = [
     category: 'Live music · Artist content',
     cover: 'fakira-dsc-0817',
     summary:
-      'A Fakira night shot for what it would be used for afterwards: frames the band could post that night, and frames a promoter could use to sell the next one.',
+      'A Fakira set shot from the front of the stage: the band, the LED visuals behind them, and fans holding up their own signs.',
     context:
-      'Fakira’s shows are loud with colour: white kurtas, Bengali lyrics thrown up on LED walls, a crowd that brings its own hand-painted signs. All of that is the marketing, as long as somebody gets it into the frame.',
+      'Fakira perform in white kurtas in front of big LED graphics, from Bengali lettering to walls of fire. At this show, fans held up hand-made posters and signs.',
     challenge:
-      'The light swung from pitch dark to a full screen of fire within a single song. The set needed to work across very different lighting and still hang together as one story about this band.',
+      'The light swung from near-dark to a full screen of fire within the set. The frames still had to hold together as one series.',
     idea:
-      'Shoot three layers every song: the face (emotion), the stage (scale and production value), and the crowd (proof people showed up). Each layer answers a different question a future audience or sponsor asks.',
+      'Work three layers through the set: the face (emotion), the stage (scale and production) and the crowd (people who showed up).',
     execution: [
-      'Tight portraits timed to the screen graphics, so the visuals and the artist land in the same frame.',
-      'Monochrome when the colour got in the way of the expression.',
-      'Turned around for the crowd: fan posters and signs are the most persuasive pictures of the night.',
-      'Edited and graded the full set in Lightroom so every frame reads as one series.',
+      'Portraits timed with the screen graphics, so the artist and the visuals share the frame.',
+      'Monochrome versions where the colour distracted from the expression.',
+      'Crowd frames of the fan-made posters and signs.',
+      'Edited in Adobe Lightroom Classic as one series.',
     ],
-    deliverables: ['Edited photo set (45 frames)', 'Portrait, landscape and monochrome selects for social formats'],
     outcomes: {
-      verified: ['45 frames in the final edited set'],
-      qualitative: [
-        'Covers every member of the band, plus stage-wide and crowd frames a promoter can reuse.',
-        'Fan-made posters documented in the set, which is real evidence of the band’s following.',
+      verified: ['45 frames in the edited set', 'Shot on a Nikon D5300, edited in Adobe Lightroom Classic (file metadata)'],
+      shows: [
+        'Band members on stage, wide stage frames and crowd frames.',
+        'Fan-made posters held up in the crowd.',
       ],
     },
     notes:
-      'The crowd shots are the ones people stop on. A wall of fire is impressive; a stranger holding up a hand-drawn portrait of the singer is convincing.',
+      'The crowd shots are the ones people stop on. A wall of fire is impressive; a fan holding up a hand-drawn portrait is convincing.',
     sequence: [
       'fakira-dsc-0600', 'fakira-dsc-0621', 'fakira-dsc-0637', 'fakira-dsc-0823', 'fakira-dsc-0858',
       'fakira-dsc-0872', 'fakira-dsc-0972', 'fakira-dsc-0833', 'fakira-dsc-0910', 'fakira-dsc-0918',
@@ -79,37 +82,36 @@ export const projects: Project[] = [
     slug: 'cactus',
     artist: 'Cactus',
     title: 'Cactus, open air',
-    kicker: 'Confetti, flame bars and a whole field singing back.',
+    kicker: 'Confetti, flame effects and phones in the air.',
     year: '',
     venue: '',
     company: '',
     role: 'Concert photographer',
-    category: 'Live music · Production documentation',
+    category: 'Live music · Production',
     cover: 'cactus-dsc-0241',
     summary:
-      'An open-air Cactus concert with full production: CO2, flame effects, confetti and a big LED rig. Documented so the production itself becomes selling material.',
+      'An open-air Cactus show with CO2, flame effects, confetti and a big LED rig, covered wide and close.',
     context:
-      'Cactus have been part of Bengali rock for decades and the audience spans generations. The production team built a big outdoor stage, and that scale is part of what the next show sells.',
+      'Cactus are a long-running Bengali rock band. This show had a large outdoor stage with a full lighting rig, LED screens and stage effects.',
     challenge:
-      'Pyro, smoke and confetti last a second and then they are gone. Missing the cue means missing the shot that shows what the production cost and what the night felt like.',
+      'Confetti and flame effects last a second or two. Miss the moment and you miss the frame that shows the scale of the production.',
     idea:
-      'Know the cues before they happen. Stay wide for the effects moments, go tight on the vocalists in between, and come back to the crowd at the peaks.',
+      'Stay wide for the effects, go tight on the vocalists in between, and come back to the crowd at the peaks.',
     execution: [
-      'Wide frames of the full stage, rig and crowd for promoter and sponsor decks.',
-      'Confetti and flame moments caught from the front of house.',
-      'Tight frames of both vocalists across very different light (green, magenta, deep blue, orange smoke).',
-      'Crowd silhouettes and phones-in-the-air frames that show engagement without identifying faces.',
+      'Wide frames of the full stage, rig and crowd.',
+      'Confetti and flame moments.',
+      'Close frames of both vocalists under green, magenta, blue and orange light.',
+      'Crowd silhouettes and phones in the air, with no identifiable faces.',
     ],
-    deliverables: ['Edited photo set (51 frames)', 'Wide production selects', 'Artist portrait selects'],
     outcomes: {
-      verified: ['51 frames in the final edited set'],
-      qualitative: [
-        'Shows the production at full scale, which is exactly what a promoter needs to pitch the next edition.',
-        'Gives the artist a range of looks from a single night.',
+      verified: ['51 frames in the edited set', 'Shot on a Nikon D5300, edited in Adobe Lightroom Classic (file metadata)'],
+      shows: [
+        'The production at full scale: stage, rig, effects and crowd.',
+        'A range of looks of the vocalists from a single night.',
       ],
     },
     notes:
-      'A wide shot with the whole field lit up does more for the next ticket sale than ten close-ups. Close-ups are for the artist; wides are for the business.',
+      'A wide shot of the whole stage and crowd says more about a show than ten close-ups. Close-ups are for the artist; wides show the scale.',
     sequence: [
       'cactus-dsc-0267', 'cactus-dsc-0114', 'cactus-dsc-0350', 'cactus-dsc-0129', 'cactus-dsc-0336',
       'cactus-dsc-0393', 'cactus-dsc-0136', 'cactus-dsc-0113', 'cactus-dsc-0361', 'cactus-dsc-0230',
@@ -120,8 +122,8 @@ export const projects: Project[] = [
   {
     slug: 'jeet-ganguly',
     artist: 'Jeet Ganguly',
-    title: 'Jeet Ganguly, with a title partner',
-    kicker: 'The artist, the crowd, and the brand that paid for the screen.',
+    title: 'Jeet Ganguly, with the sponsor on screen',
+    kicker: 'The artist, the band, and the sponsor on the LED wall.',
     year: '',
     venue: '',
     company: '',
@@ -129,28 +131,30 @@ export const projects: Project[] = [
     category: 'Live music · Sponsor visibility',
     cover: 'jeet-ganguly-dsc-0084',
     summary:
-      'A big-ground concert with sponsor branding on the LED wall. Shot so the sponsor shows up in the photos naturally, instead of being cropped out.',
+      'A Jeet Ganguly concert with sponsor branding on the LED wall, framed so the branding stays readable behind the artist.',
     context:
-      'At sponsored shows the brand on the screen helps pay for the night. The sponsor’s team wants proof they were seen, and the artist’s team wants photos that look like a concert, not an advert.',
+      'The sponsor’s branding ran on the LED screens behind the stage. A sponsor wants to be seen in the photos; an artist wants photos that look like a concert, not an advert.',
     challenge:
-      'Doing both in the same frame: the sponsor’s name readable and the artist clearly the hero, without the photo turning into a billboard.',
+      'Keeping the sponsor’s name readable while the artist stays the clear subject of the frame.',
     idea:
-      'Use the branded screen as a backdrop, not a subject. Frame the artist in front of it, and in the wide shots let the branding sit where the eye passes through.',
+      'Use the branded screen as the backdrop, not the subject. Frame the artist in front of it, and let the wide shots show the whole stage.',
     execution: [
-      'Mid shots of the artist with the partner’s branding readable in the background.',
-      'Wide frames of the full stage and packed ground for the sponsor’s recap.',
-      'CO2 and confetti moments, plus the whole band: guitar, bass, keys, drums, percussion.',
-      'Monochrome frames for the artist’s own channels, where branding is less important.',
+      'Mid shots of the artist with the branding readable behind.',
+      'Wide frames of the full stage and crowd.',
+      'CO2 and confetti moments.',
+      'The band: guitar, keys, drums and percussion.',
+      'Monochrome frames where the colour wasn’t needed.',
     ],
-    deliverables: ['Edited photo set (54 frames)', 'Sponsor-visibility selects', 'Band member selects'],
     outcomes: {
-      verified: ['54 frames in the final edited set', 'Sponsor branding readable in multiple wide and mid shots'],
-      qualitative: [
-        'One shoot produced assets for three audiences: the artist, the sponsor and the organiser.',
+      verified: [
+        '54 frames in the edited set',
+        'Sponsor branding readable in several wide and mid shots',
+        'Shot on a Nikon D5300, edited in Adobe Lightroom Classic (file metadata)',
       ],
+      shows: ['Frames for the artist, frames that show the sponsor, and wide frames of the whole show.'],
     },
     notes:
-      'Sponsors don’t want their logo in every frame. They want it in the frames people will actually share. Get the hero shot first, then make sure the brand is in it.',
+      'A sponsor’s logo matters most in the frames people actually share. Get the artist right first, then make sure the brand is in the frame.',
     sequence: [
       'jeet-ganguly-dsc-0100', 'jeet-ganguly-dsc-0026', 'jeet-ganguly-dsc-0908', 'jeet-ganguly-dsc-0103',
       'jeet-ganguly-dsc-0076', 'jeet-ganguly-dsc-0835', 'jeet-ganguly-dsc-0838', 'jeet-ganguly-dsc-0136',
@@ -171,23 +175,25 @@ export const projects: Project[] = [
     category: 'Live music · Artist content',
     cover: 'fossils-dsc-2132-l',
     summary:
-      'Fossils on a big festival stage, shot leaning into monochrome and hard backlight. A rock band should look like a rock band.',
+      'Fossils on a big stage in December 2023, shot in colour and monochrome under hard backlight.',
     context:
-      'Fossils are among the best-known Bengali rock bands, and the frontman’s look (curls, glasses, striped scarf) is a brand in itself. The photos had to protect that look.',
+      'Fossils are one of the best-known Bengali rock bands. The frontman’s look, with curls, glasses and a striped scarf, is instantly recognisable on stage.',
     challenge:
-      'Heavy backlight and haze, very little light on faces, and a huge, ornate stage set competing for attention.',
+      'Strong backlight and haze, very little light on faces, and a busy stage set behind the band.',
     idea:
-      'Treat it like a rock poster. Use monochrome where the light was harsh, keep colour where it helped the mood (red rooms, gold rigs), and use the stage architecture to show the scale.',
+      'Use monochrome where the light was harsh, keep colour where it helped (the red and gold frames), and use wide frames to show the stage.',
     execution: [
-      'Underexposed for highlights to keep the drama in the lights.',
-      'Monochrome selects for the hardest-lit moments.',
-      'Wide festival frames showing confetti, CO2 and the full stage.',
-      'Band details like the drum kit in front of the Fossils emblem.',
+      'Colour frames in red, gold and teal light.',
+      'A monochrome series for the hardest-lit moments.',
+      'Wide frames with confetti, CO2 and the full stage.',
+      'Band details, like the drum kit in front of the Fossils emblem.',
     ],
-    deliverables: ['Edited photo set (38 frames)', 'Monochrome series', 'Wide festival selects'],
     outcomes: {
-      verified: ['38 frames in the final edited set'],
-      qualitative: ['A consistent visual identity across the set, so it can be posted as one series.'],
+      verified: [
+        '38 frames in the edited set',
+        'Shot on a Nikon Z 6II in December 2023, edited in Adobe Lightroom Classic and Photoshop (file metadata)',
+      ],
+      shows: ['One consistent look across the colour and monochrome frames.'],
     },
     notes:
       'Monochrome isn’t there to rescue a bad shot. It’s a choice about what the band stands for.',
@@ -202,7 +208,7 @@ export const projects: Project[] = [
     slug: 'monali-thakur',
     artist: 'Monali Thakur',
     title: 'Monali Thakur, in colour',
-    kicker: 'Kaleidoscope screens and a performer who never stood still.',
+    kicker: 'Kaleidoscope screens and a performer in constant motion.',
     year: '2023',
     venue: '',
     company: '',
@@ -210,22 +216,21 @@ export const projects: Project[] = [
     category: 'Live music · Artist content',
     cover: 'monali-thakur-img-0947-l',
     summary:
-      'A Monali Thakur concert with very graphic LED visuals. The aim was frames where the artist and the screen design work as one image.',
+      'A Monali Thakur concert in December 2023 with very graphic LED visuals, framed so the artist and the screen design read as one image.',
     context:
-      'Monali Thakur is a playback singer with a big, energetic stage presence. The screen content that night was bold: mandalas, starbursts, neon stars.',
+      'Monali Thakur is a playback singer and live performer. The screen content that night was bold: mandalas, starbursts and stars.',
     challenge:
-      'The performer never stopped moving, and neither did the screens. A sharp, flattering frame with the right graphic in the background meant timing two moving things at once.',
+      'The singer kept moving, and so did the screens. A sharp frame with the right graphic behind it meant timing both at once.',
     idea:
-      'Pick the background first. Find the angle where the screen design frames the singer, wait for the graphic, then shoot the movement into it.',
+      'Pick the background first: find the angle where the screen design frames the singer, then wait for the moment.',
     execution: [
       'Colour frames built around the screen graphics.',
-      'Close monochrome portraits for the quieter, emotional songs.',
-      'Band frames to credit the musicians on stage.',
+      'Close monochrome portraits.',
+      'Band frames with the guitarists.',
     ],
-    deliverables: ['Edited photo set (31 frames)', 'Colour and monochrome selects'],
     outcomes: {
-      verified: ['31 frames in the final edited set'],
-      qualitative: ['Frames that sell the show’s visual design as much as the singer.'],
+      verified: ['31 frames in the edited set', 'Shot in December 2023 (file metadata)'],
+      shows: ['The show’s visual design as much as the singer.'],
     },
     notes:
       'Laughter photographs better than perfect poses. The frames people remember are the ones where the joy on stage is obvious.',
@@ -240,7 +245,7 @@ export const projects: Project[] = [
     slug: 'anupam-roy',
     artist: 'Anupam Roy',
     title: 'The Anupam Roy Band',
-    kicker: 'A singer-songwriter, a Telecaster, and beams in every colour.',
+    kicker: 'A singer-songwriter, an electric guitar, and beams in every colour.',
     year: '',
     venue: '',
     company: '',
@@ -248,22 +253,21 @@ export const projects: Project[] = [
     category: 'Live music · Artist content',
     cover: 'anupam-roy-856828',
     summary:
-      'The Anupam Roy Band live, with the band logo, LED landscapes and saturated beams. The set covers the frontman and every member of the band.',
+      'The Anupam Roy Band live, with the band’s logo on stage, LED landscapes and saturated beams.',
     context:
-      'Anupam Roy is a singer-songwriter with a loyal audience. On stage the band’s identity, logo and screen visuals are part of the experience.',
+      'Anupam Roy is a Bengali singer-songwriter who performs with The Anupam Roy Band. The band’s logo and screen visuals are part of the stage.',
     challenge:
-      'The rig changed colour from song to song. The set needed variety without looking like it came from six different shows.',
+      'The light changed colour from song to song. The set needed variety without looking like it came from different shows.',
     idea:
-      'Let the light change and keep the composition consistent: centred, symmetrical frames for the frontman and looser frames for the band.',
+      'Let the light change and keep the composition steady: centred frames for the frontman, looser frames for the band.',
     execution: [
-      'Hero frames of the frontman framed by the band logo and the LED landscapes.',
-      'Band coverage: guitar, drums, keys.',
+      'Frames of Anupam Roy in front of the band logo and the LED landscapes.',
+      'Band frames: guitar, keys and drums.',
       'Monochrome close portraits.',
     ],
-    deliverables: ['Edited photo set (35 frames, web-size versions)'],
     outcomes: {
-      verified: ['35 frames in the edited set'],
-      qualitative: ['A full-band set in which every member is credited visually.'],
+      verified: ['35 frames in the edited set', 'Supplied as 2048 px web exports, so shown at that size'],
+      shows: ['The frontman and the band, together and apart.'],
     },
     notes: 'Symmetry is a cheap way to make a busy stage look intentional.',
     sequence: [

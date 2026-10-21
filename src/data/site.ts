@@ -11,7 +11,7 @@ export const site = {
   role: 'Concert photographer & event marketer',
   url: 'https://pritam-haldar.vercel.app', // change to your final domain before deploying
   description:
-    'Pritam Haldar shoots concerts for marketing: frames for the artist’s feed, the sponsor’s report and the promoter’s next poster. With Eventures Entertainment and Hottogol.',
+    'Pritam Haldar shoots concerts for marketing: frames for the artist, the sponsor and the promoter. Working with Eventures Entertainment and Hottogol.',
 
   availability: {
     // Set `open` to false and the header / hire page will stop saying you are available.
@@ -58,12 +58,12 @@ export const companies = [
 export const opportunities = [
   {
     title: 'Concert & event photography',
-    body: 'Full-show coverage for artists, promoters and festivals: stage, crowd, production and sponsor frames, edited as one series.',
+    body: 'Full-show coverage for artists, promoters and events: stage, crowd, production and sponsor frames, edited as one series.',
     offered: true,
   },
   {
     title: 'Marketing internships & entry roles',
-    body: 'Brand, growth or event marketing teams that need someone who has worked the ground floor of live shows.',
+    body: 'Brand, growth or event marketing teams that want someone who has worked live shows from the front of the stage.',
     offered: true,
   },
   {

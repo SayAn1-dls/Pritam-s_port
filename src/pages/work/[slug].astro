@@ -12,8 +12,8 @@ const { p } = Astro.props as { p: Project };
 const idx = published.indexOf(p);
 const next = published[(idx + 1) % published.length];
 const prev = published[(idx - 1 + published.length) % published.length];
-const seq = p.sequence.filter((id) => photoById(id));
 const cover = photoById(p.cover);
+const seq = p.sequence.filter((id) => photoById(id));
 const frames = editedFrames(p);
 // The spec a buyer of event photography reads first: who, what, how much, for whom.
 const facts = [
@@ -39,7 +39,7 @@ const s = (a: number, b?: number) => seq.slice(a, b);
     </header>
 
     <div class="cs-cover wrap">
-      <Photo id={p.cover} eager sizes="100vw" lightbox ratio={cover && cover.width < cover.height ? '16/10' : undefined} />
+      <Photo id={p.cover} eager sizes="100vw" lightbox maxH="86svh" />
     </div>
 
     <section class="wrap cs-intro">
@@ -66,7 +66,7 @@ const s = (a: number, b?: number) => seq.slice(a, b);
     </section>
 
     <section class="wrap trio">
-      {s(2, 5).map((id) => <Photo id={id} ratio="4/5" sizes="(max-width: 860px) 100vw, 33vw" lightbox caption />)}
+      {s(2, 5).map((id) => <Photo id={id} sizes="(max-width: 860px) 100vw, 33vw" lightbox caption />)}
     </section>
 
     <section class="wrap chap">
@@ -81,23 +81,19 @@ const s = (a: number, b?: number) => seq.slice(a, b);
     </section>
 
     <section class="wrap sheet" aria-label="Contact sheet">
-      {s(6).map((id) => <Photo id={id} ratio="1/1" sizes="(max-width: 860px) 50vw, 25vw" lightbox />)}
+      {s(6).map((id) => <Photo id={id} sizes="(max-width: 860px) 50vw, 25vw" lightbox />)}
     </section>
 
     <section class="wrap chap outcome">
       <p class="meta chap-n">The outcome</p>
       <div class="out-grid">
         <div>
-          <h2 class="meta">Verified</h2>
+          <h2 class="meta">On record</h2>
           <ul>{p.outcomes.verified.map((o) => <li>{o}</li>)}</ul>
-          {p.deliverables.length > 0 && (<>
-            <h2 class="meta">Delivered</h2>
-            <ul>{p.deliverables.map((o) => <li>{o}</li>)}</ul>
-          </>)}
         </div>
         <div>
-          <h2 class="meta">What it gives the team</h2>
-          <ul>{p.outcomes.qualitative.map((o) => <li>{o}</li>)}</ul>
+          <h2 class="meta">What the set shows</h2>
+          <ul>{p.outcomes.shows.map((o) => <li>{o}</li>)}</ul>
         </div>
       </div>
     </section>
@@ -120,7 +116,6 @@ const s = (a: number, b?: number) => seq.slice(a, b);
   .crumbs { margin: 0 0 20px; }
   .cs-t { font-size: clamp(72px, 17vw, 300px); line-height: 0.84; }
   .cs-kick { font-family: var(--sans); font-weight: 600; font-size: clamp(22px, 2.6vw, 36px); color: var(--accent); margin: 16px 0 clamp(20px, 3vw, 34px); max-width: 30ch; }
-  .cs-cover :global(.ph) { max-height: 88vh; }
   .facts {
     margin: 0 0 clamp(24px, 3vw, 40px); display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
     column-gap: 28px; border-top: 6px solid var(--ink); max-width: 980px;
@@ -138,10 +133,12 @@ const s = (a: number, b?: number) => seq.slice(a, b);
 
   .duo { display: grid; grid-template-columns: 1.3fr 1fr; gap: 16px; align-items: start; padding-top: clamp(50px, 6vw, 90px); }
   .duo > :nth-child(2) { margin-top: 15%; }
-  .trio { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; padding-top: clamp(50px, 6vw, 90px); }
+  .trio { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; align-items: start; padding-top: clamp(50px, 6vw, 90px); }
   .trio > :nth-child(2) { margin-top: 50px; }
   .wide { padding-top: clamp(50px, 6vw, 90px); }
-  .sheet { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; padding-top: 8px; }
+  /* contact sheet: whole frames in columns, no cropping */
+  .sheet { columns: 4; column-gap: 8px; padding-top: 8px; }
+  .sheet > :global(*) { break-inside: avoid; margin-bottom: 8px; }
 
   .exec { list-style: none; margin: 0; padding: 0; }
   .exec li { display: grid; grid-template-columns: 40px 1fr; gap: 10px; padding: 14px 0; font-size: 18px; }
@@ -164,6 +161,6 @@ const s = (a: number, b?: number) => seq.slice(a, b);
     .facts { grid-template-columns: 1fr 1fr; }
     .duo, .trio { grid-template-columns: 1fr; }
     .duo > :nth-child(2), .trio > :nth-child(2) { margin-top: 0; }
-    .sheet { grid-template-columns: 1fr 1fr; }
+    .sheet { columns: 2; }
   }
 </style>

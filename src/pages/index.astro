@@ -9,6 +9,15 @@ import { published } from '../data/projects';
 import { photos, photoById } from '../data/photos';
 
 const featured = published.filter((p) => p.featured);
+// Layout follows each cover's own shape, so no cover is ever cropped to fit:
+// wide frames alternate between the two wide compositions, tall frames between the two side-by-side ones.
+let wide = 0, tall = 0;
+const layoutFor = (id: string) => {
+  const c = photoById(id);
+  if (c && c.width > c.height) return wide++ % 2 ? 'wk-2' : 'wk-0';
+  return tall++ % 2 ? 'wk-3' : 'wk-1';
+};
+const layouts = featured.map((p) => layoutFor(p.cover));
 // Real counts, computed from the content files (not typed in by hand).
 const archiveCount = photos.filter((p) => p.project !== 'pritam').length;
 const sheet = ['cactus-dsc-0393', 'fossils-dsc-2023-l', 'monali-thakur-img-0952-l', 'jeet-ganguly-dsc-0103', 'fakira-dsc-0823', 'anupam-roy-220569', 'cactus-dsc-0241', 'fossils-dsc-2339-l']
@@ -23,9 +32,9 @@ const sheet = ['cactus-dsc-0393', 'fossils-dsc-2023-l', 'monali-thakur-img-0952-
     <div class="label"><span class="meta">Selected work</span><span class="meta">{featured.length} shows</span></div>
 
     {featured.map((p, i) => (
-      <article class:list={['wk', `wk-${i % 3}`, 'rv']}>
+      <article class:list={['wk', layouts[i], 'rv']}>
         <a href={`/work/${p.slug}/`} class="wk-img" aria-label={`${p.title}: read the case study`}>
-          <Photo id={p.cover} ratio={i % 3 === 0 ? '3/2' : i % 3 === 1 ? '4/5' : '16/10'} sizes="(max-width: 860px) 100vw, 60vw" />
+          <Photo id={p.cover} maxH="82svh" sizes="(max-width: 860px) 100vw, 60vw" />
         </a>
         <div class="wk-txt">
           <p class="meta wk-n">{p.category}</p>
@@ -47,22 +56,22 @@ const sheet = ['cactus-dsc-0393', 'fossils-dsc-2023-l', 'monali-thakur-img-0952-
       <h2 class="h2 ap-h rv">Three layers, every song.</h2>
       <ol class="ap-list">
         <li class="rv">
-          <Photo id="monali-thakur-img-0886-l" ratio="1/1" sizes="(max-width: 860px) 100vw, 30vw" />
+          <Photo id="monali-thakur-img-0886-l" sizes="(max-width: 860px) 100vw, 30vw" />
           <p class="meta">The face</p>
           <h3 class="h3">For the artist</h3>
           <p>Emotion, a sharp frame, a flattering angle. The photo fans share.</p>
         </li>
         <li class="rv">
-          <Photo id="jeet-ganguly-dsc-0100" ratio="1/1" sizes="(max-width: 860px) 100vw, 30vw" />
+          <Photo id="jeet-ganguly-dsc-0100" sizes="(max-width: 860px) 100vw, 30vw" />
           <p class="meta">The stage</p>
           <h3 class="h3">For the sponsor</h3>
           <p>Scale, production and the brand on the screen, readable in the shot.</p>
         </li>
         <li class="rv">
-          <Photo id="fakira-dsc-0823" ratio="1/1" sizes="(max-width: 860px) 100vw, 30vw" />
+          <Photo id="fakira-dsc-0823" sizes="(max-width: 860px) 100vw, 30vw" />
           <p class="meta">The crowd</p>
           <h3 class="h3">For the promoter</h3>
-          <p>Proof that people showed up and cared. The poster for the next date.</p>
+          <p>Proof that people showed up and cared.</p>
         </li>
       </ol>
     </div>
@@ -88,7 +97,7 @@ const sheet = ['cactus-dsc-0393', 'fossils-dsc-2023-l', 'monali-thakur-img-0952-
     <div class="sheet-grid">
       {sheet.map((p, i) => (
         <figure class:list={['sh', `sh-${i}`, 'rv']}>
-          <Photo id={p!.id} ratio={i % 3 === 0 ? '4/5' : '3/2'} sizes="(max-width: 860px) 50vw, 25vw" lightbox />
+          <Photo id={p!.id} sizes="(max-width: 860px) 50vw, 25vw" lightbox />
           <figcaption class="meta">{p!.artist}</figcaption>
         </figure>
       ))}
@@ -106,8 +115,10 @@ const sheet = ['cactus-dsc-0393', 'fossils-dsc-2023-l', 'monali-thakur-img-0952-
   .wk-img { display: block; }
   .wk-0 .wk-img { grid-column: 1 / 9; }
   .wk-0 .wk-txt { grid-column: 9 / 13; }
-  .wk-1 .wk-img { grid-column: 6 / 11; grid-row: 1; }
+  .wk-1 .wk-img { grid-column: 6 / 12; grid-row: 1; }
   .wk-1 .wk-txt { grid-column: 1 / 6; grid-row: 1; align-self: center; padding-right: 20px; }
+  .wk-3 .wk-img { grid-column: 2 / 8; grid-row: 1; }
+  .wk-3 .wk-txt { grid-column: 8 / 13; grid-row: 1; align-self: center; padding-left: 20px; }
   .wk-2 .wk-img { grid-column: 2 / 13; }
   .wk-2 .wk-txt { grid-column: 2 / 9; margin-top: 22px; display: grid; grid-template-columns: 1fr 1fr; column-gap: 30px; }
   .wk-2 .wk-txt > :is(.wk-n, .h2) { grid-column: 1 / -1; }

@@ -1,6 +1,6 @@
 ---
 // The show ledger: one row per show. Each bar is a strip of that show's own frames,
-// and its length is the number of edited frames delivered (longest show = full width).
+// and its length is the number of frames in that show's edited set (longest show = full width).
 import { photosFor, fullSrc } from '../../data/photos';
 
 interface Row { slug: string; artist: string; year: string; frames: number }
@@ -52,7 +52,7 @@ const strips = rows.map((r) => ({ ...r, share: r.frames / max, tiles: photosFor(
     width: calc(var(--share) * 100%); overflow: hidden;
     background: var(--ink);
   }
-  .lg-bar img { flex: none; height: 100%; width: auto; aspect-ratio: 3 / 2; object-fit: cover; }
+  .lg-bar img { flex: none; height: 100%; width: auto; } /* whole frames: width follows each photo's own ratio */
   .lg-n { font-family: var(--display); font-size: clamp(34px, 3.2vw, 50px); line-height: 1; text-align: right; }
   .lg-n .meta { font-family: var(--sans); font-size: 14px; }
   .lg-row:hover .lg-name, .lg-row:focus-visible .lg-name { color: var(--accent); }

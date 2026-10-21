@@ -27,13 +27,13 @@ const proof = published.filter((p) => p.featured).slice(0, 3);
     <dl>
       <div><dt class="meta">Status</dt><dd>{av.open ? 'Open to opportunities' : 'Not available right now'}</dd></div>
       <div><dt class="meta">Works with</dt><dd>{companies.map((c) => c.name).join(', ')}</dd></div>
-      <div><dt class="meta">Strengths</dt><dd>Live-show photography, sponsor visibility, artist content, on-ground coordination</dd></div>
+      <div><dt class="meta">Strengths</dt><dd>Live-show photography: artist, stage, crowd and sponsor frames</dd></div>
       {site.contact.location && <div><dt class="meta">Based in</dt><dd>{site.contact.location}</dd></div>}
     </dl>
   </section>
 
   <section class="wrap ops">
-    <div class="label"><span class="meta">What I can do for you</span><span class="meta">{offered.length} ways to work together</span></div>
+    <div class="label"><span class="meta">What I’m open to</span><span class="meta">{offered.length} ways to work together</span></div>
     <ol class="op-list">
       {offered.map((o) => (
         <li class="rv"><h2 class="h3">{o.title}</h2><p>{o.body}</p></li>
@@ -46,7 +46,7 @@ const proof = published.filter((p) => p.featured).slice(0, 3);
     <div class="pr-grid">
       {proof.map((p) => (
         <a href={`/work/${p.slug}/`} class="pr rv">
-          <Photo id={p.cover} ratio="4/3" sizes="(max-width: 860px) 100vw, 33vw" />
+          <Photo id={p.cover} sizes="(max-width: 860px) 100vw, 33vw" />
           <p class="h3">{p.artist}</p>
           <p class="meta">{p.category}</p>
         </a>

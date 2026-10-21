@@ -1,24 +1,26 @@
 ---
-// Responsive photo from the manifest. Never stretches: the frame either follows the
-// photo's own aspect ratio, or crops with object-fit: cover around `focus`.
+// Responsive photo from the manifest. Always shown whole: the frame follows the photo's own
+// aspect ratio, so nothing is ever cropped or stretched. `maxH` caps the height (e.g. "86svh")
+// by narrowing the frame instead of cutting it.
 import { photoById, srcset, fullSrc } from '../data/photos';
 
 interface Props {
   id: string;
   sizes?: string;
-  ratio?: string; // e.g. "4/5" to crop; omit to keep the photo's own ratio
+  maxH?: string; // CSS length; the frame narrows so the whole photo fits within this height
   eager?: boolean;
   class?: string;
   lightbox?: boolean; // open the shared full-resolution viewer on click
   caption?: boolean;
 }
-const { id, sizes = '100vw', ratio, eager = false, class: cls, lightbox = false, caption = false } = Astro.props;
+const { id, sizes = '100vw', maxH, eager = false, class: cls, lightbox = false, caption = false } = Astro.props;
 const p = photoById(id);
-const style = `aspect-ratio:${ratio ?? `${p?.width}/${p?.height}`};`;
+const style = `aspect-ratio:${p?.width}/${p?.height};`;
+const fit = p && maxH ? `width:min(100%, calc(${maxH} * ${p.width} / ${p.height}));margin-inline:auto;` : undefined;
 const Tag = lightbox ? 'button' : 'div';
 ---
 {p ? (
-  <figure class:list={['photo', cls]}>
+  <figure class:list={['photo', cls]} style={fit}>
     <Tag
       class:list={['ph', { 'ph-btn': lightbox }]}
       style={style}
@@ -54,7 +56,7 @@ const Tag = lightbox ? 'button' : 'div';
     )}
   </figure>
 ) : (
-  <div class:list={['ph', 'ph-missing', cls]} style={`aspect-ratio:${ratio ?? '4/3'}`} role="img" aria-label="Photo unavailable">
+  <div class:list={['ph', 'ph-missing', cls]} style="aspect-ratio:4/3" role="img" aria-label="Photo unavailable">
     <span class="meta">Photo unavailable</span>
   </div>
 )}

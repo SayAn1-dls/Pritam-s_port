@@ -20,7 +20,7 @@ export const hero = {
   name: site.name,
   role: site.role,
   title: 'Concert photos that sell the next show.',
-  sub: `I shoot live shows with ${listOf(companies.map((c) => c.name))}, framing every set for the artist’s feed, the sponsor’s report and the promoter’s next poster.`,
+  sub: `I shoot live shows with ${listOf(companies.map((c) => c.name))}, framing every set for three audiences: the artist, the sponsor and the promoter.`,
   proofLabel: 'Shot live',
   primary: { label: `See the ${say(published.length)} shows`, href: '#shows' },
   secondary: links.whatsapp ? { label: 'WhatsApp me', href: links.whatsapp } : { label: 'Hire me', href: '/hire/' },
@@ -40,9 +40,9 @@ export const frame = {
   photo: 'cactus-dsc-0350',
   caption: 'One frame, three jobs. Cactus, open air.',
   marks: [
-    { n: 1, x: 64.5, y: 30, side: 'right', who: 'The face', job: 'the artist’s post' },
-    { n: 2, x: 90, y: 13, side: 'left', who: 'The stage', job: 'the sponsor’s proof' },
-    { n: 3, x: 21, y: 87, side: 'right', who: 'The crowd', job: 'the next show’s poster' },
+    { n: 1, x: 64.5, y: 30, side: 'right', who: 'The face', job: 'for the artist' },
+    { n: 2, x: 90, y: 13, side: 'left', who: 'The stage', job: 'the production, at full scale' },
+    { n: 3, x: 21, y: 87, side: 'right', who: 'The crowd', job: 'proof people came' },
   ] satisfies FrameMark[],
   pass: { photo: 'pritam-haldar-portrait', label: 'Photo' },
 };
@@ -50,7 +50,7 @@ export const frame = {
 /** The show ledger: one row per show, bar length = edited frames. */
 export const ledger = {
   label: 'On record',
-  note: 'Bar length = edited frames delivered',
+  note: 'Bar length = frames in each edited set',
   heading: `${cap(say(artists.length))} artists. ${totalFrames}\u00a0edited\u00a0frames.`, // number stays with its noun when wrapping
   rows: published.map((p) => ({ slug: p.slug, artist: p.artist, year: p.year, frames: editedFrames(p) })),
 };

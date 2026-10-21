@@ -12,11 +12,17 @@ The site only states what the files and your message confirm. These gaps are hid
 4. **Dates and venues.** Fossils and Monali Thakur are dated 2023 from the camera data. The Cactus, Fakira and Jeet
    Ganguly cameras had their clock set to the year 2000, and the Anupam Roy files have no date, so those years are hidden.
    The Fossils stage branding reads "Englishbazar"; confirm before it is used as a venue.
-5. **Case-study wording.** The `context`, `challenge`, `idea`, `execution` and `notes` text was drafted from what
-   the photos show. Rewrite anything that doesn't match how you actually worked.
+5. **Case-study wording.** Checked line by line in October 2026: every sentence now describes what the photos show or
+   what the file metadata says (camera, date, Lightroom/Photoshop). The `idea` and `notes` lines describe an approach and
+   an opinion in your voice. Rewrite anything that doesn't match how you actually worked.
 6. **About page wording**, including the line about moving further into marketing. Make sure it sounds like you.
-7. **Monali Thakur files** list "Rupanwaya Karmakar" as the creator in their metadata, alongside your watermark.
-   If someone else edited or co-shot that set, add a `credit` and it will show in captions.
+7. **Monali Thakur files: please confirm before sharing (most important).** All 31 files carry your signature, but their
+   metadata says they were shot on a **Canon EOS 200D II** with the camera's owner field set to **"Rupanwaya Karmakar"**.
+   Every other set was shot on Nikon cameras (D5300, Z 6II) with no owner name. If Rupanwaya shot or co-shot this set,
+   add `"credit": "Rupanwaya Karmakar"` to those photos in `src/data/photos.json` (it then shows in captions), or set the
+   project to `draft: true` to hide it.
+7b. **Anupam Roy files** have no camera metadata at all (they look like 2048 px Facebook downloads). Your signature is on
+   them; confirm they are yours.
 8. **Positioning label.** The home page and page titles now call you a **"Concert photographer & event marketer"**
    (`site.role` in `src/data/site.ts`). It matches the hire categories, but change it if you'd describe yourself differently.
 9. **Sponsor branding.** The Jeet Ganguly set shows a school's branding and phone numbers on the LED screen. It is

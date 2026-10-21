@@ -1,7 +1,7 @@
 ---
 import Base from '../layouts/Base.astro';
 import Photo from '../components/Photo.astro';
-import { photos, orientation } from '../data/photos';
+import { photos } from '../data/photos';
 import { published } from '../data/projects';
 
 const artists = published.map((p) => ({ slug: p.slug, name: p.artist }));
@@ -14,7 +14,7 @@ for (let i = 0; byArtist.some((l) => l[i]); i++) byArtist.forEach((l) => l[i] &&
 <Base title="Archive" description={`${mixed.length} concert photographs by Pritam Haldar: Fakira, Cactus, Jeet Ganguly, Fossils, Monali Thakur and Anupam Roy.`}>
   <section class="wrap head">
     <p class="meta">The archive — {mixed.length} frames, {artists.length} artists</p>
-    <h1 class="display h">Everything that <em>made the edit.</em></h1>
+    <h1 class="display h">A selection from <em>every set.</em></h1>
     <p class="lede">Every frame is from a live show I photographed. Select one to see it at full resolution; use the arrow keys or swipe to move through the series.</p>
   </section>
 
@@ -42,12 +42,12 @@ for (let i = 0; byArtist.some((l) => l[i]); i++) byArtist.forEach((l) => l[i] &&
     <div class="grid" data-grid>
       {mixed.map((p) => (
         <div
-          class:list={['cell', orientation(p)]}
+          class="cell"
           data-artist={p.project}
           data-cat={p.category}
           data-text={`${p.artist} ${p.caption} ${p.alt} ${p.category}`.toLowerCase()}
         >
-          <Photo id={p.id} sizes={orientation(p) === 'landscape' ? '(max-width: 700px) 100vw, 50vw' : '(max-width: 700px) 50vw, 25vw'} lightbox ratio="auto" />
+          <Photo id={p.id} sizes="(max-width: 700px) 50vw, (max-width: 980px) 33vw, 25vw" lightbox />
           <p class="meta acap"><b>{p.artist}</b> {p.caption}</p>
         </div>
       ))}
@@ -124,24 +124,20 @@ for (let i = 0; byArtist.some((l) => l[i]); i++) byArtist.forEach((l) => l[i] &&
   .chip:hover { border-color: var(--ink); }
   .chip[aria-pressed='true'] { background: var(--ink); border-color: var(--ink); color: var(--paper); }
 
-  .grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); grid-auto-rows: clamp(140px, 15vw, 230px); grid-auto-flow: dense; gap: 12px; }
-  .cell { position: relative; display: flex; flex-direction: column; min-height: 0; min-width: 0; }
+  /* Masonry columns: every frame is shown whole, at its own ratio. */
+  .grid { columns: 4; column-gap: 12px; }
+  .cell { break-inside: avoid; margin-bottom: 14px; min-width: 0; }
   .cell[hidden] { display: none; }
-  .cell.portrait { grid-row: span 2; }
-  .cell.landscape { grid-column: span 2; grid-row: span 2; }
-  .cell :global(figure) { flex: 1; min-height: 0; }
-  .cell :global(.ph) { height: 100%; aspect-ratio: auto !important; }
-  .acap { margin: 6px 0 0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .acap { margin: 6px 0 0; }
   .acap b { color: var(--ink); font-weight: 650; }
   .empty { padding: 60px 0; text-align: left; }
   .empty .display { font-size: clamp(30px, 4vw, 56px); margin-bottom: 20px; }
 
-  @media (max-width: 980px) { .grid { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+  @media (max-width: 980px) { .grid { columns: 3; } }
   @media (max-width: 700px) {
     .tools { top: 58px; position: static; }
-    .grid { grid-template-columns: repeat(2, minmax(0, 1fr)); grid-auto-rows: 44vw; gap: 8px; }
-    .cell.landscape { grid-column: span 2; grid-row: span 1; }
-    .cell.portrait { grid-row: span 2; }
+    .grid { columns: 2; column-gap: 8px; }
+    .cell { margin-bottom: 10px; }
     .lab { width: 100%; }
     .search { flex-direction: column; align-items: stretch; gap: 6px; }
     .search input { max-width: none; }

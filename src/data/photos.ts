@@ -33,6 +33,3 @@ export const fullSrc = (p: PhotoEntry, w?: number) => {
 };
 export const srcset = (p: PhotoEntry) =>
   [...(p.widths ?? []).map((w) => `${base}/w/${p.id}-${w}.webp ${w}w`), `${base}/full/${p.id}.webp ${p.width}w`].join(', ');
-
-export const orientation = (p: PhotoEntry) =>
-  p.width > p.height * 1.05 ? 'landscape' : p.height > p.width * 1.05 ? 'portrait' : 'square';

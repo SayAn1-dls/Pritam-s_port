@@ -1,0 +1,39 @@
+---
+import Base from '../layouts/Base.astro';
+import { site, links } from '../data/site';
+const rows = [
+  { k: 'WhatsApp', v: site.contact.phoneDisplay, href: links.whatsapp, ext: true },
+  { k: 'Call', v: site.contact.phoneDisplay, href: links.phone },
+  { k: 'Email', v: site.contact.email, href: links.email },
+  { k: 'LinkedIn', v: 'in/pritam-haldar', href: links.linkedin, ext: true },
+  { k: 'Instagram', v: site.contact.instagram.replace(/^https?:\/\/(www\.)?/, ''), href: links.instagram, ext: true },
+  { k: 'Resume', v: 'Download', href: links.resume },
+].filter((r) => r.href);
+---
+<Base title="Contact" description={`Contact ${site.name}: WhatsApp, phone, email and LinkedIn.`}>
+  <section class="wrap c">
+    <p class="meta">Contact</p>
+    <h1 class="display h">Say hello.</h1>
+    <ul class="rows">
+      {rows.map((r) => (
+        <li><a href={r.href} target={r.ext ? '_blank' : undefined} rel={r.ext ? 'noopener' : undefined}>
+          <span class="meta">{r.k}</span><span class="v">{r.v}</span><span class="arr" aria-hidden="true">→</span>
+        </a></li>
+      ))}
+    </ul>
+    <p class="more">Have a brief? Use the <a class="link-u" href="/hire/#contact">form on the hire page</a>.</p>
+  </section>
+</Base>
+
+<style>
+  .c { padding-top: clamp(40px, 6vw, 90px); }
+  .h { font-size: clamp(64px, 14vw, 230px); margin: 16px 0 clamp(30px, 4vw, 60px); }
+  .rows { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--ink); }
+  .rows a { display: grid; grid-template-columns: 140px 1fr auto; align-items: baseline; gap: 16px; padding: 22px 0; border-bottom: 1px solid var(--rule); text-decoration: none; }
+  .v { font-family: var(--serif); font-size: clamp(26px, 3.6vw, 52px); line-height: 1.05; overflow-wrap: anywhere; transition: color 0.2s; }
+  .rows a:hover .v { color: var(--accent); }
+  .arr { font-size: 24px; transition: transform 0.25s var(--ease); }
+  .rows a:hover .arr { transform: translateX(6px); }
+  .more { margin-top: 30px; color: var(--ink-2); }
+  @media (max-width: 600px) { .rows a { grid-template-columns: 1fr auto; } .rows .meta { grid-column: 1 / -1; } }
+</style>

@@ -1,0 +1,7 @@
+node_modules
+dist
+.astro
+.env
+.DS_Store
+# originals stay out of git (they live in Google Drive); see CONTENT_GUIDE.md
+originals/

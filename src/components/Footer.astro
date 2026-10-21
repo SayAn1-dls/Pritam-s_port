@@ -1,0 +1,55 @@
+---
+import { site, links, nav } from '../data/site';
+const year = new Date().getFullYear();
+---
+<footer class="ft">
+  <div class="wrap">
+    <div class="ft-top">
+      <p class="ft-big display">Let’s fill<br />a room <em>together.</em></p>
+      <div class="ft-cols">
+        <div>
+          <p class="meta">Contact</p>
+          <ul>
+            {links.email && <li><a class="link-u" href={links.email}>{site.contact.email}</a></li>}
+            {links.whatsapp && <li><a class="link-u" href={links.whatsapp} target="_blank" rel="noopener">WhatsApp {site.contact.phoneDisplay}</a></li>}
+            {links.phone && <li><a class="link-u" href={links.phone}>Call {site.contact.phoneDisplay}</a></li>}
+          </ul>
+        </div>
+        <div>
+          <p class="meta">Elsewhere</p>
+          <ul>
+            {links.linkedin && <li><a class="link-u" href={links.linkedin} target="_blank" rel="noopener">LinkedIn</a></li>}
+            {links.instagram && <li><a class="link-u" href={links.instagram} target="_blank" rel="noopener">Instagram</a></li>}
+            {links.resume && <li><a class="link-u" href={links.resume}>Resume</a></li>}
+          </ul>
+        </div>
+        <div>
+          <p class="meta">Index</p>
+          <ul>
+            <li><a class="link-u" href="/">Home</a></li>
+            {nav.map((n) => <li><a class="link-u" href={n.href}>{n.label}</a></li>)}
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="ft-base meta">
+      <span>© {year} {site.name}</span>
+      <span>Concert photographs © their photographers, shown with credit</span>
+    </div>
+  </div>
+</footer>
+
+<style>
+  .ft { background: var(--night); color: var(--paper); margin-top: clamp(80px, 10vw, 160px); padding: clamp(56px, 8vw, 110px) 0 28px; }
+  .ft-top { display: grid; grid-template-columns: 1.3fr 1fr; gap: 48px; align-items: end; }
+  .ft-big { font-size: clamp(52px, 8vw, 128px); }
+  .ft-big em { color: var(--accent); }
+  .ft-cols { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+  .ft .meta { color: #9b9387; margin: 0 0 12px; }
+  .ft ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; font-size: 15px; }
+  .ft-base { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 10px; border-top: 1px solid #34302b; margin-top: 64px; padding-top: 18px; color: #8a8378; }
+  @media (max-width: 860px) {
+    .ft-top { grid-template-columns: 1fr; }
+    .ft-cols { grid-template-columns: 1fr 1fr; }
+  }
+</style>

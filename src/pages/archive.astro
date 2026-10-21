@@ -1,0 +1,149 @@
+---
+import Base from '../layouts/Base.astro';
+import Photo from '../components/Photo.astro';
+import { photos, orientation } from '../data/photos';
+import { published } from '../data/projects';
+
+const artists = published.map((p) => ({ slug: p.slug, name: p.artist }));
+const categories = [...new Set(photos.map((p) => p.category))].sort();
+// Interleave artists so the archive reads as a mixed contact sheet, not six blocks.
+const byArtist = artists.map((a) => photos.filter((p) => p.project === a.slug));
+const mixed: typeof photos = [];
+for (let i = 0; byArtist.some((l) => l[i]); i++) byArtist.forEach((l) => l[i] && mixed.push(l[i]));
+---
+<Base title="Archive" description={`${photos.length} concert photographs by Pritam Haldar: Fakira, Cactus, Jeet Ganguly, Fossils, Monali Thakur and Anupam Roy.`}>
+  <section class="wrap head">
+    <p class="meta">The archive — {photos.length} frames, {artists.length} artists</p>
+    <h1 class="display h">Everything that <em>made the edit.</em></h1>
+    <p class="lede">Every frame is from a live show I photographed. Select one to see it at full resolution; use the arrow keys or swipe to move through the series.</p>
+  </section>
+
+  <section class="wrap tools" aria-label="Filter the archive" hidden data-tools>
+    <div class="row">
+      <label class="search">
+        <span class="meta">Search</span>
+        <input type="search" placeholder="Artist, mood, ‘crowd’, ‘smoke’…" data-q autocomplete="off" />
+      </label>
+      <p class="meta count" aria-live="polite" data-count></p>
+    </div>
+    <div class="row chips" role="group" aria-label="Artist">
+      <span class="meta lab">Artist</span>
+      <button type="button" class="chip" aria-pressed="true" data-f="artist" data-v="">All</button>
+      {artists.map((a) => <button type="button" class="chip" aria-pressed="false" data-f="artist" data-v={a.slug}>{a.name}</button>)}
+    </div>
+    <div class="row chips" role="group" aria-label="Type of frame">
+      <span class="meta lab">Frame</span>
+      <button type="button" class="chip" aria-pressed="true" data-f="cat" data-v="">All</button>
+      {categories.map((c) => <button type="button" class="chip" aria-pressed="false" data-f="cat" data-v={c}>{c}</button>)}
+    </div>
+  </section>
+
+  <section class="wrap">
+    <div class="grid" data-grid>
+      {mixed.map((p, i) => (
+        <div
+          class:list={['cell', orientation(p)]}
+          data-artist={p.project}
+          data-cat={p.category}
+          data-text={`${p.artist} ${p.caption} ${p.alt} ${p.category}`.toLowerCase()}
+        >
+          <Photo id={p.id} sizes={orientation(p) === 'landscape' ? '(max-width: 700px) 100vw, 50vw' : '(max-width: 700px) 50vw, 25vw'} lightbox ratio="auto" />
+          <p class="meta acap"><span>{String(i + 1).padStart(3, '0')}</span> {p.artist} — {p.caption}</p>
+        </div>
+      ))}
+    </div>
+    <div class="empty" hidden data-empty>
+      <p class="display">Nothing in the archive matches that.</p>
+      <button type="button" class="btn ghost" data-reset>Clear filters</button>
+    </div>
+  </section>
+</Base>
+
+<script>
+  const tools = document.querySelector<HTMLElement>('[data-tools]')!;
+  const cells = [...document.querySelectorAll<HTMLElement>('.cell')];
+  const q = document.querySelector<HTMLInputElement>('[data-q]')!;
+  const count = document.querySelector<HTMLElement>('[data-count]')!;
+  const empty = document.querySelector<HTMLElement>('[data-empty]')!;
+  const state: Record<string, string> = { artist: '', cat: '' };
+  tools.hidden = false; // filters only appear once they can work
+
+  const params = new URLSearchParams(location.search);
+  state.artist = params.get('artist') ?? '';
+  state.cat = params.get('frame') ?? '';
+  q.value = params.get('q') ?? '';
+
+  function apply() {
+    const term = q.value.trim().toLowerCase();
+    let n = 0;
+    for (const c of cells) {
+      const ok = (!state.artist || c.dataset.artist === state.artist) && (!state.cat || c.dataset.cat === state.cat) && (!term || c.dataset.text!.includes(term));
+      c.hidden = !ok;
+      if (ok) n++;
+    }
+    count.textContent = `${n} of ${cells.length} frames`;
+    empty.hidden = n > 0;
+    document.querySelectorAll<HTMLButtonElement>('.chip').forEach((b) => b.setAttribute('aria-pressed', String(state[b.dataset.f!] === b.dataset.v)));
+    const u = new URLSearchParams();
+    if (state.artist) u.set('artist', state.artist);
+    if (state.cat) u.set('frame', state.cat);
+    if (term) u.set('q', term);
+    history.replaceState(null, '', u.size ? `?${u}` : location.pathname);
+  }
+
+  tools.addEventListener('click', (e) => {
+    const b = (e.target as HTMLElement).closest<HTMLButtonElement>('.chip');
+    if (!b) return;
+    state[b.dataset.f!] = b.dataset.v!;
+    apply();
+  });
+  q.addEventListener('input', apply);
+  document.querySelector('[data-reset]')!.addEventListener('click', () => { state.artist = ''; state.cat = ''; q.value = ''; apply(); });
+  apply();
+</script>
+
+<style>
+  .head { padding: clamp(40px, 6vw, 90px) var(--gutter) clamp(30px, 4vw, 50px); }
+  .h { font-size: clamp(48px, 8vw, 140px); margin: 18px 0 22px; }
+  .h em { color: var(--accent); }
+
+  .tools { position: sticky; top: 64px; z-index: 20; background: var(--paper); padding-top: 14px; padding-bottom: 14px; border-top: 1px solid var(--ink); border-bottom: 1px solid var(--rule); margin-bottom: 24px; }
+  .row { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 10px; }
+  .row + .row { margin-top: 10px; }
+  .search { display: flex; align-items: center; gap: 12px; flex: 1; min-width: 240px; }
+  .search input {
+    flex: 1; max-width: 420px; min-height: 42px; padding: 0 12px; border: 1.5px solid var(--ink); background: transparent;
+    font: inherit; font-size: 16px; border-radius: 0;
+  }
+  .count { margin: 0; color: var(--ink); }
+  .lab { width: 64px; }
+  .chip {
+    min-height: 36px; padding: 0 12px; border: 1px solid var(--rule); background: transparent; cursor: pointer;
+    font-size: 14px; transition: background 0.15s, border-color 0.15s, color 0.15s;
+  }
+  .chip:hover { border-color: var(--ink); }
+  .chip[aria-pressed='true'] { background: var(--ink); border-color: var(--ink); color: var(--paper); }
+
+  .grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); grid-auto-rows: clamp(140px, 15vw, 230px); grid-auto-flow: dense; gap: 12px; }
+  .cell { position: relative; display: flex; flex-direction: column; min-height: 0; min-width: 0; }
+  .cell[hidden] { display: none; }
+  .cell.portrait { grid-row: span 2; }
+  .cell.landscape { grid-column: span 2; grid-row: span 2; }
+  .cell :global(figure) { flex: 1; min-height: 0; }
+  .cell :global(.ph) { height: 100%; aspect-ratio: auto !important; }
+  .acap { margin: 6px 0 0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .acap span { color: var(--accent); }
+  .empty { padding: 60px 0; text-align: left; }
+  .empty .display { font-size: clamp(30px, 4vw, 56px); margin-bottom: 20px; }
+
+  @media (max-width: 980px) { .grid { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+  @media (max-width: 700px) {
+    .tools { top: 58px; position: static; }
+    .grid { grid-template-columns: repeat(2, minmax(0, 1fr)); grid-auto-rows: 44vw; gap: 8px; }
+    .cell.landscape { grid-column: span 2; grid-row: span 1; }
+    .cell.portrait { grid-row: span 2; }
+    .lab { width: 100%; }
+    .search { flex-direction: column; align-items: stretch; gap: 6px; }
+    .search input { max-width: none; }
+  }
+</style>

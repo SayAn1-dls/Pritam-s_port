@@ -1,0 +1,28 @@
+---
+import { site, links } from '../data/site';
+---
+<section class="cta wrap" aria-labelledby="cta-h">
+  <div class="label"><span class="meta">Last page</span><span class="meta">Hiring</span><span class="meta">{site.availability.open ? site.availability.label : site.availability.closedLabel}</span></div>
+  <h2 id="cta-h" class="display cta-h rv">Have something worth <em>putting into the world?</em></h2>
+  <div class="cta-row rv">
+    <p class="lede">A show to shoot, a campaign to run, a sponsor to land, or a role on your team. Email, call or message me on WhatsApp.</p>
+    <div class="btns">
+      <a class="btn red" href="/hire/">Hire {site.shortName} <span class="arr">→</span></a>
+      {links.whatsapp && <a class="btn" href={links.whatsapp} target="_blank" rel="noopener">WhatsApp {site.contact.phoneDisplay}</a>}
+      {links.resume && <a class="btn ghost" href={links.resume}>View my resume</a>}
+      {links.email && <a class="btn ghost" href={links.email}>Get in touch</a>}
+    </div>
+  </div>
+</section>
+
+<style>
+  .cta { padding-top: clamp(90px, 11vw, 170px); }
+  .cta-h { font-size: clamp(48px, 9vw, 160px); max-width: 13ch; }
+  .cta-h em { color: var(--accent); }
+  .cta-row { display: grid; grid-template-columns: 1fr auto; gap: 30px; align-items: end; margin-top: clamp(28px, 4vw, 56px); }
+  .cta-row .btns { justify-content: flex-end; max-width: 620px; }
+  @media (max-width: 860px) {
+    .cta-row { grid-template-columns: 1fr; }
+    .cta-row .btns { justify-content: flex-start; }
+  }
+</style>

@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://pritam-haldar.vercel.app/sitemap-index.xml

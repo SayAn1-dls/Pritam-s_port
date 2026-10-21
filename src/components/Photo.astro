@@ -1,0 +1,68 @@
+---
+// Responsive photo from the manifest. Never stretches: the frame either follows the
+// photo's own aspect ratio, or crops with object-fit: cover around `focus`.
+import { photoById, srcset, fullSrc } from '../data/photos';
+
+interface Props {
+  id: string;
+  sizes?: string;
+  ratio?: string; // e.g. "4/5" to crop; omit to keep the photo's own ratio
+  eager?: boolean;
+  class?: string;
+  lightbox?: boolean; // open the shared full-resolution viewer on click
+  caption?: boolean;
+}
+const { id, sizes = '100vw', ratio, eager = false, class: cls, lightbox = false, caption = false } = Astro.props;
+const p = photoById(id);
+const style = `aspect-ratio:${ratio ?? `${p?.width}/${p?.height}`};`;
+const Tag = lightbox ? 'button' : 'div';
+---
+{p ? (
+  <figure class:list={['photo', cls]}>
+    <Tag
+      class:list={['ph', { 'ph-btn': lightbox }]}
+      style={style}
+      {...(lightbox ? {
+        type: 'button',
+        'aria-label': `View larger: ${p.alt}`,
+        'data-lb': '',
+        'data-full': fullSrc(p),
+        'data-w': p.width,
+        'data-h': p.height,
+        'data-alt': p.alt,
+        'data-artist': p.artist,
+        'data-caption': p.caption,
+      } : {})}
+    >
+      <img
+        src={fullSrc(p, 960)}
+        srcset={srcset(p)}
+        sizes={sizes}
+        width={p.width}
+        height={p.height}
+        alt={lightbox ? '' : p.alt}
+        loading={eager ? 'eager' : 'lazy'}
+        fetchpriority={eager ? 'high' : 'auto'}
+        decoding="async"
+        style={p.focus ? `object-position:${p.focus}` : undefined}
+      />
+    </Tag>
+    {caption && (
+      <figcaption class="cap meta">
+        <span><b>{p.artist}</b>{p.caption ? ` — ${p.caption}` : ''}</span>
+      </figcaption>
+    )}
+  </figure>
+) : (
+  <div class:list={['ph', 'ph-missing', cls]} style={`aspect-ratio:${ratio ?? '4/3'}`} role="img" aria-label="Photo unavailable">
+    <span class="meta">Photo unavailable</span>
+  </div>
+)}
+
+<style>
+  .photo { margin: 0; }
+  .ph-btn { display: block; width: 100%; padding: 0; border: 0; cursor: zoom-in; }
+  .ph-btn:hover img { transform: scale(1.025); }
+  .ph-missing { display: grid; place-items: center; }
+  .cap b { font-weight: 500; color: var(--ink); }
+</style>

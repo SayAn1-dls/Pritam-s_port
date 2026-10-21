@@ -1,0 +1,163 @@
+---
+import Base from '../../layouts/Base.astro';
+import Photo from '../../components/Photo.astro';
+import HireCta from '../../components/HireCta.astro';
+import { published, type Project } from '../../data/projects';
+import { photoById, fullSrc } from '../../data/photos';
+
+export function getStaticPaths() {
+  return published.map((p) => ({ params: { slug: p.slug }, props: { p } }));
+}
+const { p } = Astro.props as { p: Project };
+const idx = published.indexOf(p);
+const next = published[(idx + 1) % published.length];
+const prev = published[(idx - 1 + published.length) % published.length];
+const seq = p.sequence.filter((id) => photoById(id));
+const cover = photoById(p.cover);
+const facts = [
+  ['Artist', p.artist],
+  ['Role', p.role],
+  ['Production', p.company],
+  ['Year', p.year],
+  ['Venue', p.venue],
+  ['Type', p.category],
+].filter(([, v]) => v);
+// split the sequence into the editorial blocks of the page
+const s = (a: number, b?: number) => seq.slice(a, b);
+---
+<Base title={p.title} description={p.summary} image={cover ? fullSrc(cover, 1600) : undefined}>
+  <article>
+    <header class="cs-head wrap">
+      <p class="meta crumbs"><a class="link-u" href="/work/">Work</a> / {String(idx + 1).padStart(2, '0')} / {p.artist}</p>
+      <h1 class="display cs-t">{p.artist}</h1>
+      <p class="cs-kick">{p.kicker}</p>
+    </header>
+
+    <div class="cs-cover wrap">
+      <Photo id={p.cover} eager sizes="100vw" lightbox ratio={cover && cover.width < cover.height ? '16/10' : undefined} />
+    </div>
+
+    <section class="wrap cs-intro">
+      <dl class="facts">
+        {facts.map(([k, v]) => <div><dt class="meta">{k}</dt><dd>{v}</dd></div>)}
+      </dl>
+      <p class="lede cs-sum">{p.summary}</p>
+    </section>
+
+    <section class="wrap chap">
+      <p class="meta chap-n">01 — The context</p>
+      <div class="prose"><p>{p.context}</p></div>
+    </section>
+
+    <section class="wrap duo">
+      {s(0, 2).map((id) => <Photo id={id} sizes="(max-width: 860px) 100vw, 50vw" lightbox caption />)}
+    </section>
+
+    <section class="wrap chap">
+      <p class="meta chap-n">02 — The challenge</p>
+      <div class="prose"><p>{p.challenge}</p></div>
+    </section>
+
+    <section class="wrap chap chap-idea">
+      <p class="meta chap-n">03 — The idea</p>
+      <p class="display idea">{p.idea}</p>
+    </section>
+
+    <section class="wrap trio">
+      {s(2, 5).map((id) => <Photo id={id} ratio="4/5" sizes="(max-width: 860px) 100vw, 33vw" lightbox caption />)}
+    </section>
+
+    <section class="wrap chap">
+      <p class="meta chap-n">04 — The execution</p>
+      <ol class="exec">
+        {p.execution.map((e, i) => <li><span class="meta">{String(i + 1).padStart(2, '0')}</span><span>{e}</span></li>)}
+      </ol>
+    </section>
+
+    <section class="wrap wide">
+      {s(5, 6).map((id) => <Photo id={id} sizes="100vw" lightbox caption />)}
+    </section>
+
+    <section class="wrap sheet" aria-label="Contact sheet">
+      {s(6).map((id) => <Photo id={id} ratio="1/1" sizes="(max-width: 860px) 50vw, 25vw" lightbox />)}
+    </section>
+
+    <section class="wrap chap outcome">
+      <p class="meta chap-n">05 — The outcome</p>
+      <div class="out-grid">
+        <div>
+          <h2 class="meta">Verified</h2>
+          <ul>{p.outcomes.verified.map((o) => <li>{o}</li>)}</ul>
+          {p.deliverables.length > 0 && (<>
+            <h2 class="meta">Delivered</h2>
+            <ul>{p.deliverables.map((o) => <li>{o}</li>)}</ul>
+          </>)}
+        </div>
+        <div>
+          <h2 class="meta">What it gives the team</h2>
+          <ul>{p.outcomes.qualitative.map((o) => <li>{o}</li>)}</ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="wrap chap">
+      <p class="meta chap-n">06 — What I took from it</p>
+      <p class="display note">{p.notes}</p>
+    </section>
+
+    <nav class="wrap pn" aria-label="More work">
+      <a href={`/work/${prev.slug}/`} class="pn-a"><span class="meta">← Previous</span><span class="pn-t">{prev.artist}</span></a>
+      <a href={`/work/${next.slug}/`} class="pn-a pn-next"><span class="meta">Next →</span><span class="pn-t">{next.artist}</span></a>
+    </nav>
+  </article>
+  <HireCta />
+</Base>
+
+<style>
+  .cs-head { padding-top: clamp(30px, 5vw, 70px); }
+  .crumbs { margin: 0 0 20px; }
+  .cs-t { font-size: clamp(64px, 15vw, 260px); line-height: 0.85; letter-spacing: -0.04em; }
+  .cs-kick { font-family: var(--serif); font-style: italic; font-size: clamp(22px, 2.6vw, 36px); color: var(--accent); margin: 16px 0 clamp(28px, 4vw, 50px); max-width: 30ch; }
+  .cs-cover :global(.ph) { max-height: 88vh; }
+  .cs-intro { display: grid; grid-template-columns: 1fr 1.4fr; gap: clamp(30px, 6vw, 100px); padding-top: clamp(30px, 4vw, 60px); }
+  .facts { margin: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 0; border-top: 1px solid var(--ink); align-self: start; }
+  .facts div { border-bottom: 1px solid var(--rule); padding: 12px 0; }
+  .facts dd { margin: 4px 0 0; font-size: 16px; }
+  .cs-sum { max-width: 40ch; margin: 0; }
+
+  .chap { display: grid; grid-template-columns: 1fr 2fr; gap: 30px; padding-top: clamp(60px, 8vw, 120px); }
+  .chap-n { margin: 6px 0 0; color: var(--ink); border-top: 1px solid var(--ink); padding-top: 10px; align-self: start; }
+  .chap .prose p { font-size: clamp(19px, 1.6vw, 23px); line-height: 1.5; margin: 0; }
+  .idea { font-size: clamp(30px, 3.6vw, 56px); line-height: 1.08; }
+  .note { font-size: clamp(28px, 3.2vw, 48px); line-height: 1.1; font-style: italic; }
+
+  .duo { display: grid; grid-template-columns: 1.3fr 1fr; gap: 16px; align-items: start; padding-top: clamp(50px, 6vw, 90px); }
+  .duo > :nth-child(2) { margin-top: 15%; }
+  .trio { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; padding-top: clamp(50px, 6vw, 90px); }
+  .trio > :nth-child(2) { margin-top: 50px; }
+  .wide { padding-top: clamp(50px, 6vw, 90px); }
+  .sheet { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; padding-top: 8px; }
+
+  .exec { list-style: none; margin: 0; padding: 0; }
+  .exec li { display: grid; grid-template-columns: 40px 1fr; gap: 10px; padding: 14px 0; border-bottom: 1px solid var(--rule); font-size: 18px; }
+  .exec li .meta { padding-top: 5px; }
+
+  .out-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
+  .outcome h2 { margin: 0 0 10px; }
+  .outcome h2 + ul { margin-bottom: 28px; }
+  .outcome ul { padding: 0; list-style: none; margin: 0; }
+  .outcome li { font-family: var(--serif); font-size: 22px; line-height: 1.3; padding: 10px 0; border-bottom: 1px solid var(--rule); }
+
+  .pn { display: grid; grid-template-columns: 1fr 1fr; margin-top: clamp(70px, 9vw, 130px); border-top: 1px solid var(--ink); }
+  .pn-a { display: grid; gap: 6px; padding: 22px 0; text-decoration: none; }
+  .pn-next { text-align: right; border-left: 1px solid var(--rule); }
+  .pn-t { font-family: var(--serif); font-size: clamp(30px, 4vw, 60px); line-height: 1; transition: color 0.2s; }
+  .pn-a:hover .pn-t { color: var(--accent); }
+
+  @media (max-width: 860px) {
+    .cs-intro, .chap, .out-grid { grid-template-columns: 1fr; }
+    .duo, .trio { grid-template-columns: 1fr; }
+    .duo > :nth-child(2), .trio > :nth-child(2) { margin-top: 0; }
+    .sheet { grid-template-columns: 1fr 1fr; }
+  }
+</style>

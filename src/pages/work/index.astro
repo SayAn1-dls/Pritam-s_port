@@ -1,0 +1,60 @@
+---
+import Base from '../../layouts/Base.astro';
+import Photo from '../../components/Photo.astro';
+import HireCta from '../../components/HireCta.astro';
+import { published } from '../../data/projects';
+import { photosFor } from '../../data/photos';
+---
+<Base title="Work" description="Case studies: concerts photographed and documented as marketing material for artists, sponsors and promoters.">
+  <section class="wrap head">
+    <p class="meta">Index of work — {published.length} shows</p>
+    <h1 class="display h">Six artists. <em>Hundreds of frames.</em> One question each time: who is this photo for?</h1>
+  </section>
+
+  <section class="wrap">
+    <ol class="list">
+      {published.map((p, i) => (
+        <li class="row rv">
+          <a href={`/work/${p.slug}/`} class="row-a">
+            <span class="meta n">{String(i + 1).padStart(2, '0')}</span>
+            <span class="t">{p.artist}</span>
+            <span class="k">{p.kicker}</span>
+            <span class="meta c">{p.category}</span>
+            <span class="meta f">{photosFor(p.slug).length} frames online</span>
+            <span class="img" aria-hidden="true"><Photo id={p.cover} ratio="4/3" sizes="(max-width: 860px) 100vw, 320px" /></span>
+          </a>
+        </li>
+      ))}
+    </ol>
+  </section>
+  <HireCta />
+</Base>
+
+<style>
+  .head { padding: clamp(40px, 6vw, 90px) var(--gutter) clamp(40px, 5vw, 70px); }
+  .h { font-size: clamp(42px, 6.4vw, 110px); max-width: 17ch; margin-top: 18px; }
+  .h em { color: var(--accent); }
+  .list { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--ink); }
+  .row { border-bottom: 1px solid var(--rule); }
+  .row-a {
+    display: grid; grid-template-columns: 60px 1.1fr 1.4fr 1fr 140px; align-items: center; gap: 20px;
+    padding: 26px 0; text-decoration: none; position: relative;
+  }
+  .t { font-family: var(--serif); font-size: clamp(32px, 3.6vw, 56px); line-height: 1; transition: color 0.2s, transform 0.4s var(--ease); }
+  .k { font-family: var(--serif); font-style: italic; color: var(--ink-2); font-size: 18px; }
+  .f { text-align: right; }
+  .img {
+    position: absolute; right: 160px; top: 50%; width: 300px; translate: 0 -50%; pointer-events: none; z-index: 3;
+    opacity: 0; scale: 0.96; transition: opacity 0.3s var(--ease), scale 0.4s var(--ease);
+  }
+  .row-a:hover .t, .row-a:focus-visible .t { color: var(--accent); transform: translateX(8px); }
+  @media (hover: hover) and (min-width: 861px) {
+    .row-a:hover .img { opacity: 1; scale: 1; }
+  }
+  @media (max-width: 860px) {
+    .row-a { grid-template-columns: 40px 1fr; gap: 6px 12px; padding: 20px 0; }
+    .row-a > :not(.n):not(.img) { grid-column: 2; }
+    .f { text-align: left; }
+    .img { position: static; opacity: 1; scale: 1; translate: none; width: 100%; grid-column: 1 / -1 !important; margin-top: 12px; }
+  }
+</style>

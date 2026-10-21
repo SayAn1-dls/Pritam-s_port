@@ -1,0 +1,249 @@
+---
+import Base from '../layouts/Base.astro';
+import Photo from '../components/Photo.astro';
+import { site, links, opportunities, companies } from '../data/site';
+import { published } from '../data/projects';
+
+const offered = opportunities.filter((o) => o.offered);
+const av = site.availability;
+const proof = published.filter((p) => p.featured).slice(0, 3);
+---
+<Base title="Hire me" description={`Hire ${site.name} for concert photography, event marketing, sponsorships and partnerships. Email, call or WhatsApp.`}>
+  <section class="wrap hd">
+    <p class:list={['meta', 'st', { closed: !av.open }]}><i aria-hidden="true"></i>{av.open ? av.label : av.closedLabel}</p>
+    <h1 class="display h">Good work starts with a <em>good conversation.</em></h1>
+    <div class="hd-row">
+      <p class="lede">Concert coverage, event marketing, sponsorship and partnership work, or a role on your marketing team. Tell me what you’re putting together and I’ll tell you honestly how I can help.</p>
+      <div class="quick" aria-label="Contact directly">
+        {links.whatsapp && <a class="btn red" href={links.whatsapp} target="_blank" rel="noopener">Chat on WhatsApp <span class="arr">→</span></a>}
+        {links.phone && <a class="btn" href={links.phone}>Call {site.contact.phoneDisplay}</a>}
+        {links.email && <a class="btn ghost" href={links.email}>Email me</a>}
+        {links.resume && <a class="btn ghost" href={links.resume}>Download resume</a>}
+      </div>
+    </div>
+  </section>
+
+  <section class="wrap facts" aria-label="At a glance">
+    <dl>
+      <div><dt class="meta">Status</dt><dd>{av.open ? 'Open to opportunities' : 'Not available right now'}</dd></div>
+      <div><dt class="meta">Works with</dt><dd>{companies.map((c) => c.name).join(', ')}</dd></div>
+      <div><dt class="meta">Strengths</dt><dd>Live-show photography, sponsor visibility, artist content, on-ground coordination</dd></div>
+      {site.contact.location && <div><dt class="meta">Based in</dt><dd>{site.contact.location}</dd></div>}
+    </dl>
+  </section>
+
+  <section class="wrap ops">
+    <div class="label"><span class="meta">01</span><span class="meta">What I can do for you</span><span class="meta">{offered.length} ways to work together</span></div>
+    <ol class="op-list">
+      {offered.map((o, i) => (
+        <li class="rv"><span class="meta">{String(i + 1).padStart(2, '0')}</span><h2 class="h3">{o.title}</h2><p>{o.body}</p></li>
+      ))}
+    </ol>
+  </section>
+
+  <section class="wrap proof">
+    <div class="label"><span class="meta">02</span><span class="meta">Proof of work</span><a class="meta link-u" href="/work/">All case studies →</a></div>
+    <div class="pr-grid">
+      {proof.map((p) => (
+        <a href={`/work/${p.slug}/`} class="pr rv">
+          <Photo id={p.cover} ratio="4/3" sizes="(max-width: 860px) 100vw, 33vw" />
+          <p class="h3">{p.artist}</p>
+          <p class="meta">{p.category}</p>
+        </a>
+      ))}
+    </div>
+  </section>
+
+  <section class="wrap form-wrap" id="contact">
+    <div class="label"><span class="meta">03</span><span class="meta">Discuss an opportunity</span><span class="meta">Replies come from {site.contact.email}</span></div>
+    <div class="f-grid">
+      <div class="f-side">
+        <p class="display f-h">Tell me about it.</p>
+        <p class="f-note">
+          {site.formEndpoint
+            ? 'This form sends your message straight to my inbox.'
+            : 'This form opens your email app with the message filled in. You press send, and it comes straight to me. Prefer to skip email? Use WhatsApp.'}
+        </p>
+        <ul class="direct">
+          {links.email && <li><span class="meta">Email</span><a class="link-u" href={links.email}>{site.contact.email}</a></li>}
+          {links.whatsapp && <li><span class="meta">WhatsApp</span><a class="link-u" href={links.whatsapp} target="_blank" rel="noopener">{site.contact.phoneDisplay}</a></li>}
+          {links.phone && <li><span class="meta">Phone</span><a class="link-u" href={links.phone}>{site.contact.phoneDisplay}</a></li>}
+          {links.linkedin && <li><span class="meta">LinkedIn</span><a class="link-u" href={links.linkedin} target="_blank" rel="noopener">pritam-haldar</a></li>}
+        </ul>
+      </div>
+
+      <form class="form" novalidate data-endpoint={site.formEndpoint} data-email={site.contact.email}
+        action={site.formEndpoint || `mailto:${site.contact.email}`} method={site.formEndpoint ? 'post' : 'get'}>
+        <div class="fld">
+          <label for="f-name">Name</label>
+          <input id="f-name" name="name" required autocomplete="name" />
+          <p class="err" id="e-name" hidden>Please add your name.</p>
+        </div>
+        <div class="fld">
+          <label for="f-email">Work email</label>
+          <input id="f-email" name="email" type="email" required autocomplete="email" />
+          <p class="err" id="e-email" hidden>Please add a valid email so I can reply.</p>
+        </div>
+        <div class="fld">
+          <label for="f-org">Company or organisation <span class="opt">optional</span></label>
+          <input id="f-org" name="organisation" autocomplete="organization" />
+        </div>
+        <div class="fld">
+          <label for="f-type">What is it?</label>
+          <select id="f-type" name="type" required>
+            <option value="">Choose one</option>
+            {offered.map((o) => <option>{o.title}</option>)}
+            <option>Something else</option>
+          </select>
+          <p class="err" id="e-type" hidden>Pick the closest option.</p>
+        </div>
+        <div class="fld" data-budget hidden>
+          <label for="f-budget">Budget or fee range <span class="opt">optional</span></label>
+          <input id="f-budget" name="budget" placeholder="e.g. ₹15,000 for one show" />
+        </div>
+        <div class="fld">
+          <label for="f-msg">Message</label>
+          <textarea id="f-msg" name="message" rows="6" required minlength="20" placeholder="The show or role, dates, city, and what you need."></textarea>
+          <p class="err" id="e-msg" hidden>A couple of sentences helps (at least 20 characters).</p>
+        </div>
+        <button class="btn red send" type="submit">Send <span class="arr">→</span></button>
+        <p class="status" role="status" aria-live="polite" hidden></p>
+      </form>
+    </div>
+  </section>
+</Base>
+
+<script>
+  const form = document.querySelector<HTMLFormElement>('.form')!;
+  const status = form.querySelector<HTMLElement>('.status')!;
+  const type = form.querySelector<HTMLSelectElement>('#f-type')!;
+  const budget = form.querySelector<HTMLElement>('[data-budget]')!;
+  const projectish = /photography|promotion|collaboration|sponsorship|event/i;
+  type.addEventListener('change', () => { budget.hidden = !projectish.test(type.value); });
+
+  const checks: [string, (f: FormData) => boolean][] = [
+    ['name', (f) => String(f.get('name')).trim().length > 1],
+    ['email', (f) => /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(String(f.get('email')).trim())],
+    ['type', (f) => !!f.get('type')],
+    ['msg', (f) => String(f.get('message')).trim().length >= 20],
+  ];
+  const fieldFor = (k: string) => form.querySelector<HTMLInputElement>(`#f-${k}`)!;
+
+  function validate(f: FormData, focus = true) {
+    let first: HTMLElement | null = null;
+    for (const [k, ok] of checks) {
+      const bad = !ok(f);
+      const err = form.querySelector<HTMLElement>(`#e-${k}`)!;
+      err.hidden = !bad;
+      fieldFor(k).setAttribute('aria-invalid', String(bad));
+      if (bad) fieldFor(k).setAttribute('aria-describedby', `e-${k}`); else fieldFor(k).removeAttribute('aria-describedby');
+      if (bad && !first) first = fieldFor(k);
+    }
+    if (focus) first?.focus();
+    return !first;
+  }
+  form.addEventListener('input', (e) => {
+    const el = e.target as HTMLElement;
+    if (el.getAttribute('aria-invalid') === 'true') validate(new FormData(form), false);
+  });
+
+  function say(msg: string, kind: 'ok' | 'bad') {
+    status.hidden = false;
+    status.className = `status ${kind}`;
+    status.textContent = msg;
+  }
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const f = new FormData(form);
+    if (!validate(f)) { say('A few details are missing. They’re marked above.', 'bad'); return; }
+    const endpoint = form.dataset.endpoint;
+    const btn = form.querySelector<HTMLButtonElement>('.send')!;
+    if (endpoint) {
+      btn.disabled = true;
+      say('Sending…', 'ok');
+      try {
+        const r = await fetch(endpoint, { method: 'POST', body: f, headers: { Accept: 'application/json' } });
+        if (!r.ok) throw new Error(String(r.status));
+        form.reset();
+        say('Thank you. Your message has been sent and I’ll reply by email.', 'ok');
+      } catch {
+        say(`That didn’t go through. Please email ${form.dataset.email} directly, or try again.`, 'bad');
+      } finally { btn.disabled = false; }
+      return;
+    }
+    // Honest fallback: hand the message to the visitor's own email app.
+    const body = [
+      String(f.get('message')).trim(), '',
+      `— ${String(f.get('name')).trim()}`,
+      f.get('organisation') ? String(f.get('organisation')) : '',
+      String(f.get('email')).trim(),
+      f.get('budget') ? `Budget: ${f.get('budget')}` : '',
+    ].filter((l, i) => l || i === 1).join('\n');
+    const subject = `${f.get('type')} — from ${String(f.get('name')).trim()}`;
+    location.href = `mailto:${form.dataset.email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    say(`Your email app should now open with this message ready. Press send there. If nothing opened, write to ${form.dataset.email}.`, 'ok');
+  });
+</script>
+
+<style>
+  .hd { padding: clamp(40px, 6vw, 90px) var(--gutter) 0; }
+  .st { display: inline-flex; align-items: center; gap: 10px; color: var(--ink); }
+  .st i { width: 9px; height: 9px; border-radius: 50%; background: #2f8f4e; }
+  .st.closed i { background: var(--grey); }
+  .h { font-size: clamp(48px, 8.4vw, 150px); max-width: 14ch; margin: 18px 0 clamp(26px, 4vw, 50px); }
+  .h em { color: var(--accent); }
+  .hd-row { display: grid; grid-template-columns: 1fr auto; gap: 30px; align-items: end; }
+  .quick { display: flex; flex-wrap: wrap; gap: 10px; justify-content: flex-end; max-width: 560px; }
+
+  .facts { margin-top: clamp(40px, 6vw, 80px); }
+  .facts dl { margin: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); border-top: 1px solid var(--ink); border-bottom: 1px solid var(--ink); }
+  .facts dl div { padding: 16px 20px 18px 0; }
+  .facts dd { margin: 6px 0 0; font-family: var(--serif); font-size: 20px; line-height: 1.25; }
+
+  .ops, .proof, .form-wrap { padding-top: clamp(70px, 9vw, 130px); }
+  .op-list { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(3, 1fr); gap: 0 clamp(20px, 3vw, 40px); }
+  .op-list li { border-top: 1px solid var(--rule); padding: 20px 0 30px; }
+  .op-list .h3 { margin: 10px 0 10px; }
+  .op-list p { color: var(--ink-2); margin: 0; }
+  .label a.meta { margin-left: auto; color: var(--ink); }
+
+  .pr-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+  .pr { text-decoration: none; }
+  .pr .h3 { margin: 12px 0 4px; }
+  .pr:hover .h3 { color: var(--accent); }
+
+  .f-grid > * { min-width: 0; }
+  .f-grid { display: grid; grid-template-columns: 1fr 1.3fr; gap: clamp(30px, 6vw, 100px); }
+  .f-h { font-size: clamp(44px, 5vw, 80px); }
+  .f-note { color: var(--ink-2); max-width: 40ch; }
+  .direct { list-style: none; padding: 0; margin: 30px 0 0; }
+  .direct a { overflow-wrap: anywhere; }
+  .direct li { display: grid; grid-template-columns: 100px minmax(0, 1fr); padding: 12px 0; border-bottom: 1px solid var(--rule); align-items: baseline; }
+
+  .form { display: grid; grid-template-columns: 1fr 1fr; gap: 18px 20px; align-content: start; }
+  .fld { display: grid; gap: 6px; }
+  .fld:has(textarea), .fld[data-budget], .send, .status { grid-column: 1 / -1; }
+  .fld label { font-family: var(--mono); font-size: 12px; letter-spacing: 0.06em; text-transform: uppercase; }
+  .opt { color: var(--grey); text-transform: none; letter-spacing: 0; }
+  .fld input, .fld select, .fld textarea {
+    width: 100%; min-height: 48px; padding: 10px 12px; font: inherit; font-size: 16px; color: var(--ink);
+    background: #fbf8f1; border: 1.5px solid var(--ink-2); border-radius: 0; appearance: none;
+  }
+  .fld select { background-image: linear-gradient(45deg, transparent 50%, var(--ink) 50%), linear-gradient(135deg, var(--ink) 50%, transparent 50%); background-position: calc(100% - 18px) 21px, calc(100% - 13px) 21px; background-size: 5px 5px; background-repeat: no-repeat; }
+  .fld textarea { resize: vertical; }
+  .fld [aria-invalid='true'] { border-color: var(--accent); background: #fff3ee; }
+  .err { margin: 0; color: var(--accent); font-size: 14px; }
+  .send { justify-self: start; }
+  .send:disabled { opacity: 0.6; cursor: wait; }
+  .status { margin: 0; padding: 14px 16px; border-left: 3px solid var(--ink); background: var(--paper-2); }
+  .status.bad { border-color: var(--accent); }
+
+  @media (max-width: 860px) {
+    .hd-row, .f-grid { grid-template-columns: 1fr; }
+    .quick { justify-content: flex-start; }
+    .op-list, .pr-grid { grid-template-columns: 1fr; }
+    .form { grid-template-columns: 1fr; }
+    .fld { grid-column: 1 / -1; }
+  }
+</style>

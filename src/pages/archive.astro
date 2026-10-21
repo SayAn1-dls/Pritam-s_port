@@ -105,9 +105,9 @@ for (let i = 0; byArtist.some((l) => l[i]); i++) byArtist.forEach((l) => l[i] &&
 <style>
   .head { padding: clamp(40px, 6vw, 90px) var(--gutter) clamp(30px, 4vw, 50px); }
   .h { font-size: clamp(48px, 8vw, 140px); margin: 18px 0 22px; }
-  .h em { color: var(--accent); }
+  .h em { color: inherit; }
 
-  .tools { position: sticky; top: 64px; z-index: 20; background: var(--paper); padding-top: 14px; padding-bottom: 14px; border-top: 1px solid var(--ink); border-bottom: 1px solid var(--rule); margin-bottom: 24px; }
+  .tools { position: sticky; top: 64px; z-index: 20; background: var(--paper); padding-top: 14px; padding-bottom: 14px; border-top: 6px solid var(--ink); margin-bottom: 24px; }
   .row { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 10px; }
   .row + .row { margin-top: 10px; }
   .search { display: flex; align-items: center; gap: 12px; flex: 1; min-width: 240px; }
@@ -118,7 +118,7 @@ for (let i = 0; byArtist.some((l) => l[i]); i++) byArtist.forEach((l) => l[i] &&
   .count { margin: 0; color: var(--ink); }
   .lab { width: 64px; }
   .chip {
-    min-height: 36px; padding: 0 12px; border: 1px solid var(--rule); background: transparent; cursor: pointer;
+    min-height: 36px; padding: 0 14px; border: 0; background: var(--paper-2); cursor: pointer;
     font-size: 14px; transition: background 0.15s, border-color 0.15s, color 0.15s;
   }
   .chip:hover { border-color: var(--ink); }

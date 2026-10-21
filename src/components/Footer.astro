@@ -43,11 +43,11 @@ const year = new Date().getFullYear();
   .ft { background: var(--night); color: var(--paper); margin-top: clamp(80px, 10vw, 160px); padding: clamp(56px, 8vw, 110px) 0 28px; }
   .ft-top { display: grid; grid-template-columns: 1.3fr 1fr; gap: 48px; align-items: end; }
   .ft-big { font-size: clamp(52px, 8vw, 128px); }
-  .ft-big em { color: var(--accent); }
+  .ft-big em { color: inherit; }
   .ft-cols { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
   .ft .meta { color: #9b9387; margin: 0 0 12px; }
   .ft ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; font-size: 15px; }
-  .ft-base { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 10px; border-top: 1px solid #34302b; margin-top: 64px; padding-top: 18px; color: #8a8378; }
+  .ft-base { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 10px; margin-top: 80px; padding-top: 18px; color: #8a8378; }
   @media (max-width: 860px) {
     .ft-top { grid-template-columns: 1fr; }
     .ft-cols { grid-template-columns: 1fr 1fr; }

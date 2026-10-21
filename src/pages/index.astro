@@ -148,7 +148,7 @@ const sheet = ['cactus-dsc-0393', 'fossils-dsc-2023-l', 'monali-thakur-img-0952-
     padding-top: clamp(20px, 3vw, 40px);
     padding-bottom: clamp(40px, 6vw, 90px);
   }
-  .cover-meta { grid-column: 1 / -1; display: flex; justify-content: space-between; border-bottom: 1px solid var(--ink); padding-bottom: 10px; margin-bottom: clamp(24px, 4vw, 56px); color: var(--ink); }
+  .cover-meta { grid-column: 1 / -1; display: flex; justify-content: space-between; border-bottom: 0; padding-bottom: 10px; margin-bottom: clamp(24px, 4vw, 56px); color: var(--ink); }
   .cover-h {
     grid-column: 1 / 9; grid-row: 2;
     font-size: clamp(64px, 10.6vw, 196px);
@@ -172,9 +172,9 @@ const sheet = ['cactus-dsc-0393', 'fossils-dsc-2023-l', 'monali-thakur-img-0952-
   /* proof */
   .proof-row {
     display: grid; grid-template-columns: repeat(3, auto) 1fr; gap: 0;
-    margin: 0; border-top: 1px solid var(--ink); border-bottom: 1px solid var(--ink);
+    margin: 0; border-top: 6px solid var(--ink); border-bottom: 0;
   }
-  .proof-row > div { padding: 20px 28px 22px 0; margin-right: 28px; border-right: 1px solid var(--rule); }
+  .proof-row > div { padding: 20px 28px 22px 0; margin-right: 28px; }
   .proof-row > div:last-child { border-right: 0; margin-right: 0; }
   .proof-row dd { margin: 6px 0 0; font-family: var(--display); font-size: clamp(52px, 6vw, 88px); line-height: 1; }
   .proof-names dd { font-size: clamp(24px, 2.4vw, 34px); line-height: 1.15; text-transform: uppercase; }
@@ -205,7 +205,7 @@ const sheet = ['cactus-dsc-0393', 'fossils-dsc-2023-l', 'monali-thakur-img-0952-
   .label.inv .meta { color: var(--paper); }
   .label.inv .meta:last-child { color: #9b9387; }
   .ap-h { max-width: 16ch; margin-bottom: clamp(40px, 6vw, 80px); }
-  .ap-h em { color: var(--accent); font-style: normal; }
+  .ap-h em { color: inherit; font-style: normal; }
   .ap-list { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(3, 1fr); gap: clamp(20px, 3vw, 44px); }
   .ap-list li:nth-child(2) { margin-top: 60px; }
   .ap-list li:nth-child(3) { margin-top: 120px; }
@@ -216,7 +216,7 @@ const sheet = ['cactus-dsc-0393', 'fossils-dsc-2023-l', 'monali-thakur-img-0952-
   .aboutp { padding-top: clamp(80px, 10vw, 150px); }
   .ab-grid { display: grid; grid-template-columns: 7fr 5fr; gap: clamp(30px, 5vw, 80px); align-items: end; }
   .ab-quote { font-size: clamp(36px, 4.6vw, 70px); line-height: 1.02; }
-  .ab-quote em { color: var(--accent); }
+  .ab-quote em { color: inherit; }
   .ab-txt p { color: var(--ink-2); margin: 0 0 1em; }
 
   /* contact sheet */
@@ -237,7 +237,7 @@ const sheet = ['cactus-dsc-0393', 'fossils-dsc-2023-l', 'monali-thakur-img-0952-
     .stamp { right: 10px; top: 16px; }
     .cover-intro { order: 3; margin-top: 24px; }
     .proof-row { grid-template-columns: 1fr 1fr; }
-    .proof-row > div { padding: 16px 12px 16px 0; margin-right: 12px; border-bottom: 1px solid var(--rule); }
+    .proof-row > div { padding: 16px 12px 16px 0; margin-right: 12px; }
     .proof-row > div:nth-child(2) { border-right: 0; margin-right: 0; }
     .proof-names { grid-column: 1 / -1; border-bottom: 0 !important; }
     .wk { display: flex; flex-direction: column; align-items: stretch; }

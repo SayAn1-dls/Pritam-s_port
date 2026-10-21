@@ -120,13 +120,13 @@ const s = (a: number, b?: number) => seq.slice(a, b);
   .cs-kick { font-family: var(--sans); font-weight: 600; font-size: clamp(22px, 2.6vw, 36px); color: var(--accent); margin: 16px 0 clamp(28px, 4vw, 50px); max-width: 30ch; }
   .cs-cover :global(.ph) { max-height: 88vh; }
   .cs-intro { display: grid; grid-template-columns: 1fr 1.4fr; gap: clamp(30px, 6vw, 100px); padding-top: clamp(30px, 4vw, 60px); }
-  .facts { margin: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 0; border-top: 1px solid var(--ink); align-self: start; }
-  .facts div { border-bottom: 1px solid var(--rule); padding: 12px 0; }
+  .facts { margin: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 0; border-top: 6px solid var(--ink); align-self: start; }
+  .facts div { padding: 12px 0; }
   .facts dd { margin: 4px 0 0; font-size: 16px; }
   .cs-sum { max-width: 40ch; margin: 0; }
 
   .chap { display: grid; grid-template-columns: 1fr 2fr; gap: 30px; padding-top: clamp(60px, 8vw, 120px); }
-  .chap-n { margin: 6px 0 0; color: var(--ink); border-top: 1px solid var(--ink); padding-top: 10px; align-self: start; }
+  .chap-n { margin: 6px 0 0; color: var(--ink); border-top: 6px solid var(--ink); padding-top: 10px; align-self: start; }
   .chap .prose p { font-size: clamp(19px, 1.6vw, 23px); line-height: 1.5; margin: 0; }
   .idea { font-size: clamp(32px, 3.8vw, 60px); line-height: 1; }
   .note { font-size: clamp(30px, 3.4vw, 52px); line-height: 1; }
@@ -139,18 +139,18 @@ const s = (a: number, b?: number) => seq.slice(a, b);
   .sheet { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; padding-top: 8px; }
 
   .exec { list-style: none; margin: 0; padding: 0; }
-  .exec li { display: grid; grid-template-columns: 40px 1fr; gap: 10px; padding: 14px 0; border-bottom: 1px solid var(--rule); font-size: 18px; }
+  .exec li { display: grid; grid-template-columns: 40px 1fr; gap: 10px; padding: 14px 0; font-size: 18px; }
   .exec li .meta { padding-top: 5px; }
 
   .out-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
   .outcome h2 { margin: 0 0 10px; }
   .outcome h2 + ul { margin-bottom: 28px; }
   .outcome ul { padding: 0; list-style: none; margin: 0; }
-  .outcome li { font-weight: 650; font-size: 20px; line-height: 1.35; padding: 10px 0; border-bottom: 1px solid var(--rule); }
+  .outcome li { font-weight: 650; font-size: 20px; line-height: 1.35; padding: 10px 0; }
 
-  .pn { display: grid; grid-template-columns: 1fr 1fr; margin-top: clamp(70px, 9vw, 130px); border-top: 1px solid var(--ink); }
+  .pn { display: grid; grid-template-columns: 1fr 1fr; margin-top: clamp(70px, 9vw, 130px); border-top: 6px solid var(--ink); }
   .pn-a { display: grid; gap: 6px; padding: 22px 0; text-decoration: none; }
-  .pn-next { text-align: right; border-left: 1px solid var(--rule); }
+  .pn-next { text-align: right; }
   .pn-t { font-family: var(--display); text-transform: uppercase; font-size: clamp(30px, 4vw, 60px); line-height: 1; transition: color 0.2s; }
   .pn-a:hover .pn-t { color: var(--accent); }
 

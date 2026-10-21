@@ -95,8 +95,8 @@ button { font: inherit; color: inherit; }
 /* --- section label --- */
 .label {
   display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 14px;
-  border-top: 1px solid var(--ink);
-  padding-top: 12px;
+  border-top: 6px solid var(--ink);
+  padding-top: 16px;
   margin-bottom: clamp(28px, 4vw, 56px);
 }
 .label .meta { color: var(--ink); font-size: 16px; font-weight: 650; }

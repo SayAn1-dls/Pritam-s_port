@@ -150,13 +150,13 @@ const sheet = ['cactus-dsc-0393', 'fossils-dsc-2023-l', 'monali-thakur-img-0952-
   }
   .cover-meta { grid-column: 1 / -1; display: flex; justify-content: space-between; border-bottom: 0; padding-bottom: 10px; margin-bottom: clamp(24px, 4vw, 56px); color: var(--ink); }
   .cover-h {
-    grid-column: 1 / 9; grid-row: 2;
+    grid-column: 1 / 8; grid-row: 2; min-width: 0;
     font-size: clamp(64px, 10.6vw, 196px);
-    position: relative; z-index: 2;
+    position: relative; z-index: 4;
     text-wrap: balance;
   }
   .cover-h em { display: block; }
-  .cover-photo { grid-column: 8 / 13; grid-row: 2 / 4; align-self: start; margin-top: clamp(0px, 6vw, 90px); }
+  .cover-photo { position: relative; z-index: 1; grid-column: 8 / 13; grid-row: 2 / 4; align-self: start; margin-top: clamp(0px, 6vw, 90px); }
   .cover-tag { margin: 10px 0 0; }
   .cover-frame { position: relative; }
   .stamp {

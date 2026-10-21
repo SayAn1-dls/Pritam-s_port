@@ -10,7 +10,7 @@ const proof = published.filter((p) => p.featured).slice(0, 3);
 ---
 <Base title="Hire me" description={`Hire ${site.name} for concert photography, event marketing, sponsorships and partnerships. Email, call or WhatsApp.`}>
   <section class="wrap hd">
-    <p class:list={['meta', 'st', { closed: !av.open }]}><i aria-hidden="true"></i>{av.open ? av.label : av.closedLabel}</p>
+    <p class:list={['meta', 'st', { closed: !av.open }]}>{av.open ? av.label : av.closedLabel}</p>
     <h1 class="display h">Good work starts with a <em>good conversation.</em></h1>
     <div class="hd-row">
       <p class="lede">Concert coverage, event marketing, sponsorship and partnership work, or a role on your marketing team. Tell me what you’re putting together and I’ll tell you honestly how I can help.</p>
@@ -33,16 +33,16 @@ const proof = published.filter((p) => p.featured).slice(0, 3);
   </section>
 
   <section class="wrap ops">
-    <div class="label"><span class="meta">01</span><span class="meta">What I can do for you</span><span class="meta">{offered.length} ways to work together</span></div>
+    <div class="label"><span class="meta">What I can do for you</span><span class="meta">{offered.length} ways to work together</span></div>
     <ol class="op-list">
-      {offered.map((o, i) => (
-        <li class="rv"><span class="meta">{String(i + 1).padStart(2, '0')}</span><h2 class="h3">{o.title}</h2><p>{o.body}</p></li>
+      {offered.map((o) => (
+        <li class="rv"><h2 class="h3">{o.title}</h2><p>{o.body}</p></li>
       ))}
     </ol>
   </section>
 
   <section class="wrap proof">
-    <div class="label"><span class="meta">02</span><span class="meta">Proof of work</span><a class="meta link-u" href="/work/">All case studies →</a></div>
+    <div class="label"><span class="meta">Proof of work</span><a class="meta link-u" href="/work/">All case studies →</a></div>
     <div class="pr-grid">
       {proof.map((p) => (
         <a href={`/work/${p.slug}/`} class="pr rv">
@@ -55,7 +55,7 @@ const proof = published.filter((p) => p.featured).slice(0, 3);
   </section>
 
   <section class="wrap form-wrap" id="contact">
-    <div class="label"><span class="meta">03</span><span class="meta">Discuss an opportunity</span><span class="meta">Replies come from {site.contact.email}</span></div>
+    <div class="label"><span class="meta">Discuss an opportunity</span><span class="meta">Replies come from {site.contact.email}</span></div>
     <div class="f-grid">
       <div class="f-side">
         <p class="display f-h">Tell me about it.</p>
@@ -224,7 +224,7 @@ const proof = published.filter((p) => p.featured).slice(0, 3);
   .form { display: grid; grid-template-columns: 1fr 1fr; gap: 18px 20px; align-content: start; }
   .fld { display: grid; gap: 6px; }
   .fld:has(textarea), .fld[data-budget], .send, .status { grid-column: 1 / -1; }
-  .fld label { font-family: var(--mono); font-size: 12px; letter-spacing: 0.06em; text-transform: uppercase; }
+  .fld label { font-size: 15px; font-weight: 650; }
   .opt { color: var(--grey); text-transform: none; letter-spacing: 0; }
   .fld input, .fld select, .fld textarea {
     width: 100%; min-height: 48px; padding: 10px 12px; font: inherit; font-size: 16px; color: var(--ink);

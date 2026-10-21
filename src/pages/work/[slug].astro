@@ -28,7 +28,7 @@ const s = (a: number, b?: number) => seq.slice(a, b);
 <Base title={p.title} description={p.summary} image={cover ? fullSrc(cover, 1600) : undefined}>
   <article>
     <header class="cs-head wrap">
-      <p class="meta crumbs"><a class="link-u" href="/work/">Work</a> / {String(idx + 1).padStart(2, '0')} / {p.artist}</p>
+      <p class="meta crumbs"><a class="link-u" href="/work/">Work</a> / {p.artist}</p>
       <h1 class="display cs-t">{p.artist}</h1>
       <p class="cs-kick">{p.kicker}</p>
     </header>
@@ -45,7 +45,7 @@ const s = (a: number, b?: number) => seq.slice(a, b);
     </section>
 
     <section class="wrap chap">
-      <p class="meta chap-n">01 — The context</p>
+      <p class="meta chap-n">The context</p>
       <div class="prose"><p>{p.context}</p></div>
     </section>
 
@@ -54,12 +54,12 @@ const s = (a: number, b?: number) => seq.slice(a, b);
     </section>
 
     <section class="wrap chap">
-      <p class="meta chap-n">02 — The challenge</p>
+      <p class="meta chap-n">The challenge</p>
       <div class="prose"><p>{p.challenge}</p></div>
     </section>
 
     <section class="wrap chap chap-idea">
-      <p class="meta chap-n">03 — The idea</p>
+      <p class="meta chap-n">The idea</p>
       <p class="display idea">{p.idea}</p>
     </section>
 
@@ -68,9 +68,9 @@ const s = (a: number, b?: number) => seq.slice(a, b);
     </section>
 
     <section class="wrap chap">
-      <p class="meta chap-n">04 — The execution</p>
+      <p class="meta chap-n">The execution</p>
       <ol class="exec">
-        {p.execution.map((e, i) => <li><span class="meta">{String(i + 1).padStart(2, '0')}</span><span>{e}</span></li>)}
+        {p.execution.map((e) => <li><span class="meta" aria-hidden="true">—</span><span>{e}</span></li>)}
       </ol>
     </section>
 
@@ -83,7 +83,7 @@ const s = (a: number, b?: number) => seq.slice(a, b);
     </section>
 
     <section class="wrap chap outcome">
-      <p class="meta chap-n">05 — The outcome</p>
+      <p class="meta chap-n">The outcome</p>
       <div class="out-grid">
         <div>
           <h2 class="meta">Verified</h2>
@@ -101,7 +101,7 @@ const s = (a: number, b?: number) => seq.slice(a, b);
     </section>
 
     <section class="wrap chap">
-      <p class="meta chap-n">06 — What I took from it</p>
+      <p class="meta chap-n">What I took from it</p>
       <p class="display note">{p.notes}</p>
     </section>
 
@@ -117,7 +117,7 @@ const s = (a: number, b?: number) => seq.slice(a, b);
   .cs-head { padding-top: clamp(30px, 5vw, 70px); }
   .crumbs { margin: 0 0 20px; }
   .cs-t { font-size: clamp(72px, 17vw, 300px); line-height: 0.84; }
-  .cs-kick { font-family: var(--sans); font-style: italic; font-weight: 700; font-stretch: 112%; font-size: clamp(22px, 2.6vw, 36px); color: var(--accent); margin: 16px 0 clamp(28px, 4vw, 50px); max-width: 30ch; }
+  .cs-kick { font-family: var(--sans); font-weight: 600; font-size: clamp(22px, 2.6vw, 36px); color: var(--accent); margin: 16px 0 clamp(28px, 4vw, 50px); max-width: 30ch; }
   .cs-cover :global(.ph) { max-height: 88vh; }
   .cs-intro { display: grid; grid-template-columns: 1fr 1.4fr; gap: clamp(30px, 6vw, 100px); padding-top: clamp(30px, 4vw, 60px); }
   .facts { margin: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 0; border-top: 1px solid var(--ink); align-self: start; }

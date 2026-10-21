@@ -17,13 +17,9 @@ const sheet = ['cactus-dsc-0393', 'fossils-dsc-2023-l', 'monali-thakur-img-0952-
 <Base>
   <!-- ============ COVER ============ -->
   <section class="cover wrap">
-    <div class="cover-meta meta">
-      <span>Portfolio — Live music, marketing &amp; partnerships</span>
-      <span>Vol. {new Date().getFullYear()}</span>
-    </div>
 
     <h1 class="display cover-h">
-      The show lasts <span class="ol">three hours.</span>
+      The show lasts <span>three hours.</span>
       <em>The pictures sell the next one.</em>
     </h1>
 
@@ -53,9 +49,9 @@ const sheet = ['cactus-dsc-0393', 'fossils-dsc-2023-l', 'monali-thakur-img-0952-
   <!-- ============ PROOF ============ -->
   <section class="proof wrap" aria-label="At a glance">
     <dl class="proof-row">
-      <div><dt class="meta">Artists photographed live</dt><dd>{String(artists.length).padStart(2, '0')}</dd></div>
+      <div><dt class="meta">Artists photographed live</dt><dd>{artists.length}</dd></div>
       <div><dt class="meta">Edited frames across these shows</dt><dd>{framesDelivered}</dd></div>
-      <div><dt class="meta">Production partners</dt><dd>{String(companies.length).padStart(2, '0')}</dd></div>
+      <div><dt class="meta">Production partners</dt><dd>{companies.length}</dd></div>
       <div class="proof-names">
         <dt class="meta">On the bill</dt>
         <dd>{artists.map((a, i) => <span>{a}{i < artists.length - 1 && <i aria-hidden="true"> / </i>}</span>)}</dd>
@@ -65,7 +61,7 @@ const sheet = ['cactus-dsc-0393', 'fossils-dsc-2023-l', 'monali-thakur-img-0952-
 
   <!-- ============ SELECTED WORK ============ -->
   <section id="work" class="work wrap">
-    <div class="label"><span class="meta">No. 02</span><span class="meta">Selected work</span><span class="meta">{featured.length} shows</span></div>
+    <div class="label"><span class="meta">Selected work</span><span class="meta">{featured.length} shows</span></div>
 
     {featured.map((p, i) => (
       <article class:list={['wk', `wk-${i % 3}`, 'rv']}>
@@ -73,7 +69,7 @@ const sheet = ['cactus-dsc-0393', 'fossils-dsc-2023-l', 'monali-thakur-img-0952-
           <Photo id={p.cover} ratio={i % 3 === 0 ? '3/2' : i % 3 === 1 ? '4/5' : '16/10'} sizes="(max-width: 860px) 100vw, 60vw" />
         </a>
         <div class="wk-txt">
-          <p class="meta wk-n">{String(i + 1).padStart(2, '0')} — {p.category}</p>
+          <p class="meta wk-n">{p.category}</p>
           <h2 class="h2"><a href={`/work/${p.slug}/`}>{p.artist}</a></h2>
           <p class="wk-kick">{p.kicker}</p>
           <p class="wk-sum">{p.summary}</p>
@@ -88,24 +84,24 @@ const sheet = ['cactus-dsc-0393', 'fossils-dsc-2023-l', 'monali-thakur-img-0952-
   <!-- ============ APPROACH (dark) ============ -->
   <section class="approach">
     <div class="wrap">
-      <div class="label inv"><span class="meta">No. 03</span><span class="meta">How I work a show</span><span class="meta">Three frames, three audiences</span></div>
+      <div class="label inv"><span class="meta">How I work a show</span><span class="meta">Three frames, three audiences</span></div>
       <h2 class="h2 ap-h rv">A concert photo is a <em>marketing asset</em> with a deadline.</h2>
       <ol class="ap-list">
         <li class="rv">
           <Photo id="monali-thakur-img-0886-l" ratio="1/1" sizes="(max-width: 860px) 100vw, 30vw" />
-          <p class="meta">01 — The face</p>
+          <p class="meta">The face</p>
           <h3 class="h3">For the artist</h3>
           <p>Emotion, a sharp frame and a flattering angle. The photo the artist posts that night, and the one fans share.</p>
         </li>
         <li class="rv">
           <Photo id="jeet-ganguly-dsc-0100" ratio="1/1" sizes="(max-width: 860px) 100vw, 30vw" />
-          <p class="meta">02 — The stage</p>
+          <p class="meta">The stage</p>
           <h3 class="h3">For the sponsor</h3>
           <p>Scale, production and the brand on the screen, readable. What the partner shows their boss on Monday.</p>
         </li>
         <li class="rv">
           <Photo id="fakira-dsc-0823" ratio="1/1" sizes="(max-width: 860px) 100vw, 30vw" />
-          <p class="meta">03 — The crowd</p>
+          <p class="meta">The crowd</p>
           <h3 class="h3">For the promoter</h3>
           <p>Proof that people showed up and cared. It’s the most persuasive thing you can put on the poster for the next date.</p>
         </li>
@@ -115,7 +111,7 @@ const sheet = ['cactus-dsc-0393', 'fossils-dsc-2023-l', 'monali-thakur-img-0952-
 
   <!-- ============ ABOUT PREVIEW ============ -->
   <section class="aboutp wrap">
-    <div class="label"><span class="meta">No. 04</span><span class="meta">About</span><span class="meta"></span></div>
+    <div class="label"><span class="meta">About</span></div>
     <div class="ab-grid">
       <p class="display ab-quote rv">I stand where the crowd can’t, so the people who weren’t there <em>wish they had been.</em></p>
       <div class="ab-txt rv">
@@ -128,12 +124,12 @@ const sheet = ['cactus-dsc-0393', 'fossils-dsc-2023-l', 'monali-thakur-img-0952-
 
   <!-- ============ ARCHIVE PREVIEW (contact sheet) ============ -->
   <section class="sheet wrap">
-    <div class="label"><span class="meta">No. 05</span><span class="meta">From the archive</span><span class="meta">{archiveCount} frames online</span></div>
+    <div class="label"><span class="meta">From the archive</span><span class="meta">{archiveCount} frames online</span></div>
     <div class="sheet-grid">
       {sheet.map((p, i) => (
         <figure class:list={['sh', `sh-${i}`, 'rv']}>
           <Photo id={p!.id} ratio={i % 3 === 0 ? '4/5' : '3/2'} sizes="(max-width: 860px) 50vw, 25vw" lightbox />
-          <figcaption class="meta">#{String(i + 1).padStart(3, '0')} · {p!.artist}</figcaption>
+          <figcaption class="meta">{p!.artist}</figcaption>
         </figure>
       ))}
     </div>
@@ -155,11 +151,11 @@ const sheet = ['cactus-dsc-0393', 'fossils-dsc-2023-l', 'monali-thakur-img-0952-
   .cover-meta { grid-column: 1 / -1; display: flex; justify-content: space-between; border-bottom: 1px solid var(--ink); padding-bottom: 10px; margin-bottom: clamp(24px, 4vw, 56px); color: var(--ink); }
   .cover-h {
     grid-column: 1 / 9; grid-row: 2;
-    font-size: clamp(50px, 8.6vw, 150px);
+    font-size: clamp(64px, 10.6vw, 196px);
     position: relative; z-index: 2;
     text-wrap: balance;
   }
-  .cover-h em { display: block; color: var(--accent); }
+  .cover-h em { display: block; }
   .cover-photo { grid-column: 8 / 13; grid-row: 2 / 4; align-self: start; margin-top: clamp(0px, 6vw, 90px); }
   .cover-tag { margin: 10px 0 0; }
   .cover-frame { position: relative; }
@@ -198,7 +194,7 @@ const sheet = ['cactus-dsc-0393', 'fossils-dsc-2023-l', 'monali-thakur-img-0952-
   .wk-txt .h2 a { text-decoration: none; }
   .wk-txt .h2 a:hover { color: var(--accent); }
   .wk-n { margin: 0 0 12px; }
-  .wk-kick { font-family: var(--sans); font-style: italic; font-weight: 700; font-stretch: 112%; font-size: 21px; line-height: 1.3; margin: 14px 0 10px; }
+  .wk-kick { font-family: var(--sans); font-weight: 600; font-size: 21px; line-height: 1.3; margin: 14px 0 10px; }
   .wk-sum { color: var(--ink-2); margin: 0 0 14px; }
   .wk-more { display: inline-block; margin-top: 8px; }
   .work-all { margin: -40px 0 0; }
@@ -234,7 +230,7 @@ const sheet = ['cactus-dsc-0393', 'fossils-dsc-2023-l', 'monali-thakur-img-0952-
 
   @media (max-width: 860px) {
     .cover { display: flex; flex-direction: column; }
-    .cover-h { font-size: clamp(44px, 12.5vw, 80px); }
+    .cover-h { font-size: clamp(58px, 17vw, 110px); }
     .cover-meta { gap: 12px; }
     .cover-meta span:last-child { white-space: nowrap; }
     .cover-photo { margin: 24px 0 0; order: 2; }

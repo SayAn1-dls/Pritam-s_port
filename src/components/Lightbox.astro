@@ -42,7 +42,7 @@
     img.alt = el.dataset.alt ?? '';
     artist.textContent = el.dataset.artist ?? '';
     text.textContent = el.dataset.caption ? `— ${el.dataset.caption}` : '';
-    count.textContent = `${String(i + 1).padStart(2, '0')} / ${String(list.length).padStart(2, '0')}`;
+    count.textContent = `${i + 1} of ${list.length}`;
     // warm the neighbours
     [list[(i + 1) % list.length], list[(i - 1 + list.length) % list.length]].forEach((x) => {
       if (x) new Image().src = x.dataset.full!;

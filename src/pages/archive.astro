@@ -40,7 +40,7 @@ for (let i = 0; byArtist.some((l) => l[i]); i++) byArtist.forEach((l) => l[i] &&
 
   <section class="wrap">
     <div class="grid" data-grid>
-      {mixed.map((p, i) => (
+      {mixed.map((p) => (
         <div
           class:list={['cell', orientation(p)]}
           data-artist={p.project}
@@ -48,7 +48,7 @@ for (let i = 0; byArtist.some((l) => l[i]); i++) byArtist.forEach((l) => l[i] &&
           data-text={`${p.artist} ${p.caption} ${p.alt} ${p.category}`.toLowerCase()}
         >
           <Photo id={p.id} sizes={orientation(p) === 'landscape' ? '(max-width: 700px) 100vw, 50vw' : '(max-width: 700px) 50vw, 25vw'} lightbox ratio="auto" />
-          <p class="meta acap"><span>{String(i + 1).padStart(3, '0')}</span> {p.artist} — {p.caption}</p>
+          <p class="meta acap"><b>{p.artist}</b> {p.caption}</p>
         </div>
       ))}
     </div>
@@ -132,7 +132,7 @@ for (let i = 0; byArtist.some((l) => l[i]); i++) byArtist.forEach((l) => l[i] &&
   .cell :global(figure) { flex: 1; min-height: 0; }
   .cell :global(.ph) { height: 100%; aspect-ratio: auto !important; }
   .acap { margin: 6px 0 0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-  .acap span { color: var(--accent); }
+  .acap b { color: var(--ink); font-weight: 650; }
   .empty { padding: 60px 0; text-align: left; }
   .empty .display { font-size: clamp(30px, 4vw, 56px); margin-bottom: 20px; }
 

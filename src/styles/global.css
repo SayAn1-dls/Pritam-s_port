@@ -1,7 +1,5 @@
-@import '@fontsource/anton/400.css';
+@import '@fontsource/league-gothic/400.css';
 @import '@fontsource-variable/archivo/wdth.css';
-@import '@fontsource-variable/archivo/wdth-italic.css';
-@import '@fontsource/jetbrains-mono/400.css';
 
 :root {
   --paper: #f4efe4;
@@ -14,10 +12,12 @@
   --accent-ink: #fff8ef;
   --night: #100f0e;
 
-  /* Poster type: Anton for headlines (gig-poster condensed caps), Archivo for everything you read. */
-  --display: 'Anton', 'Impact', 'Arial Narrow Bold', sans-serif;
+  /* Two faces, each with one job (see docs/TYPE_RESEARCH.md).
+     League Gothic: film-credit / poster condensed caps, as used by Adweek. Headlines only.
+     Archivo: 19th-c. American grotesque revival, for everything else, labels included. */
+  --display: 'League Gothic', 'Arial Narrow', 'Helvetica Neue Condensed', sans-serif;
   --sans: 'Archivo Variable', 'Helvetica Neue', Arial, sans-serif;
-  --mono: 'JetBrains Mono', ui-monospace, Menlo, monospace;
+  --mono: var(--sans); /* no monospace voice: labels use the text face */
 
   --gutter: clamp(16px, 4vw, 56px);
   --max: 1480px;
@@ -60,29 +60,31 @@ button { font: inherit; color: inherit; }
   font-family: var(--display);
   font-weight: 400;
   text-transform: uppercase;
-  line-height: 0.9;
-  letter-spacing: 0.004em;
+  line-height: 0.94;
+  letter-spacing: 0.012em;
+  font-kerning: normal;
+  text-wrap: balance;
   margin: 0;
 }
-.display em { font-style: normal; color: var(--accent); }
-/* outlined poster type, used sparingly */
-.ol { color: transparent; -webkit-text-stroke: 0.025em var(--ink); }
+/* One face, one colour: no accent-coloured or outlined words inside headlines. */
+.display em { font-style: normal; color: inherit; }
 .h2 {
   font-family: var(--display);
   font-weight: 400;
   text-transform: uppercase;
-  font-size: clamp(38px, 5.6vw, 84px);
-  line-height: 0.92;
+  font-size: clamp(44px, 6.4vw, 100px);
+  line-height: 0.95;
+  letter-spacing: 0.012em;
   margin: 0;
 }
-.h3 { font-family: var(--display); font-weight: 400; text-transform: uppercase; font-size: clamp(24px, 2.4vw, 34px); line-height: 1; margin: 0; letter-spacing: 0.01em; }
+.h3 { font-family: var(--display); font-weight: 400; text-transform: uppercase; font-size: clamp(30px, 3vw, 42px); line-height: 1; margin: 0; letter-spacing: 0.015em; }
 /* punchy sub-lines: wide, heavy italic grotesque */
-.kick { font-family: var(--sans); font-style: italic; font-weight: 700; font-stretch: 112%; letter-spacing: -0.01em; }
+
 .meta {
-  font-family: var(--mono);
-  font-size: 11.5px;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
+  font-family: var(--sans);
+  font-size: 14px;
+  line-height: 1.4;
+  font-weight: 500;
   color: var(--grey);
 }
 .lede { font-size: clamp(19px, 1.6vw, 23px); line-height: 1.45; color: var(--ink-2); max-width: 34ch; font-weight: 450; }
@@ -90,14 +92,15 @@ button { font: inherit; color: inherit; }
 .prose p { margin: 0 0 1.05em; }
 .accent { color: var(--accent); }
 
-/* --- section label: "No. 02 — Selected work" --- */
+/* --- section label --- */
 .label {
   display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 14px;
   border-top: 1px solid var(--ink);
   padding-top: 12px;
   margin-bottom: clamp(28px, 4vw, 56px);
 }
-.label .meta { color: var(--ink); }
+.label .meta { color: var(--ink); font-size: 16px; font-weight: 650; }
+.label .meta:not(:first-child) { font-weight: 500; }
 .label .meta:last-child { margin-left: auto; color: var(--grey); overflow-wrap: anywhere; }
 
 /* --- buttons --- */
@@ -107,7 +110,7 @@ button { font: inherit; color: inherit; }
   min-height: 48px; padding: 0 22px;
   border: 1.5px solid var(--b);
   background: var(--b); color: var(--paper);
-  font-family: var(--mono); font-size: 12.5px; letter-spacing: 0.08em; text-transform: uppercase;
+  font-family: var(--sans); font-size: 15px; font-weight: 650; letter-spacing: 0;
   text-decoration: none; cursor: pointer;
   transition: background 0.25s var(--ease), color 0.25s var(--ease), transform 0.25s var(--ease);
 }

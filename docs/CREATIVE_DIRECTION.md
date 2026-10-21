@@ -23,10 +23,9 @@ copied from any site. The principles used:
 - **Paper** `#F4EFE4`, **ink** `#171513`, **grey** `#6D665C`, one accent: **stage red** `#C4361C`, taken from the
   red and orange rig light in the Fakira, Fossils and Cactus sets. The near-black `#100F0E` is used for the
   "approach" section and footer, like a dark stage.
-- **Type:** gig-poster typography. **Anton** (condensed, all caps) for every headline, number and artist name, with
-  outlined Anton (`.ol`) used once for emphasis in the hero. **Archivo** (variable width and weight) for body text,
-  with heavy, slightly wide italic sub-lines for taglines. **JetBrains Mono** for index numbers, captions and metadata.
-  All are self-hosted through Fontsource (OFL licence).
+- **Type:** two faces, chosen from what the audience's own sites use (see `docs/TYPE_RESEARCH.md`). **League Gothic** for
+  headlines (film-credit / gig-poster caps, as on Adweek) and **Archivo** for everything else, labels included. Both are
+  self-hosted through Fontsource (OFL licence).
 - **Layout:** a 12-column grid that is deliberately broken. The hero headline overlaps the photo column, the
   selected-work rows alternate between three compositions, the approach cards step down, and the contact sheets are
   staggered. Corners are square, there are no gradients, no glass and no cards.

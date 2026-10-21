@@ -62,7 +62,7 @@ Changes made to follow the research:
 - Labels are sentence case at 14–16px instead of tiny tracked caps.
 - The hero is set larger (up to about 10.6vw) so it gets its punch from scale, not effects.
 
-Not changed (optional next step): the thin 1px rules between sections, which Taste Skill also bans.
+Thin 1px dividers were then replaced: section starts get a 6px ink bar, list separators became spacing or a tone fill. Only form fields and buttons keep borders.
 
 ## 4. If budget allows later
 Commercial faces the audience's own sites use: **Brother 1816**, **ABC Repro / ABC Diatype** (Dinamo) and

@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Build plan: "first 3 seconds" pass on the Pritam Haldar portfolio.
+  Inputs: docs/research/01-reference-teardown.md, docs/research/02-gap-analysis.md, docs/research/ISSUES.md
+  Executed on branch feat/first-3-seconds (worktree pritam-wt/03-build), built on research/gap-analysis.
+-->
+<plan id="first-3-seconds" version="1.0" date="2026-10-22">
+
+  <persona>
+    <role>Senior conversion copywriter and front-end engineer, working as one person.</role>
+    <voice>Plain, concrete, confident. Short sentences. Names and counts over adjectives. First person for Pritam.</voice>
+    <audience priority="1">Marketing / events recruiters and production houses deciding in seconds whether to keep reading.</audience>
+    <audience priority="2">Artists, promoters and sponsors looking for a concert photographer who understands marketing.</audience>
+    <principles>
+      <principle>Classify before you charm: the reader must know who, what and the proof before any wordplay.</principle>
+      <principle>Show the work doing its job; the pictures are the evidence.</principle>
+      <principle>Never state anything the content files cannot back up.</principle>
+    </principles>
+  </persona>
+
+  <objective>
+    Within the first viewport (1440x900 desktop and 375x812 phone), a first-time visitor can say:
+    "Pritam Haldar is a concert photographer who shoots for marketing: artists, sponsors and promoters,
+    with Eventures Entertainment and Hottogol, on shows like Fakira and Jeet Ganguly, and I can WhatsApp him."
+    The target is 80-90% comprehension, measured by scripts/fold-audit.browser.js.
+  </objective>
+
+  <ground_rules>
+    <honesty>
+      <rule>Numbers are computed from src/data/projects.ts and src/data/photos.json, never typed into templates.</rule>
+      <rule>No turnaround, reach, revenue or client-result claims until Pritam supplies them (FTS-15).</rule>
+      <rule>Do not attach a production company to a specific show (TO_VERIFY #2).</rule>
+      <rule>Use neutral wording for people; never infer pronouns.</rule>
+      <rule>Images: resize only, no regrade, no upscale. Originals are never touched.</rule>
+    </honesty>
+    <design>
+      <rule>One theme: paper / ink / stage red, League Gothic + Archivo. No new colours, no new fonts.</rule>
+      <rule>Banned: bento grids, glass or blur panels, gradient blobs, emoji, flat or line icons, tag-pill walls, drop-shadow cards.</rule>
+      <rule>Infographics are built from real frames and real counts (photo annotations, filmstrip bars), never icons.</rule>
+      <rule>One accent use per view: the outcome words in the H1 and the primary button.</rule>
+      <rule>Square corners, thick ink rules for structure (existing system).</rule>
+      <rule>Text never overlaps a busy part of a photo without a solid backing; callout labels sit on solid ink or paper.</rule>
+    </design>
+    <copy>
+      <rule>H1 at most 8 words, and contains a category noun ("concert", "photos").</rule>
+      <rule>Hero sub-line at most 28 words.</rule>
+      <rule>No paragraph on any page over 40 words.</rule>
+      <rule>Banned vocabulary (AI-slop): elevate, unleash, seamless, cutting-edge, synergy, game-changer, passionate, world-class, leverage, delve, tapestry, testament, next-level, revolutionise, supercharge.</rule>
+      <rule>Headings are statements a scanner can read as the whole story.</rule>
+    </copy>
+    <engineering>
+      <rule>Astro components, TypeScript strict, scoped CSS. No new runtime dependencies.</rule>
+      <rule>Home copy lives in one module (src/data/home.ts); components receive data through typed props.</rule>
+      <rule>Hero and ledger render without JavaScript and are never hidden behind reveal animations.</rule>
+      <rule>No leakage: no secrets, no console output, no dead CSS or unused exports, no inline magic numbers for data, no hard-coded artist lists.</rule>
+      <rule>Respect prefers-reduced-motion; keyboard and screen-reader access for every interactive element.</rule>
+      <rule>Layout must survive 320px to 1920px with no horizontal scroll and no orphaned single words in headings (text-wrap: balance).</rule>
+    </engineering>
+  </ground_rules>
+
+  <scaffolding>
+    <worktrees>
+      <worktree path="pritam-wt/01-research" branch="research/assessment">Reference teardown (docs/research/01-reference-teardown.md)</worktree>
+      <worktree path="pritam-wt/02-gap" branch="research/gap-analysis">Gap analysis, issue triage, this plan, fold-audit tool</worktree>
+      <worktree path="pritam-wt/03-build" branch="feat/first-3-seconds">Implementation</worktree>
+    </worktrees>
+    <files>
+      <file path="src/data/home.ts" kind="new">Typed home copy: eyebrow, h1 parts, sub-line, actions, frame annotations, ledger heading.</file>
+      <file path="src/components/home/Hero.astro" kind="new">First viewport: text column plus AnnotatedFrame. Carries data-hero.</file>
+      <file path="src/components/home/AnnotatedFrame.astro" kind="new">One real photo, numbered callouts positioned in % of the frame, pass inset with portrait.</file>
+      <file path="src/components/home/ShowLedger.astro" kind="new">One row per show: name, filmstrip bar (width = frames / max), count, link.</file>
+      <file path="src/pages/index.astro" kind="edit">Compose Hero, ShowLedger, existing work, approach, about and archive sections.</file>
+      <file path="src/pages/work/[slug].astro" kind="edit">Spec line above the cover.</file>
+      <file path="src/pages/about.astro" kind="edit">Split long paragraphs.</file>
+      <file path="src/data/site.ts" kind="edit">role and description.</file>
+      <file path="scripts/check-copy.mjs" kind="new">Copy lint over dist/: H1 and sub-line limits, paragraph limit, banned words, emoji, placeholder text, hero required tokens.</file>
+      <file path="scripts/fold-audit.browser.js" kind="existing">First-viewport audit run in a browser.</file>
+    </files>
+  </scaffolding>
+
+  <tooling phase="setup-before-work">
+    <tool name="node_modules link" cmd="ln -s ../../pritam-portfolio/node_modules node_modules">Reuse the installed dependencies in the worktree; nothing new installed.</tool>
+    <tool name="astro check" cmd="npx astro check">Type safety: 0 errors, 0 warnings required.</tool>
+    <tool name="build" cmd="npx astro build">Static build into dist/.</tool>
+    <tool name="link check" cmd="node scripts/check-site.mjs">Every internal href, src, srcset and data-full resolves.</tool>
+    <tool name="copy lint" cmd="node scripts/check-copy.mjs">Copy rules from ground_rules/copy, plus hero required tokens. Exit 1 on failure.</tool>
+    <tool name="npm run check" cmd="npm run check">Runs astro check, build, link check and copy lint in one go.</tool>
+    <tool name="browser pane" cmd="preview_start portfolio-build (astro dev on 4323 from the worktree)">Visual review, fold audit, overflow scan at 320/375/390/768/1024/1280/1440/1920.</tool>
+    <tool name="overflow scan" cmd="document.documentElement.scrollWidth &gt; innerWidth">Run per page per viewport in the browser.</tool>
+  </tooling>
+
+  <tasks>
+    <task id="T1" issues="FTS-12">Add scripts/check-copy.mjs and wire it into npm run check. Run it on the baseline and confirm it FAILS (proves the gate works).</task>
+    <task id="T2" issues="FTS-10">Update site.role to "Concert photographer &amp; event marketer" and site.description to match the hero sub-line.</task>
+    <task id="T3" issues="FTS-01,FTS-03,FTS-04,FTS-09">Create src/data/home.ts and Hero.astro: eyebrow (name, role, availability), H1 "Concert photos that sell the next show.", sub-line naming both companies and three audiences, artist proof line from projects data, two actions (See the six shows / WhatsApp me).</task>
+    <task id="T4" issues="FTS-02,FTS-11">AnnotatedFrame.astro: cactus-dsc-0350 at native 16:10, three numbered markers (face 58%/40%, stage 83%/30%, crowd 36%/72%) with labels on solid backing; desktop labels beside markers, phone labels as a numbered legend under the frame. Portrait as a pass inset. Remove the stamp.</task>
+    <task id="T5" issues="FTS-05">ShowLedger.astro: heading computed ("Six artists. N edited frames."), one row per published project, filmstrip of that project's own thumbnails clipped to width = frames/max, count right-aligned, row links to the case study. Replaces the numeric proof strip.</task>
+    <task id="T6" issues="FTS-06">Tighten the approach band copy to at most 16 words per item; heading "Three layers, every song."</task>
+    <task id="T7" issues="FTS-07">Case study: spec line (role, frames, type, production, year; empty values hidden) between the kicker and the cover.</task>
+    <task id="T8" issues="FTS-08">About: split long paragraphs to at most 40 words each, same facts, same voice.</task>
+    <task id="T9" issues="FTS-13">Add the "event marketer" label to docs/TO_VERIFY.md; update CONTENT_GUIDE.md with home.ts.</task>
+    <task id="T10">Verification: npm run check green; fold audit passes at 1440x900, 1280x720, 390x844, 375x812; overflow scan clean on every page at 8 widths; reduced-motion and no-JS render checked; visual review of hero crops and text wraps.</task>
+  </tasks>
+
+  <pass_criteria>
+    <criterion id="P1" measure="fold-audit">At 1440x900, 1280x720, 390x844 and 375x812: name, "photograph", "market", "concert", both companies, at least 3 artist names and at least 1 action are fully in view, and the annotated frame image is at least partly in view on desktop.</criterion>
+    <criterion id="P2" measure="check-copy">H1 at most 8 words with a category noun; sub-line at most 28 words; 0 paragraphs over 40 words on any page; 0 banned words; 0 emoji; 0 placeholder strings.</criterion>
+    <criterion id="P3" measure="research alignment">Every hero element maps to a teardown rule: classification H1 (rule 1), work shown doing its job (rule 2), names (rule 3), data-drawn infographic (rule 4), sourced numbers (rule 5).</criterion>
+    <criterion id="P4" measure="layout">No horizontal overflow at 320-1920px on any page. Headings use balanced wrapping with no single-word last line in the H1 at the tested widths. Callout labels never clip outside the frame. Photo crops keep the subject (focus) in frame.</criterion>
+    <criterion id="P5" measure="engineering">astro check 0 errors and 0 warnings; link check 0 broken; no new dependencies; no console statements in src; hero and ledger render with JS disabled.</criterion>
+    <criterion id="P6" measure="honesty">Every number on the home page traces to a data file; no company is attached to a specific show; nothing claims turnaround or reach.</criterion>
+  </pass_criteria>
+
+  <fail_criteria>
+    <criterion>Any first-viewport check in P1 fails at any tested viewport.</criterion>
+    <criterion>A bento grid, glass panel, gradient blob, emoji or flat icon appears anywhere.</criterion>
+    <criterion>A second accent colour or a third typeface is introduced.</criterion>
+    <criterion>The hero or ledger is invisible without JavaScript or before an animation runs.</criterion>
+    <criterion>A number is typed into a template instead of computed, or a claim is not backed by a data file.</criterion>
+    <criterion>Any original photo is modified, re-graded or upscaled.</criterion>
+  </fail_criteria>
+
+  <rollback>All work is on feat/first-3-seconds. main stays at 76dce0f until the user approves a merge.</rollback>
+</plan>

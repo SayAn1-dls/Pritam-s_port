@@ -1,5 +1,5 @@
 ---
-// One real concert frame, annotated with who each part of it works for.
+// One real concert frame, optionally annotated with numbered marks (the home hero uses none).
 // The marks are a real list (read by screen readers and shown as a legend on phones);
 // on wider screens each item is placed beside its numbered marker on the photo.
 import Photo from '../Photo.astro';
@@ -24,17 +24,19 @@ const ratio = p ? p.height / p.width : 0.625;
     {marks.map((m) => (
       <span class="af-dot" style={`--x:${m.x}%;--fy:${m.y / 100}`} aria-hidden="true">{m.n}</span>
     ))}
-    <ol class="af-marks">
-      {marks.map((m) => (
-        <li class:list={['af-mark', `af-${m.side}`]} style={`--x:${m.x}%;--fy:${m.y / 100}`}>
-          <span class="af-n" aria-hidden="true">{m.n}</span>
-          <span class="af-txt"><b>{m.who}</b> <span>{m.job}</span></span>
-        </li>
-      ))}
-    </ol>
+    {marks.length > 0 && (
+      <ol class="af-marks">
+        {marks.map((m) => (
+          <li class:list={['af-mark', `af-${m.side}`]} style={`--x:${m.x}%;--fy:${m.y / 100}`}>
+            <span class="af-n" aria-hidden="true">{m.n}</span>
+            <span class="af-txt"><b>{m.who}</b> <span>{m.job}</span></span>
+          </li>
+        ))}
+      </ol>
+    )}
     <div class="af-pass" aria-label={`${pass.label} pass: ${pass.name}`} role="img">
       <span class="af-pass-l" aria-hidden="true">{pass.label}</span>
-      <Photo id={pass.photo} sizes="120px" eager />
+      <Photo id={pass.photo} sizes="120px" />
       <span class="af-pass-n" aria-hidden="true">{pass.name}</span>
     </div>
   </div>

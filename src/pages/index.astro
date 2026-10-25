@@ -6,7 +6,7 @@ import Hero from '../components/home/Hero.astro';
 import ShowLedger from '../components/home/ShowLedger.astro';
 import { ledger } from '../data/home';
 import { published } from '../data/projects';
-import { photos, photoById } from '../data/photos';
+import { photos, photoById, SELF } from '../data/photos';
 
 const featured = published.filter((p) => p.featured);
 // Layout follows each cover's own shape, so no cover is ever cropped to fit:
@@ -19,8 +19,8 @@ const layoutFor = (id: string) => {
 };
 const layouts = featured.map((p) => layoutFor(p.cover));
 // Real counts, computed from the content files (not typed in by hand).
-const archiveCount = photos.filter((p) => p.project !== 'pritam').length;
-const sheet = ['cactus-dsc-0393', 'fossils-dsc-2023-l', 'monali-thakur-img-0952-l', 'jeet-ganguly-dsc-0103', 'fakira-dsc-0823', 'anupam-roy-220569', 'cactus-dsc-0241', 'fossils-dsc-2339-l']
+const galleryCount = photos.filter((p) => p.project !== SELF).length;
+const sheet = ['cactus-dsc-0393', 'fossils-dsc-2352-l', 'monali-thakur-img-0908-l', 'jeet-ganguly-dsc-0103', 'fakira-dsc-0918', 'anupam-roy-905730', 'cactus-dsc-0241', 'fossils-dsc-2339-l']
   .map(photoById).filter(Boolean);
 ---
 <Base>
@@ -52,26 +52,26 @@ const sheet = ['cactus-dsc-0393', 'fossils-dsc-2023-l', 'monali-thakur-img-0952-
   <!-- ============ APPROACH (dark) ============ -->
   <section class="approach">
     <div class="wrap">
-      <div class="label inv"><span class="meta">How I work a show</span><span class="meta">Three audiences, every set</span></div>
+      <div class="label inv"><span class="meta">How I work a show</span><span class="meta">Three layers, every set</span></div>
       <h2 class="h2 ap-h rv">Three layers, every song.</h2>
       <ol class="ap-list">
         <li class="rv">
           <Photo id="monali-thakur-img-0886-l" sizes="(max-width: 860px) 100vw, 30vw" />
           <p class="meta">The face</p>
-          <h3 class="h3">For the artist</h3>
-          <p>Emotion, a sharp frame, a flattering angle. The photo fans share.</p>
+          <h3 class="h3">The artist</h3>
+          <p>Emotion, a sharp frame, a flattering angle. The moment the song lands.</p>
         </li>
         <li class="rv">
           <Photo id="jeet-ganguly-dsc-0100" sizes="(max-width: 860px) 100vw, 30vw" />
           <p class="meta">The stage</p>
-          <h3 class="h3">For the sponsor</h3>
-          <p>Scale, production and the brand on the screen, readable in the shot.</p>
+          <h3 class="h3">The performance</h3>
+          <p>Scale, light and production: the whole stage in one frame.</p>
         </li>
         <li class="rv">
           <Photo id="fakira-dsc-0823" sizes="(max-width: 860px) 100vw, 30vw" />
           <p class="meta">The crowd</p>
-          <h3 class="h3">For the promoter</h3>
-          <p>Proof that people showed up and cared.</p>
+          <h3 class="h3">The energy</h3>
+          <p>The crowd singing back, hands up, the room at full volume.</p>
         </li>
       </ol>
     </div>
@@ -83,9 +83,9 @@ const sheet = ['cactus-dsc-0393', 'fossils-dsc-2023-l', 'monali-thakur-img-0952-
     <div class="ab-grid">
       <p class="display ab-quote rv">I stand where the crowd can’t, so the people who weren’t there <em>wish they had been.</em></p>
       <div class="ab-txt rv">
-        <p>I work between the stage and the marketing team. Before I shoot, I ask what each frame has to do after the lights come up.</p>
-        <p>Who will post it, who paid to be in it, and who it has to convince to buy a ticket.</p>
-        <p>Working with production companies means I see the whole machine: artists, sponsors, crews, and a crowd that has to be won all over again for every show.</p>
+        <p>I photograph concerts and the artists who play them, from the front of the stage to the back of the crowd.</p>
+        <p>The face mid-song, the band locked in, the light hitting the haze, the crowd singing every word.</p>
+        <p>Every show is different, and every set gets photographed as one story, from the first song to the encore.</p>
         <a class="link-u" href="/about/">More about me →</a>
       </div>
     </div>
@@ -93,7 +93,7 @@ const sheet = ['cactus-dsc-0393', 'fossils-dsc-2023-l', 'monali-thakur-img-0952-
 
   <!-- ============ ARCHIVE PREVIEW (contact sheet) ============ -->
   <section class="sheet wrap">
-    <div class="label"><span class="meta">From the archive</span><span class="meta">{archiveCount} frames online</span></div>
+    <div class="label"><span class="meta">From the gallery</span><span class="meta">{galleryCount} frames online</span></div>
     <div class="sheet-grid">
       {sheet.map((p, i) => (
         <figure class:list={['sh', `sh-${i}`, 'rv']}>
@@ -102,7 +102,7 @@ const sheet = ['cactus-dsc-0393', 'fossils-dsc-2023-l', 'monali-thakur-img-0952-
         </figure>
       ))}
     </div>
-    <p class="sheet-more"><a class="btn" href="/archive/">Open the archive <span class="arr">→</span></a></p>
+    <p class="sheet-more"><a class="btn" href="/gallery/">Open the gallery <span class="arr">→</span></a></p>
   </section>
 
   <HireCta />

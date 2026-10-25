@@ -1,6 +1,16 @@
 @import '@fontsource/league-gothic/400.css';
 @import '@fontsource-variable/archivo/wdth.css';
 
+/* Width-matched stand-ins for League Gothic while it loads. League Gothic is far narrower than
+   Arial/Roboto, so an unadjusted fallback wraps headlines onto extra lines and the page jumps when
+   the real face arrives. Scaled to the measured width ratio, the fallback wraps the same way.
+   Line heights are unitless multiples of font-size, so they are unaffected. */
+@font-face { font-family: 'League Gothic Fallback'; src: local('Arial'), local('Helvetica'), local('Liberation Sans'); size-adjust: 53.5%; }
+@font-face { font-family: 'League Gothic Fallback Roboto'; src: local('Roboto'); size-adjust: 55.5%; }
+/* Same for the text face: Archivo is ~2% narrower than Arial and ~7% wider than Roboto. */
+@font-face { font-family: 'Archivo Fallback'; src: local('Arial'), local('Helvetica'), local('Liberation Sans'); size-adjust: 98%; }
+@font-face { font-family: 'Archivo Fallback Roboto'; src: local('Roboto'); size-adjust: 107.5%; }
+
 :root {
   --paper: #f4efe4;
   --paper-2: #ebe4d5;
@@ -15,8 +25,8 @@
   /* Two faces, each with one job (see docs/TYPE_RESEARCH.md).
      League Gothic: film-credit / poster condensed caps, as used by Adweek. Headlines only.
      Archivo: 19th-c. American grotesque revival, for everything else, labels included. */
-  --display: 'League Gothic', 'Arial Narrow', 'Helvetica Neue Condensed', sans-serif;
-  --sans: 'Archivo Variable', 'Helvetica Neue', Arial, sans-serif;
+  --display: 'League Gothic', 'League Gothic Fallback', 'League Gothic Fallback Roboto', 'Arial Narrow', 'Helvetica Neue Condensed', sans-serif;
+  --sans: 'Archivo Variable', 'Archivo Fallback', 'Archivo Fallback Roboto', 'Helvetica Neue', Arial, sans-serif;
   --mono: var(--sans); /* no monospace voice: labels use the text face */
 
   --gutter: clamp(16px, 4vw, 56px);

@@ -4,6 +4,10 @@ import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import Lightbox from '../components/Lightbox.astro';
 import { site } from '../data/site';
+// The two Latin font files every page renders with. Preloaded so text paints in the final face
+// sooner (less re-layout when the fallback font swaps out).
+import displayFont from '@fontsource/league-gothic/files/league-gothic-latin-400-normal.woff2?url';
+import textFont from '@fontsource-variable/archivo/files/archivo-latin-wdth-normal.woff2?url';
 
 interface Props {
   title?: string;
@@ -25,6 +29,8 @@ const ogImage = new URL(image, site.url).href;
     <meta name="description" content={description} />
     <link rel="canonical" href={canonical} />
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="preload" href={displayFont} as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href={textFont} as="font" type="font/woff2" crossorigin />
     <meta name="theme-color" content="#f4efe4" />
     <meta property="og:type" content="website" />
     <meta property="og:title" content={fullTitle} />
@@ -57,6 +63,22 @@ const ogImage = new URL(image, site.url).href;
         setTimeout(() => els.forEach((el) => el.classList.add('in')), 2500);
       } else {
         els.forEach((el) => el.classList.add('in'));
+      }
+      // Deferred photos (<Photo defer>): attach the real source once a photo is within ~one screen.
+      const deferred = document.querySelectorAll<HTMLImageElement>('img[data-src]');
+      const attach = (img: HTMLImageElement) => {
+        if (img.dataset.srcset) img.srcset = img.dataset.srcset;
+        img.src = img.dataset.src!;
+        img.removeAttribute('data-src');
+      };
+      if ('IntersectionObserver' in window) {
+        const lo = new IntersectionObserver(
+          (entries) => entries.forEach((e) => { if (e.isIntersecting) { attach(e.target as HTMLImageElement); lo.unobserve(e.target); } }),
+          { rootMargin: '100% 0px' }
+        );
+        deferred.forEach((img) => lo.observe(img));
+      } else {
+        deferred.forEach(attach);
       }
       // Scroll progress hairline
       const bar = document.querySelector<HTMLElement>('.progress span');

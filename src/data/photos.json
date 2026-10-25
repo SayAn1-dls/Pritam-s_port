@@ -40,6 +40,7 @@
       "height": 2800,
       "originalSize": "4000x5333",
       "widths": [
+        240,
         480,
         960,
         1600
@@ -63,9 +64,11 @@
       "height": 1750,
       "originalSize": "6000x3750",
       "widths": [
+        240,
         480,
         960,
-        1600
+        1600,
+        2200
       ],
       "enhancement": "Resized only (Lanczos3), sRGB, EXIF stripped. No re-grading, no upscaling, no generative edits."
     },
@@ -86,9 +89,11 @@
       "height": 1750,
       "originalSize": "5857x3661",
       "widths": [
+        240,
         480,
         960,
-        1600
+        1600,
+        2200
       ],
       "enhancement": "Resized only (Lanczos3), sRGB, EXIF stripped. No re-grading, no upscaling, no generative edits."
     },
@@ -109,9 +114,11 @@
       "height": 1750,
       "originalSize": "6000x3750",
       "widths": [
+        240,
         480,
         960,
-        1600
+        1600,
+        2200
       ],
       "enhancement": "Resized only (Lanczos3), sRGB, EXIF stripped. No re-grading, no upscaling, no generative edits."
     },
@@ -132,9 +139,11 @@
       "height": 1750,
       "originalSize": "6000x3750",
       "widths": [
+        240,
         480,
         960,
-        1600
+        1600,
+        2200
       ],
       "enhancement": "Resized only (Lanczos3), sRGB, EXIF stripped. No re-grading, no upscaling, no generative edits."
     },
@@ -155,9 +164,11 @@
       "height": 1750,
       "originalSize": "5736x3585",
       "widths": [
+        240,
         480,
         960,
-        1600
+        1600,
+        2200
       ],
       "enhancement": "Resized only (Lanczos3), sRGB, EXIF stripped. No re-grading, no upscaling, no generative edits."
     },
@@ -178,9 +189,11 @@
       "height": 1750,
       "originalSize": "6000x3750",
       "widths": [
+        240,
         480,
         960,
-        1600
+        1600,
+        2200
       ],
       "enhancement": "Resized only (Lanczos3), sRGB, EXIF stripped. No re-grading, no upscaling, no generative edits."
     },
@@ -189,7 +202,7 @@
       "original": "FAKIRA/DSC_0972.jpg",
       "artist": "Fakira",
       "project": "fakira",
-      "category": "Portrait",
+      "category": "Close-up",
       "tone": "mono",
       "caption": "Between songs",
       "alt": "Black and white portrait of a smiling Fakira guitarist with curly hair at the mic",
@@ -201,6 +214,7 @@
       "height": 2800,
       "originalSize": "4000x5333",
       "widths": [
+        240,
         480,
         960,
         1600
@@ -224,9 +238,11 @@
       "height": 1750,
       "originalSize": "5791x3619",
       "widths": [
+        240,
         480,
         960,
-        1600
+        1600,
+        2200
       ],
       "enhancement": "Resized only (Lanczos3), sRGB, EXIF stripped. No re-grading, no upscaling, no generative edits."
     },
@@ -247,6 +263,7 @@
       "height": 2800,
       "originalSize": "4000x5333",
       "widths": [
+        240,
         480,
         960,
         1600
@@ -270,6 +287,7 @@
       "height": 2800,
       "originalSize": "4000x5333",
       "widths": [
+        240,
         480,
         960,
         1600
@@ -293,9 +311,11 @@
       "height": 1750,
       "originalSize": "6000x3750",
       "widths": [
+        240,
         480,
         960,
-        1600
+        1600,
+        2200
       ],
       "enhancement": "Resized only (Lanczos3), sRGB, EXIF stripped. No re-grading, no upscaling, no generative edits."
     },
@@ -316,9 +336,11 @@
       "height": 1750,
       "originalSize": "5945x3716",
       "widths": [
+        240,
         480,
         960,
-        1600
+        1600,
+        2200
       ],
       "enhancement": "Resized only (Lanczos3), sRGB, EXIF stripped. No re-grading, no upscaling, no generative edits."
     },
@@ -339,9 +361,11 @@
       "height": 1750,
       "originalSize": "5993x3746",
       "widths": [
+        240,
         480,
         960,
-        1600
+        1600,
+        2200
       ],
       "enhancement": "Resized only (Lanczos3), sRGB, EXIF stripped. No re-grading, no upscaling, no generative edits."
     },
@@ -362,9 +386,11 @@
       "height": 1750,
       "originalSize": "6000x3750",
       "widths": [
+        240,
         480,
         960,
-        1600
+        1600,
+        2200
       ],
       "enhancement": "Resized only (Lanczos3), sRGB, EXIF stripped. No re-grading, no upscaling, no generative edits."
     },
@@ -385,9 +411,11 @@
       "height": 1750,
       "originalSize": "6000x3750",
       "widths": [
+        240,
         480,
         960,
-        1600
+        1600,
+        2200
       ],
       "enhancement": "Resized only (Lanczos3), sRGB, EXIF stripped. No re-grading, no upscaling, no generative edits."
     },
@@ -408,9 +436,11 @@
       "height": 1750,
       "originalSize": "5894x3684",
       "widths": [
+        240,
         480,
         960,
-        1600
+        1600,
+        2200
       ],
       "enhancement": "Resized only (Lanczos3), sRGB, EXIF stripped. No re-grading, no upscaling, no generative edits."
     },
@@ -431,6 +461,7 @@
       "height": 2800,
       "originalSize": "4000x5333",
       "widths": [
+        240,
         480,
         960,
         1600
@@ -454,6 +485,7 @@
       "height": 2800,
       "originalSize": "4000x5333",
       "widths": [
+        240,
         480,
         960,
         1600
@@ -477,9 +509,11 @@
       "height": 1750,
       "originalSize": "6000x3750",
       "widths": [
+        240,
         480,
         960,
-        1600
+        1600,
+        2200
       ],
       "enhancement": "Resized only (Lanczos3), sRGB, EXIF stripped. No re-grading, no upscaling, no generative edits."
     },
@@ -500,9 +534,11 @@
       "height": 1750,
       "originalSize": "6000x3750",
       "widths": [
+        240,
         480,
         960,
-        1600
+        1600,
+        2200
       ],
       "enhancement": "Resized only (Lanczos3), sRGB, EXIF stripped. No re-grading, no upscaling, no generative edits."
     },
@@ -523,9 +559,11 @@
       "height": 1750,
       "originalSize": "6000x3750",
       "widths": [
+        240,
         480,
         960,
-        1600
+        1600,
+        2200
       ],
       "enhancement": "Resized only (Lanczos3), sRGB, EXIF stripped. No re-grading, no upscaling, no generative edits."
     },
@@ -546,9 +584,11 @@
       "height": 1750,
       "originalSize": "6000x3750",
       "widths": [
+        240,
         480,
         960,
-        1600
+        1600,
+        2200
       ],
       "enhancement": "Resized only (Lanczos3), sRGB, EXIF stripped. No re-grading, no upscaling, no generative edits."
     },
@@ -569,6 +609,7 @@
       "height": 2800,
       "originalSize": "4000x5333",
       "widths": [
+        240,
         480,
         960,
         1600
@@ -592,9 +633,11 @@
       "height": 1750,
       "originalSize": "5791x3619",
       "widths": [
+        240,
         480,
         960,
-        1600
+        1600,
+        2200
       ],
       "enhancement": "Resized only (Lanczos3), sRGB, EXIF stripped. No re-grading, no upscaling, no generative edits."
     },
@@ -615,6 +658,7 @@
       "height": 2800,
       "originalSize": "4000x5333",
       "widths": [
+        240,
         480,
         960,
         1600
@@ -638,6 +682,7 @@
       "height": 2800,
       "originalSize": "4000x5333",
       "widths": [
+        240,
         480,
         960,
         1600
@@ -661,9 +706,11 @@
       "height": 1750,
       "originalSize": "6000x3750",
       "widths": [
+        240,
         480,
         960,
-        1600
+        1600,
+        2200
       ],
       "enhancement": "Resized only (Lanczos3), sRGB, EXIF stripped. No re-grading, no upscaling, no generative edits."
     },
@@ -684,6 +731,7 @@
       "height": 2800,
       "originalSize": "4000x5333",
       "widths": [
+        240,
         480,
         960,
         1600
@@ -707,9 +755,11 @@
       "height": 1750,
       "originalSize": "5894x3684",
       "widths": [
+        240,
         480,
         960,
-        1600
+        1600,
+        2200
       ],
       "enhancement": "Resized only (Lanczos3), sRGB, EXIF stripped. No re-grading, no upscaling, no generative edits."
     },
@@ -730,6 +780,7 @@
       "height": 2800,
       "originalSize": "4000x5333",
       "widths": [
+        240,
         480,
         960,
         1600
@@ -741,10 +792,10 @@
       "original": "JEET GANGULY/DSC_0084.jpg",
       "artist": "Jeet Ganguly",
       "project": "jeet-ganguly",
-      "category": "Sponsor visibility",
+      "category": "On stage",
       "tone": "colour",
-      "caption": "Sponsor on the screen",
-      "alt": "Jeet Ganguly singing in front of the LED screen carrying a sponsor's branding",
+      "caption": "In front of the LED wall",
+      "alt": "Jeet Ganguly singing in front of the LED screen",
       "focus": "50% 30%",
       "credit": "Pritam Haldar",
       "public": true,
@@ -753,6 +804,7 @@
       "height": 2800,
       "originalSize": "3755x5006",
       "widths": [
+        240,
         480,
         960,
         1600
@@ -767,7 +819,7 @@
       "category": "Wide",
       "tone": "colour",
       "caption": "CO2 jets across the stage",
-      "alt": "Wide shot of the stage with CO2 jets and sponsor screen during Jeet Ganguly's set",
+      "alt": "Wide shot of the stage with CO2 jets and the LED screen during Jeet Ganguly's set",
       "focus": "",
       "credit": "Pritam Haldar",
       "public": true,
@@ -776,9 +828,11 @@
       "height": 1750,
       "originalSize": "5784x3615",
       "widths": [
+        240,
         480,
         960,
-        1600
+        1600,
+        2200
       ],
       "enhancement": "Resized only (Lanczos3), sRGB, EXIF stripped. No re-grading, no upscaling, no generative edits."
     },
@@ -799,9 +853,11 @@
       "height": 1750,
       "originalSize": "6000x3750",
       "widths": [
+        240,
         480,
         960,
-        1600
+        1600,
+        2200
       ],
       "enhancement": "Resized only (Lanczos3), sRGB, EXIF stripped. No re-grading, no upscaling, no generative edits."
     },
@@ -822,9 +878,11 @@
       "height": 1750,
       "originalSize": "6000x3750",
       "widths": [
+        240,
         480,
         960,
-        1600
+        1600,
+        2200
       ],
       "enhancement": "Resized only (Lanczos3), sRGB, EXIF stripped. No re-grading, no upscaling, no generative edits."
     },
@@ -845,9 +903,11 @@
       "height": 1750,
       "originalSize": "6000x3750",
       "widths": [
+        240,
         480,
         960,
-        1600
+        1600,
+        2200
       ],
       "enhancement": "Resized only (Lanczos3), sRGB, EXIF stripped. No re-grading, no upscaling, no generative edits."
     },
@@ -868,9 +928,11 @@
       "height": 1750,
       "originalSize": "6000x3750",
       "widths": [
+        240,
         480,
         960,
-        1600
+        1600,
+        2200
       ],
       "enhancement": "Resized only (Lanczos3), sRGB, EXIF stripped. No re-grading, no upscaling, no generative edits."
     },
@@ -891,6 +953,7 @@
       "height": 2800,
       "originalSize": "3748x4997",
       "widths": [
+        240,
         480,
         960,
         1600
@@ -914,9 +977,11 @@
       "height": 1750,
       "originalSize": "6000x3750",
       "widths": [
+        240,
         480,
         960,
-        1600
+        1600,
+        2200
       ],
       "enhancement": "Resized only (Lanczos3), sRGB, EXIF stripped. No re-grading, no upscaling, no generative edits."
     },
@@ -937,9 +1002,11 @@
       "height": 1750,
       "originalSize": "6000x3750",
       "widths": [
+        240,
         480,
         960,
-        1600
+        1600,
+        2200
       ],
       "enhancement": "Resized only (Lanczos3), sRGB, EXIF stripped. No re-grading, no upscaling, no generative edits."
     },
@@ -960,6 +1027,7 @@
       "height": 2800,
       "originalSize": "4000x5333",
       "widths": [
+        240,
         480,
         960,
         1600
@@ -983,9 +1051,11 @@
       "height": 1750,
       "originalSize": "5878x3674",
       "widths": [
+        240,
         480,
         960,
-        1600
+        1600,
+        2200
       ],
       "enhancement": "Resized only (Lanczos3), sRGB, EXIF stripped. No re-grading, no upscaling, no generative edits."
     },
@@ -994,10 +1064,10 @@
       "original": "JEET GANGULY/DSC_0908.jpg",
       "artist": "Jeet Ganguly",
       "project": "jeet-ganguly",
-      "category": "Sponsor visibility",
+      "category": "On stage",
       "tone": "colour",
-      "caption": "Green screen, branded stage",
-      "alt": "Jeet Ganguly performing against a green LED screen carrying sponsor branding",
+      "caption": "Under green light",
+      "alt": "Jeet Ganguly performing against a green LED screen",
       "focus": "",
       "credit": "Pritam Haldar",
       "public": true,
@@ -1006,9 +1076,11 @@
       "height": 1867,
       "originalSize": "6000x4000",
       "widths": [
+        240,
         480,
         960,
-        1600
+        1600,
+        2200
       ],
       "enhancement": "Resized only (Lanczos3), sRGB, EXIF stripped. No re-grading, no upscaling, no generative edits."
     },
@@ -1020,7 +1092,7 @@
       "category": "Band",
       "tone": "colour",
       "caption": "Grin in front of the screen",
-      "alt": "Guitarist grinning while playing in front of the sponsor screen",
+      "alt": "Guitarist grinning while playing in front of the LED screen",
       "focus": "50% 30%",
       "credit": "Pritam Haldar",
       "public": true,
@@ -1029,6 +1101,7 @@
       "height": 2800,
       "originalSize": "4000x5333",
       "widths": [
+        240,
         480,
         960,
         1600
@@ -1052,6 +1125,7 @@
       "height": 2800,
       "originalSize": "3841x5121",
       "widths": [
+        240,
         480,
         960,
         1600
@@ -1075,9 +1149,11 @@
       "height": 2800,
       "originalSize": "3916x4895",
       "widths": [
+        240,
         480,
         960,
-        1600
+        1600,
+        2200
       ],
       "enhancement": "Resized only (Lanczos3), sRGB, EXIF stripped. No re-grading, no upscaling, no generative edits."
     },
@@ -1098,9 +1174,11 @@
       "height": 2800,
       "originalSize": "2302x2878",
       "widths": [
+        240,
         480,
         960,
-        1600
+        1600,
+        2200
       ],
       "enhancement": "Resized only (Lanczos3), sRGB, EXIF stripped. No re-grading, no upscaling, no generative edits."
     },
@@ -1121,9 +1199,11 @@
       "height": 2800,
       "originalSize": "2907x3633",
       "widths": [
+        240,
         480,
         960,
-        1600
+        1600,
+        2200
       ],
       "enhancement": "Resized only (Lanczos3), sRGB, EXIF stripped. No re-grading, no upscaling, no generative edits."
     },
@@ -1144,9 +1224,11 @@
       "height": 2800,
       "originalSize": "4024x5030",
       "widths": [
+        240,
         480,
         960,
-        1600
+        1600,
+        2200
       ],
       "enhancement": "Resized only (Lanczos3), sRGB, EXIF stripped. No re-grading, no upscaling, no generative edits."
     },
@@ -1167,9 +1249,11 @@
       "height": 1863,
       "originalSize": "5442x3621",
       "widths": [
+        240,
         480,
         960,
-        1600
+        1600,
+        2200
       ],
       "enhancement": "Resized only (Lanczos3), sRGB, EXIF stripped. No re-grading, no upscaling, no generative edits."
     },
@@ -1190,9 +1274,11 @@
       "height": 2800,
       "originalSize": "3592x4490",
       "widths": [
+        240,
         480,
         960,
-        1600
+        1600,
+        2200
       ],
       "enhancement": "Resized only (Lanczos3), sRGB, EXIF stripped. No re-grading, no upscaling, no generative edits."
     },
@@ -1213,9 +1299,11 @@
       "height": 2800,
       "originalSize": "2832x3540",
       "widths": [
+        240,
         480,
         960,
-        1600
+        1600,
+        2200
       ],
       "enhancement": "Resized only (Lanczos3), sRGB, EXIF stripped. No re-grading, no upscaling, no generative edits."
     },
@@ -1236,9 +1324,11 @@
       "height": 1863,
       "originalSize": "4897x3258",
       "widths": [
+        240,
         480,
         960,
-        1600
+        1600,
+        2200
       ],
       "enhancement": "Resized only (Lanczos3), sRGB, EXIF stripped. No re-grading, no upscaling, no generative edits."
     },
@@ -1259,9 +1349,11 @@
       "height": 2800,
       "originalSize": "3772x4715",
       "widths": [
+        240,
         480,
         960,
-        1600
+        1600,
+        2200
       ],
       "enhancement": "Resized only (Lanczos3), sRGB, EXIF stripped. No re-grading, no upscaling, no generative edits."
     },
@@ -1282,9 +1374,11 @@
       "height": 1863,
       "originalSize": "5255x3496",
       "widths": [
+        240,
         480,
         960,
-        1600
+        1600,
+        2200
       ],
       "enhancement": "Resized only (Lanczos3), sRGB, EXIF stripped. No re-grading, no upscaling, no generative edits."
     },
@@ -1305,9 +1399,11 @@
       "height": 1863,
       "originalSize": "3683x2450",
       "widths": [
+        240,
         480,
         960,
-        1600
+        1600,
+        2200
       ],
       "enhancement": "Resized only (Lanczos3), sRGB, EXIF stripped. No re-grading, no upscaling, no generative edits."
     },
@@ -1328,9 +1424,11 @@
       "height": 1863,
       "originalSize": "5550x3693",
       "widths": [
+        240,
         480,
         960,
-        1600
+        1600,
+        2200
       ],
       "enhancement": "Resized only (Lanczos3), sRGB, EXIF stripped. No re-grading, no upscaling, no generative edits."
     },
@@ -1351,9 +1449,11 @@
       "height": 1863,
       "originalSize": "6048x4024",
       "widths": [
+        240,
         480,
         960,
-        1600
+        1600,
+        2200
       ],
       "enhancement": "Resized only (Lanczos3), sRGB, EXIF stripped. No re-grading, no upscaling, no generative edits."
     },
@@ -1374,9 +1474,11 @@
       "height": 2800,
       "originalSize": "4000x5000",
       "widths": [
+        240,
         480,
         960,
-        1600
+        1600,
+        2200
       ],
       "enhancement": "Resized only (Lanczos3), sRGB, EXIF stripped. No re-grading, no upscaling, no generative edits."
     },
@@ -1397,9 +1499,11 @@
       "height": 1867,
       "originalSize": "6000x4000",
       "widths": [
+        240,
         480,
         960,
-        1600
+        1600,
+        2200
       ],
       "enhancement": "Resized only (Lanczos3), sRGB, EXIF stripped. No re-grading, no upscaling, no generative edits."
     },
@@ -1420,9 +1524,11 @@
       "height": 2800,
       "originalSize": "3888x4860",
       "widths": [
+        240,
         480,
         960,
-        1600
+        1600,
+        2200
       ],
       "enhancement": "Resized only (Lanczos3), sRGB, EXIF stripped. No re-grading, no upscaling, no generative edits."
     },
@@ -1443,9 +1549,11 @@
       "height": 1867,
       "originalSize": "5404x3603",
       "widths": [
+        240,
         480,
         960,
-        1600
+        1600,
+        2200
       ],
       "enhancement": "Resized only (Lanczos3), sRGB, EXIF stripped. No re-grading, no upscaling, no generative edits."
     },
@@ -1466,9 +1574,11 @@
       "height": 2800,
       "originalSize": "4000x5000",
       "widths": [
+        240,
         480,
         960,
-        1600
+        1600,
+        2200
       ],
       "enhancement": "Resized only (Lanczos3), sRGB, EXIF stripped. No re-grading, no upscaling, no generative edits."
     },
@@ -1489,9 +1599,11 @@
       "height": 1867,
       "originalSize": "6000x4000",
       "widths": [
+        240,
         480,
         960,
-        1600
+        1600,
+        2200
       ],
       "enhancement": "Resized only (Lanczos3), sRGB, EXIF stripped. No re-grading, no upscaling, no generative edits."
     },
@@ -1512,9 +1624,11 @@
       "height": 1867,
       "originalSize": "6000x4000",
       "widths": [
+        240,
         480,
         960,
-        1600
+        1600,
+        2200
       ],
       "enhancement": "Resized only (Lanczos3), sRGB, EXIF stripped. No re-grading, no upscaling, no generative edits."
     },
@@ -1523,7 +1637,7 @@
       "original": "MONALI THAKUR/IMG_0917 L.jpg",
       "artist": "Monali Thakur",
       "project": "monali-thakur",
-      "category": "Portrait",
+      "category": "Close-up",
       "tone": "colour",
       "caption": "Smiling at the front row",
       "alt": "Monali Thakur smiling toward the audience under purple and pink light",
@@ -1535,9 +1649,11 @@
       "height": 2800,
       "originalSize": "3761x4702",
       "widths": [
+        240,
         480,
         960,
-        1600
+        1600,
+        2200
       ],
       "enhancement": "Resized only (Lanczos3), sRGB, EXIF stripped. No re-grading, no upscaling, no generative edits."
     },
@@ -1558,9 +1674,11 @@
       "height": 2800,
       "originalSize": "3034x3792",
       "widths": [
+        240,
         480,
         960,
-        1600
+        1600,
+        2200
       ],
       "enhancement": "Resized only (Lanczos3), sRGB, EXIF stripped. No re-grading, no upscaling, no generative edits."
     },
@@ -1581,9 +1699,11 @@
       "height": 1867,
       "originalSize": "6000x4000",
       "widths": [
+        240,
         480,
         960,
-        1600
+        1600,
+        2200
       ],
       "enhancement": "Resized only (Lanczos3), sRGB, EXIF stripped. No re-grading, no upscaling, no generative edits."
     },
@@ -1604,9 +1724,11 @@
       "height": 2800,
       "originalSize": "4000x5000",
       "widths": [
+        240,
         480,
         960,
-        1600
+        1600,
+        2200
       ],
       "enhancement": "Resized only (Lanczos3), sRGB, EXIF stripped. No re-grading, no upscaling, no generative edits."
     },
@@ -1627,9 +1749,11 @@
       "height": 1867,
       "originalSize": "6000x4000",
       "widths": [
+        240,
         480,
         960,
-        1600
+        1600,
+        2200
       ],
       "enhancement": "Resized only (Lanczos3), sRGB, EXIF stripped. No re-grading, no upscaling, no generative edits."
     },
@@ -1650,9 +1774,11 @@
       "height": 1867,
       "originalSize": "5631x3754",
       "widths": [
+        240,
         480,
         960,
-        1600
+        1600,
+        2200
       ],
       "enhancement": "Resized only (Lanczos3), sRGB, EXIF stripped. No re-grading, no upscaling, no generative edits."
     },
@@ -1673,6 +1799,7 @@
       "height": 1365,
       "originalSize": "2048x1365",
       "widths": [
+        240,
         480,
         960,
         1600
@@ -1696,6 +1823,7 @@
       "height": 1365,
       "originalSize": "2048x1365",
       "widths": [
+        240,
         480,
         960,
         1600
@@ -1719,6 +1847,7 @@
       "height": 2048,
       "originalSize": "1365x2048",
       "widths": [
+        240,
         480,
         960
       ],
@@ -1741,6 +1870,7 @@
       "height": 1365,
       "originalSize": "2048x1365",
       "widths": [
+        240,
         480,
         960,
         1600
@@ -1764,6 +1894,7 @@
       "height": 1365,
       "originalSize": "2048x1365",
       "widths": [
+        240,
         480,
         960,
         1600
@@ -1787,6 +1918,7 @@
       "height": 1365,
       "originalSize": "2048x1365",
       "widths": [
+        240,
         480,
         960,
         1600
@@ -1810,6 +1942,7 @@
       "height": 2048,
       "originalSize": "1365x2048",
       "widths": [
+        240,
         480,
         960
       ],
@@ -1832,6 +1965,7 @@
       "height": 1365,
       "originalSize": "2048x1365",
       "widths": [
+        240,
         480,
         960,
         1600
@@ -1855,6 +1989,7 @@
       "height": 1365,
       "originalSize": "2048x1365",
       "widths": [
+        240,
         480,
         960,
         1600
@@ -1878,6 +2013,7 @@
       "height": 2048,
       "originalSize": "1365x2048",
       "widths": [
+        240,
         480,
         960
       ],
@@ -1900,6 +2036,7 @@
       "height": 1365,
       "originalSize": "2048x1365",
       "widths": [
+        240,
         480,
         960,
         1600
@@ -1911,7 +2048,7 @@
       "original": "ANUPAM ROY/342220569_754705196109734_523146374578082658_n.jpg",
       "artist": "Anupam Roy",
       "project": "anupam-roy",
-      "category": "Portrait",
+      "category": "Close-up",
       "tone": "colour",
       "caption": "Mic up, close",
       "alt": "Close, low-angle image of Anupam Roy singing with the mic raised",
@@ -1923,6 +2060,7 @@
       "height": 2048,
       "originalSize": "1366x2048",
       "widths": [
+        240,
         480,
         960
       ],
@@ -1945,8 +2083,2420 @@
       "height": 2048,
       "originalSize": "1365x2048",
       "widths": [
+        240,
         480,
         960
+      ],
+      "enhancement": "Resized only (Lanczos3), sRGB, EXIF stripped. No re-grading, no upscaling, no generative edits."
+    },
+    {
+      "id": "anupam-roy-998776",
+      "original": "ANUPAM ROY/341998776_1620754528440791_4651325865671253498_n.jpg",
+      "artist": "Anupam Roy",
+      "project": "anupam-roy",
+      "category": "On stage",
+      "tone": "colour",
+      "caption": "",
+      "alt": "Anupam Roy singing under green light with confetti in the air",
+      "credit": "Pritam Haldar",
+      "public": true,
+      "downloadable": false,
+      "width": 2048,
+      "height": 1365,
+      "originalSize": "2048x1365",
+      "widths": [
+        240,
+        480,
+        960,
+        1600
+      ],
+      "enhancement": "Resized only (Lanczos3), sRGB, EXIF stripped. No re-grading, no upscaling, no generative edits."
+    },
+    {
+      "id": "anupam-roy-031362",
+      "original": "ANUPAM ROY/342031362_208019481944148_4532210446875859225_n.jpg",
+      "artist": "Anupam Roy",
+      "project": "anupam-roy",
+      "category": "Band",
+      "tone": "mono",
+      "caption": "",
+      "alt": "Drummer raising both hands above the kit, in black and white",
+      "credit": "Pritam Haldar",
+      "public": true,
+      "downloadable": false,
+      "width": 2048,
+      "height": 1366,
+      "originalSize": "2048x1366",
+      "widths": [
+        240,
+        480,
+        960,
+        1600
+      ],
+      "enhancement": "Resized only (Lanczos3), sRGB, EXIF stripped. No re-grading, no upscaling, no generative edits."
+    },
+    {
+      "id": "anupam-roy-035291",
+      "original": "ANUPAM ROY/342035291_622372839745643_99034757124360958_n.jpg",
+      "artist": "Anupam Roy",
+      "project": "anupam-roy",
+      "category": "Monochrome",
+      "tone": "mono",
+      "caption": "",
+      "alt": "Anupam Roy smiling on stage as confetti falls, in black and white",
+      "credit": "Pritam Haldar",
+      "public": true,
+      "downloadable": false,
+      "width": 2048,
+      "height": 1365,
+      "originalSize": "2048x1365",
+      "widths": [
+        240,
+        480,
+        960,
+        1600
+      ],
+      "enhancement": "Resized only (Lanczos3), sRGB, EXIF stripped. No re-grading, no upscaling, no generative edits."
+    },
+    {
+      "id": "anupam-roy-051733",
+      "original": "ANUPAM ROY/342051733_614741963574503_6122969455142946321_n.jpg",
+      "artist": "Anupam Roy",
+      "project": "anupam-roy",
+      "category": "Band",
+      "tone": "mono",
+      "caption": "",
+      "alt": "Drummer playing behind the kit, in black and white",
+      "credit": "Pritam Haldar",
+      "public": true,
+      "downloadable": false,
+      "width": 2048,
+      "height": 1365,
+      "originalSize": "2048x1365",
+      "widths": [
+        240,
+        480,
+        960,
+        1600
+      ],
+      "enhancement": "Resized only (Lanczos3), sRGB, EXIF stripped. No re-grading, no upscaling, no generative edits."
+    },
+    {
+      "id": "anupam-roy-053469",
+      "original": "ANUPAM ROY/342053469_180732691501183_504371222592918232_n.jpg",
+      "artist": "Anupam Roy",
+      "project": "anupam-roy",
+      "category": "Band",
+      "tone": "mono",
+      "caption": "",
+      "alt": "Bassist playing under a beam of light with confetti falling, in black and white",
+      "credit": "Pritam Haldar",
+      "public": true,
+      "downloadable": false,
+      "width": 2048,
+      "height": 1365,
+      "originalSize": "2048x1365",
+      "widths": [
+        240,
+        480,
+        960,
+        1600
+      ],
+      "enhancement": "Resized only (Lanczos3), sRGB, EXIF stripped. No re-grading, no upscaling, no generative edits."
+    },
+    {
+      "id": "anupam-roy-053478",
+      "original": "ANUPAM ROY/342053478_2296708050511694_404968541660689984_n.jpg",
+      "artist": "Anupam Roy",
+      "project": "anupam-roy",
+      "category": "Band",
+      "tone": "mono",
+      "caption": "",
+      "alt": "Guitarist playing under a fan of light beams, in black and white",
+      "credit": "Pritam Haldar",
+      "public": true,
+      "downloadable": false,
+      "width": 2048,
+      "height": 1365,
+      "originalSize": "2048x1365",
+      "widths": [
+        240,
+        480,
+        960,
+        1600
+      ],
+      "enhancement": "Resized only (Lanczos3), sRGB, EXIF stripped. No re-grading, no upscaling, no generative edits."
+    },
+    {
+      "id": "anupam-roy-169508",
+      "original": "ANUPAM ROY/342169508_249121334235825_5827486462983433978_n.jpg",
+      "artist": "Anupam Roy",
+      "project": "anupam-roy",
+      "category": "On stage",
+      "tone": "colour",
+      "caption": "",
+      "alt": "Anupam Roy with arms spread wide and an acoustic guitar, in front of an LED landscape",
+      "credit": "Pritam Haldar",
+      "public": true,
+      "downloadable": false,
+      "width": 960,
+      "height": 640,
+      "originalSize": "960x640",
+      "widths": [
+        240,
+        480
+      ],
+      "enhancement": "Resized only (Lanczos3), sRGB, EXIF stripped. No re-grading, no upscaling, no generative edits."
+    },
+    {
+      "id": "anupam-roy-183334",
+      "original": "ANUPAM ROY/342183334_733464545188716_2815528376007813973_n.jpg",
+      "artist": "Anupam Roy",
+      "project": "anupam-roy",
+      "category": "Close-up",
+      "tone": "colour",
+      "caption": "",
+      "alt": "Anupam Roy singing at the microphone under blue light",
+      "credit": "Pritam Haldar",
+      "public": true,
+      "downloadable": false,
+      "width": 2048,
+      "height": 1365,
+      "originalSize": "2048x1365",
+      "widths": [
+        240,
+        480,
+        960,
+        1600
+      ],
+      "enhancement": "Resized only (Lanczos3), sRGB, EXIF stripped. No re-grading, no upscaling, no generative edits."
+    },
+    {
+      "id": "anupam-roy-186021",
+      "original": "ANUPAM ROY/342186021_511158811059057_8281513057956223709_n.jpg",
+      "artist": "Anupam Roy",
+      "project": "anupam-roy",
+      "category": "Wide",
+      "tone": "colour",
+      "caption": "",
+      "alt": "The stage in near-darkness with coloured LED panels",
+      "credit": "Pritam Haldar",
+      "public": true,
+      "downloadable": false,
+      "width": 2048,
+      "height": 1366,
+      "originalSize": "2048x1366",
+      "widths": [
+        240,
+        480,
+        960,
+        1600
+      ],
+      "enhancement": "Resized only (Lanczos3), sRGB, EXIF stripped. No re-grading, no upscaling, no generative edits."
+    },
+    {
+      "id": "anupam-roy-211841",
+      "original": "ANUPAM ROY/342211841_1041289980165244_8879253343701618645_n.jpg",
+      "artist": "Anupam Roy",
+      "project": "anupam-roy",
+      "category": "Monochrome",
+      "tone": "mono",
+      "caption": "",
+      "alt": "Anupam Roy smiling with an electric guitar as sparks fall behind him, in black and white",
+      "credit": "Pritam Haldar",
+      "public": true,
+      "downloadable": false,
+      "width": 2048,
+      "height": 1365,
+      "originalSize": "2048x1365",
+      "widths": [
+        240,
+        480,
+        960,
+        1600
+      ],
+      "enhancement": "Resized only (Lanczos3), sRGB, EXIF stripped. No re-grading, no upscaling, no generative edits."
+    },
+    {
+      "id": "anupam-roy-341817",
+      "original": "ANUPAM ROY/342341817_184732841071105_1720820059641311713_n.jpg",
+      "artist": "Anupam Roy",
+      "project": "anupam-roy",
+      "category": "On stage",
+      "tone": "colour",
+      "caption": "",
+      "alt": "Anupam Roy at the microphone in low light",
+      "credit": "Pritam Haldar",
+      "public": true,
+      "downloadable": false,
+      "width": 2048,
+      "height": 1365,
+      "originalSize": "2048x1365",
+      "widths": [
+        240,
+        480,
+        960,
+        1600
+      ],
+      "enhancement": "Resized only (Lanczos3), sRGB, EXIF stripped. No re-grading, no upscaling, no generative edits."
+    },
+    {
+      "id": "cactus-dsc-0014",
+      "original": "CACTUSS/DSC_0014.jpg",
+      "artist": "Cactus",
+      "project": "cactus",
+      "category": "Close-up",
+      "tone": "colour",
+      "caption": "",
+      "alt": "Cactus vocalist singing under blue light and haze",
+      "credit": "Pritam Haldar",
+      "public": true,
+      "downloadable": false,
+      "width": 2800,
+      "height": 1867,
+      "originalSize": "6000x4000",
+      "widths": [
+        240,
+        480,
+        960,
+        1600,
+        2200
+      ],
+      "enhancement": "Resized only (Lanczos3), sRGB, EXIF stripped. No re-grading, no upscaling, no generative edits."
+    },
+    {
+      "id": "cactus-dsc-0152",
+      "original": "CACTUSS/DSC_0152.jpg",
+      "artist": "Cactus",
+      "project": "cactus",
+      "category": "Monochrome",
+      "tone": "mono",
+      "caption": "",
+      "alt": "Cactus vocalist singing in front of the keyboards, in black and white",
+      "credit": "Pritam Haldar",
+      "public": true,
+      "downloadable": false,
+      "width": 2800,
+      "height": 1750,
+      "originalSize": "6000x3750",
+      "widths": [
+        240,
+        480,
+        960,
+        1600,
+        2200
+      ],
+      "enhancement": "Resized only (Lanczos3), sRGB, EXIF stripped. No re-grading, no upscaling, no generative edits."
+    },
+    {
+      "id": "cactus-dsc-0166",
+      "original": "CACTUSS/DSC_0166.jpg",
+      "artist": "Cactus",
+      "project": "cactus",
+      "category": "On stage",
+      "tone": "colour",
+      "caption": "",
+      "alt": "Both Cactus vocalists singing side by side in the haze",
+      "credit": "Pritam Haldar",
+      "public": true,
+      "downloadable": false,
+      "width": 2800,
+      "height": 1750,
+      "originalSize": "6000x3750",
+      "widths": [
+        240,
+        480,
+        960,
+        1600,
+        2200
+      ],
+      "enhancement": "Resized only (Lanczos3), sRGB, EXIF stripped. No re-grading, no upscaling, no generative edits."
+    },
+    {
+      "id": "cactus-dsc-0171",
+      "original": "CACTUSS/DSC_0171.jpg",
+      "artist": "Cactus",
+      "project": "cactus",
+      "category": "Monochrome",
+      "tone": "mono",
+      "caption": "",
+      "alt": "Cactus vocalist singing in silhouette against stage haze, in black and white",
+      "credit": "Pritam Haldar",
+      "public": true,
+      "downloadable": false,
+      "width": 2800,
+      "height": 1750,
+      "originalSize": "6000x3750",
+      "widths": [
+        240,
+        480,
+        960,
+        1600,
+        2200
+      ],
+      "enhancement": "Resized only (Lanczos3), sRGB, EXIF stripped. No re-grading, no upscaling, no generative edits."
+    },
+    {
+      "id": "cactus-dsc-0242",
+      "original": "CACTUSS/DSC_0242.jpg",
+      "artist": "Cactus",
+      "project": "cactus",
+      "category": "Wide",
+      "tone": "colour",
+      "caption": "",
+      "alt": "Confetti bursting over the stage and crowd during the Cactus set",
+      "credit": "Pritam Haldar",
+      "public": true,
+      "downloadable": false,
+      "width": 2800,
+      "height": 1750,
+      "originalSize": "6000x3750",
+      "widths": [
+        240,
+        480,
+        960,
+        1600,
+        2200
+      ],
+      "enhancement": "Resized only (Lanczos3), sRGB, EXIF stripped. No re-grading, no upscaling, no generative edits."
+    },
+    {
+      "id": "cactus-dsc-0260",
+      "original": "CACTUSS/DSC_0260.jpg",
+      "artist": "Cactus",
+      "project": "cactus",
+      "category": "Crowd",
+      "tone": "colour",
+      "caption": "",
+      "alt": "Cactus vocalist with a raised fist above the crowd",
+      "credit": "Pritam Haldar",
+      "public": true,
+      "downloadable": false,
+      "width": 2800,
+      "height": 1750,
+      "originalSize": "5802x3626",
+      "widths": [
+        240,
+        480,
+        960,
+        1600,
+        2200
+      ],
+      "enhancement": "Resized only (Lanczos3), sRGB, EXIF stripped. No re-grading, no upscaling, no generative edits."
+    },
+    {
+      "id": "cactus-dsc-0263",
+      "original": "CACTUSS/DSC_0263.jpg",
+      "artist": "Cactus",
+      "project": "cactus",
+      "category": "Crowd",
+      "tone": "colour",
+      "caption": "",
+      "alt": "Crowd with hands raised as CO2 jets fire across the Cactus stage",
+      "credit": "Pritam Haldar",
+      "public": true,
+      "downloadable": false,
+      "width": 2800,
+      "height": 1750,
+      "originalSize": "5542x3464",
+      "widths": [
+        240,
+        480,
+        960,
+        1600,
+        2200
+      ],
+      "enhancement": "Resized only (Lanczos3), sRGB, EXIF stripped. No re-grading, no upscaling, no generative edits."
+    },
+    {
+      "id": "cactus-dsc-0339",
+      "original": "CACTUSS/DSC_0339.jpg",
+      "artist": "Cactus",
+      "project": "cactus",
+      "category": "Close-up",
+      "tone": "colour",
+      "caption": "",
+      "alt": "Cactus vocalist singing through orange smoke",
+      "credit": "Pritam Haldar",
+      "public": true,
+      "downloadable": false,
+      "width": 2800,
+      "height": 1750,
+      "originalSize": "6000x3750",
+      "widths": [
+        240,
+        480,
+        960,
+        1600,
+        2200
+      ],
+      "enhancement": "Resized only (Lanczos3), sRGB, EXIF stripped. No re-grading, no upscaling, no generative edits."
+    },
+    {
+      "id": "cactus-dsc-0340",
+      "original": "CACTUSS/DSC_0340.jpg",
+      "artist": "Cactus",
+      "project": "cactus",
+      "category": "On stage",
+      "tone": "colour",
+      "caption": "",
+      "alt": "Cactus vocalist inside a cloud of yellow smoke with a hand graphic on the screen",
+      "credit": "Pritam Haldar",
+      "public": true,
+      "downloadable": false,
+      "width": 2800,
+      "height": 1750,
+      "originalSize": "6000x3750",
+      "widths": [
+        240,
+        480,
+        960,
+        1600,
+        2200
+      ],
+      "enhancement": "Resized only (Lanczos3), sRGB, EXIF stripped. No re-grading, no upscaling, no generative edits."
+    },
+    {
+      "id": "cactus-dsc-0353",
+      "original": "CACTUSS/DSC_0353.jpg",
+      "artist": "Cactus",
+      "project": "cactus",
+      "category": "On stage",
+      "tone": "colour",
+      "caption": "",
+      "alt": "Cactus vocalist with a raised fist under dark stage light",
+      "credit": "Pritam Haldar",
+      "public": true,
+      "downloadable": false,
+      "width": 2800,
+      "height": 1750,
+      "originalSize": "6000x3750",
+      "widths": [
+        240,
+        480,
+        960,
+        1600,
+        2200
+      ],
+      "enhancement": "Resized only (Lanczos3), sRGB, EXIF stripped. No re-grading, no upscaling, no generative edits."
+    },
+    {
+      "id": "cactus-dsc-0394",
+      "original": "CACTUSS/DSC_0394.jpg",
+      "artist": "Cactus",
+      "project": "cactus",
+      "category": "On stage",
+      "tone": "colour",
+      "caption": "",
+      "alt": "Cactus vocalist pointing out over the crowd through yellow haze",
+      "credit": "Pritam Haldar",
+      "public": true,
+      "downloadable": false,
+      "width": 2800,
+      "height": 1750,
+      "originalSize": "6000x3750",
+      "widths": [
+        240,
+        480,
+        960,
+        1600,
+        2200
+      ],
+      "enhancement": "Resized only (Lanczos3), sRGB, EXIF stripped. No re-grading, no upscaling, no generative edits."
+    },
+    {
+      "id": "cactus-dsc-0412",
+      "original": "CACTUSS/DSC_0412.jpg",
+      "artist": "Cactus",
+      "project": "cactus",
+      "category": "Wide",
+      "tone": "colour",
+      "caption": "",
+      "alt": "Wide view of the open-air Cactus stage under green beams, with CO2 jets",
+      "credit": "Pritam Haldar",
+      "public": true,
+      "downloadable": false,
+      "width": 2800,
+      "height": 1750,
+      "originalSize": "5615x3509",
+      "widths": [
+        240,
+        480,
+        960,
+        1600,
+        2200
+      ],
+      "enhancement": "Resized only (Lanczos3), sRGB, EXIF stripped. No re-grading, no upscaling, no generative edits."
+    },
+    {
+      "id": "fakira-dsc-0568",
+      "original": "FAKIRA/DSC_0568.jpg",
+      "artist": "Fakira",
+      "project": "fakira",
+      "category": "Monochrome",
+      "tone": "mono",
+      "caption": "",
+      "alt": "Fakira's singer at the microphone, in black and white",
+      "credit": "Pritam Haldar",
+      "public": true,
+      "downloadable": false,
+      "width": 2800,
+      "height": 1750,
+      "originalSize": "6000x3750",
+      "widths": [
+        240,
+        480,
+        960,
+        1600,
+        2200
+      ],
+      "enhancement": "Resized only (Lanczos3), sRGB, EXIF stripped. No re-grading, no upscaling, no generative edits."
+    },
+    {
+      "id": "fakira-dsc-0589",
+      "original": "FAKIRA/DSC_0589.jpg",
+      "artist": "Fakira",
+      "project": "fakira",
+      "category": "On stage",
+      "tone": "colour",
+      "caption": "",
+      "alt": "Fakira's singer playing acoustic guitar against fire on the LED screen",
+      "credit": "Pritam Haldar",
+      "public": true,
+      "downloadable": false,
+      "width": 2800,
+      "height": 1750,
+      "originalSize": "5945x3716",
+      "widths": [
+        240,
+        480,
+        960,
+        1600,
+        2200
+      ],
+      "enhancement": "Resized only (Lanczos3), sRGB, EXIF stripped. No re-grading, no upscaling, no generative edits."
+    },
+    {
+      "id": "fakira-dsc-0615",
+      "original": "FAKIRA/DSC_0615.jpg",
+      "artist": "Fakira",
+      "project": "fakira",
+      "category": "Monochrome",
+      "tone": "mono",
+      "caption": "",
+      "alt": "Fakira's singer seen from behind, hair over his shoulders, in black and white",
+      "credit": "Pritam Haldar",
+      "public": true,
+      "downloadable": false,
+      "width": 2800,
+      "height": 1750,
+      "originalSize": "6000x3750",
+      "widths": [
+        240,
+        480,
+        960,
+        1600,
+        2200
+      ],
+      "enhancement": "Resized only (Lanczos3), sRGB, EXIF stripped. No re-grading, no upscaling, no generative edits."
+    },
+    {
+      "id": "fakira-dsc-0625",
+      "original": "FAKIRA/DSC_0625.jpg",
+      "artist": "Fakira",
+      "project": "fakira",
+      "category": "Monochrome",
+      "tone": "mono",
+      "caption": "",
+      "alt": "Close-up of Fakira's singer at the microphone, in black and white",
+      "credit": "Pritam Haldar",
+      "public": true,
+      "downloadable": false,
+      "width": 2800,
+      "height": 1750,
+      "originalSize": "6000x3750",
+      "widths": [
+        240,
+        480,
+        960,
+        1600,
+        2200
+      ],
+      "enhancement": "Resized only (Lanczos3), sRGB, EXIF stripped. No re-grading, no upscaling, no generative edits."
+    },
+    {
+      "id": "fakira-dsc-0656",
+      "original": "FAKIRA/DSC_0656.jpg",
+      "artist": "Fakira",
+      "project": "fakira",
+      "category": "On stage",
+      "tone": "colour",
+      "caption": "",
+      "alt": "Fakira's singer raising both hands under blue light, with the percussionist behind",
+      "credit": "Pritam Haldar",
+      "public": true,
+      "downloadable": false,
+      "width": 2800,
+      "height": 1750,
+      "originalSize": "5857x3661",
+      "widths": [
+        240,
+        480,
+        960,
+        1600,
+        2200
+      ],
+      "enhancement": "Resized only (Lanczos3), sRGB, EXIF stripped. No re-grading, no upscaling, no generative edits."
+    },
+    {
+      "id": "fakira-dsc-0659",
+      "original": "FAKIRA/DSC_0659.jpg",
+      "artist": "Fakira",
+      "project": "fakira",
+      "category": "Monochrome",
+      "tone": "mono",
+      "caption": "",
+      "alt": "Fakira's singer with arms raised in the haze, in black and white",
+      "credit": "Pritam Haldar",
+      "public": true,
+      "downloadable": false,
+      "width": 2800,
+      "height": 1750,
+      "originalSize": "6000x3750",
+      "widths": [
+        240,
+        480,
+        960,
+        1600,
+        2200
+      ],
+      "enhancement": "Resized only (Lanczos3), sRGB, EXIF stripped. No re-grading, no upscaling, no generative edits."
+    },
+    {
+      "id": "fakira-dsc-0669",
+      "original": "FAKIRA/DSC_0669.jpg",
+      "artist": "Fakira",
+      "project": "fakira",
+      "category": "On stage",
+      "tone": "colour",
+      "caption": "",
+      "alt": "Fakira's singer playing acoustic guitar in front of a blue LED graphic",
+      "credit": "Pritam Haldar",
+      "public": true,
+      "downloadable": false,
+      "width": 2800,
+      "height": 1750,
+      "originalSize": "5857x3661",
+      "widths": [
+        240,
+        480,
+        960,
+        1600,
+        2200
+      ],
+      "enhancement": "Resized only (Lanczos3), sRGB, EXIF stripped. No re-grading, no upscaling, no generative edits."
+    },
+    {
+      "id": "fakira-dsc-0674",
+      "original": "FAKIRA/DSC_0674.jpg",
+      "artist": "Fakira",
+      "project": "fakira",
+      "category": "Monochrome",
+      "tone": "mono",
+      "caption": "",
+      "alt": "Fakira's singer raising a hand over his guitar, in black and white",
+      "credit": "Pritam Haldar",
+      "public": true,
+      "downloadable": false,
+      "width": 2800,
+      "height": 1750,
+      "originalSize": "5857x3661",
+      "widths": [
+        240,
+        480,
+        960,
+        1600,
+        2200
+      ],
+      "enhancement": "Resized only (Lanczos3), sRGB, EXIF stripped. No re-grading, no upscaling, no generative edits."
+    },
+    {
+      "id": "fakira-dsc-0682",
+      "original": "FAKIRA/DSC_0682.jpg",
+      "artist": "Fakira",
+      "project": "fakira",
+      "category": "Band",
+      "tone": "mono",
+      "caption": "",
+      "alt": "Two Fakira guitarists in white kurtas, in black and white",
+      "credit": "Pritam Haldar",
+      "public": true,
+      "downloadable": false,
+      "width": 2800,
+      "height": 1750,
+      "originalSize": "6000x3750",
+      "widths": [
+        240,
+        480,
+        960,
+        1600,
+        2200
+      ],
+      "enhancement": "Resized only (Lanczos3), sRGB, EXIF stripped. No re-grading, no upscaling, no generative edits."
+    },
+    {
+      "id": "fakira-dsc-0687",
+      "original": "FAKIRA/DSC_0687.jpg",
+      "artist": "Fakira",
+      "project": "fakira",
+      "category": "On stage",
+      "tone": "colour",
+      "caption": "",
+      "alt": "Fakira's singer with acoustic guitar between beams of blue light",
+      "credit": "Pritam Haldar",
+      "public": true,
+      "downloadable": false,
+      "width": 2800,
+      "height": 1750,
+      "originalSize": "5857x3661",
+      "widths": [
+        240,
+        480,
+        960,
+        1600,
+        2200
+      ],
+      "enhancement": "Resized only (Lanczos3), sRGB, EXIF stripped. No re-grading, no upscaling, no generative edits."
+    },
+    {
+      "id": "fakira-dsc-0720",
+      "original": "FAKIRA/DSC_0720.jpg",
+      "artist": "Fakira",
+      "project": "fakira",
+      "category": "Wide",
+      "tone": "colour",
+      "caption": "",
+      "alt": "Fakira's name lit in Bengali lettering on the stage set under blue lights",
+      "credit": "Pritam Haldar",
+      "public": true,
+      "downloadable": false,
+      "width": 2800,
+      "height": 1750,
+      "originalSize": "6000x3750",
+      "widths": [
+        240,
+        480,
+        960,
+        1600,
+        2200
+      ],
+      "enhancement": "Resized only (Lanczos3), sRGB, EXIF stripped. No re-grading, no upscaling, no generative edits."
+    },
+    {
+      "id": "fakira-dsc-0754",
+      "original": "FAKIRA/DSC_0754.jpg",
+      "artist": "Fakira",
+      "project": "fakira",
+      "category": "Crowd",
+      "tone": "mono",
+      "caption": "",
+      "alt": "Fakira's singer raising both arms over the crowd, in black and white",
+      "credit": "Pritam Haldar",
+      "public": true,
+      "downloadable": false,
+      "width": 2800,
+      "height": 1750,
+      "originalSize": "6000x3750",
+      "widths": [
+        240,
+        480,
+        960,
+        1600,
+        2200
+      ],
+      "enhancement": "Resized only (Lanczos3), sRGB, EXIF stripped. No re-grading, no upscaling, no generative edits."
+    },
+    {
+      "id": "fakira-dsc-0767",
+      "original": "FAKIRA/DSC_0767.jpg",
+      "artist": "Fakira",
+      "project": "fakira",
+      "category": "Crowd",
+      "tone": "mono",
+      "caption": "",
+      "alt": "Smoke and lights over a raised hand in the crowd, in black and white",
+      "credit": "Pritam Haldar",
+      "public": true,
+      "downloadable": false,
+      "width": 2800,
+      "height": 1750,
+      "originalSize": "6000x3750",
+      "widths": [
+        240,
+        480,
+        960,
+        1600,
+        2200
+      ],
+      "enhancement": "Resized only (Lanczos3), sRGB, EXIF stripped. No re-grading, no upscaling, no generative edits."
+    },
+    {
+      "id": "fakira-dsc-0837",
+      "original": "FAKIRA/DSC_0837.jpg",
+      "artist": "Fakira",
+      "project": "fakira",
+      "category": "On stage",
+      "tone": "colour",
+      "caption": "",
+      "alt": "Fakira's singer in silhouette against yellow-green beams",
+      "credit": "Pritam Haldar",
+      "public": true,
+      "downloadable": false,
+      "width": 2800,
+      "height": 1750,
+      "originalSize": "6000x3750",
+      "widths": [
+        240,
+        480,
+        960,
+        1600,
+        2200
+      ],
+      "enhancement": "Resized only (Lanczos3), sRGB, EXIF stripped. No re-grading, no upscaling, no generative edits."
+    },
+    {
+      "id": "fakira-dsc-0860",
+      "original": "FAKIRA/DSC_0860.jpg",
+      "artist": "Fakira",
+      "project": "fakira",
+      "category": "Crowd",
+      "tone": "colour",
+      "caption": "",
+      "alt": "Fakira's singer and drummer seen past raised hands in the crowd",
+      "credit": "Pritam Haldar",
+      "public": true,
+      "downloadable": false,
+      "width": 2800,
+      "height": 1750,
+      "originalSize": "6000x3750",
+      "widths": [
+        240,
+        480,
+        960,
+        1600,
+        2200
+      ],
+      "enhancement": "Resized only (Lanczos3), sRGB, EXIF stripped. No re-grading, no upscaling, no generative edits."
+    },
+    {
+      "id": "fakira-dsc-0877",
+      "original": "FAKIRA/DSC_0877.jpg",
+      "artist": "Fakira",
+      "project": "fakira",
+      "category": "Band",
+      "tone": "colour",
+      "caption": "",
+      "alt": "Fakira guitarists playing under pink and blue light, seen over the crowd",
+      "credit": "Pritam Haldar",
+      "public": true,
+      "downloadable": false,
+      "width": 2800,
+      "height": 1750,
+      "originalSize": "6000x3750",
+      "widths": [
+        240,
+        480,
+        960,
+        1600,
+        2200
+      ],
+      "enhancement": "Resized only (Lanczos3), sRGB, EXIF stripped. No re-grading, no upscaling, no generative edits."
+    },
+    {
+      "id": "fakira-dsc-0887",
+      "original": "FAKIRA/DSC_0887.jpg",
+      "artist": "Fakira",
+      "project": "fakira",
+      "category": "Band",
+      "tone": "colour",
+      "caption": "",
+      "alt": "Fakira's drummer behind the kit between two light beams",
+      "credit": "Pritam Haldar",
+      "public": true,
+      "downloadable": false,
+      "width": 2800,
+      "height": 1750,
+      "originalSize": "6000x3750",
+      "widths": [
+        240,
+        480,
+        960,
+        1600,
+        2200
+      ],
+      "enhancement": "Resized only (Lanczos3), sRGB, EXIF stripped. No re-grading, no upscaling, no generative edits."
+    },
+    {
+      "id": "fakira-dsc-0888",
+      "original": "FAKIRA/DSC_0888.jpg",
+      "artist": "Fakira",
+      "project": "fakira",
+      "category": "On stage",
+      "tone": "colour",
+      "caption": "",
+      "alt": "Fakira's singer with arms spread wide in front of a giant face on the LED screen",
+      "credit": "Pritam Haldar",
+      "public": true,
+      "downloadable": false,
+      "width": 2800,
+      "height": 1750,
+      "originalSize": "6000x3750",
+      "widths": [
+        240,
+        480,
+        960,
+        1600,
+        2200
+      ],
+      "enhancement": "Resized only (Lanczos3), sRGB, EXIF stripped. No re-grading, no upscaling, no generative edits."
+    },
+    {
+      "id": "fakira-dsc-0902",
+      "original": "FAKIRA/DSC_0902.jpg",
+      "artist": "Fakira",
+      "project": "fakira",
+      "category": "Crowd",
+      "tone": "colour",
+      "caption": "",
+      "alt": "Fakira's singer under pink and blue beams, framed by the crowd's silhouettes",
+      "credit": "Pritam Haldar",
+      "public": true,
+      "downloadable": false,
+      "width": 2800,
+      "height": 1750,
+      "originalSize": "6000x3750",
+      "widths": [
+        240,
+        480,
+        960,
+        1600,
+        2200
+      ],
+      "enhancement": "Resized only (Lanczos3), sRGB, EXIF stripped. No re-grading, no upscaling, no generative edits."
+    },
+    {
+      "id": "fakira-dsc-0926",
+      "original": "FAKIRA/DSC_0926.jpg",
+      "artist": "Fakira",
+      "project": "fakira",
+      "category": "On stage",
+      "tone": "colour",
+      "caption": "",
+      "alt": "Fakira's singer at the microphone in front of a curtain of fairy lights",
+      "credit": "Pritam Haldar",
+      "public": true,
+      "downloadable": false,
+      "width": 2800,
+      "height": 1750,
+      "originalSize": "5933x3708",
+      "widths": [
+        240,
+        480,
+        960,
+        1600,
+        2200
+      ],
+      "enhancement": "Resized only (Lanczos3), sRGB, EXIF stripped. No re-grading, no upscaling, no generative edits."
+    },
+    {
+      "id": "fakira-dsc-0959",
+      "original": "FAKIRA/DSC_0959.jpg",
+      "artist": "Fakira",
+      "project": "fakira",
+      "category": "Band",
+      "tone": "colour",
+      "caption": "",
+      "alt": "Four Fakira members in white kurtas playing guitars side by side",
+      "credit": "Pritam Haldar",
+      "public": true,
+      "downloadable": false,
+      "width": 2800,
+      "height": 1750,
+      "originalSize": "5603x3502",
+      "widths": [
+        240,
+        480,
+        960,
+        1600,
+        2200
+      ],
+      "enhancement": "Resized only (Lanczos3), sRGB, EXIF stripped. No re-grading, no upscaling, no generative edits."
+    },
+    {
+      "id": "fakira-dsc-0988",
+      "original": "FAKIRA/DSC_0988.jpg",
+      "artist": "Fakira",
+      "project": "fakira",
+      "category": "Crowd",
+      "tone": "mono",
+      "caption": "",
+      "alt": "Fakira's singer below Bengali lyrics on the screen, phones raised in front, in black and white",
+      "credit": "Pritam Haldar",
+      "public": true,
+      "downloadable": false,
+      "width": 2800,
+      "height": 1750,
+      "originalSize": "6000x3750",
+      "widths": [
+        240,
+        480,
+        960,
+        1600,
+        2200
+      ],
+      "enhancement": "Resized only (Lanczos3), sRGB, EXIF stripped. No re-grading, no upscaling, no generative edits."
+    },
+    {
+      "id": "fakira-dsc-0991",
+      "original": "FAKIRA/DSC_0991.jpg",
+      "artist": "Fakira",
+      "project": "fakira",
+      "category": "Band",
+      "tone": "colour",
+      "caption": "",
+      "alt": "Fakira's drummer under warm yellow light",
+      "credit": "Pritam Haldar",
+      "public": true,
+      "downloadable": false,
+      "width": 2800,
+      "height": 1750,
+      "originalSize": "6000x3750",
+      "widths": [
+        240,
+        480,
+        960,
+        1600,
+        2200
+      ],
+      "enhancement": "Resized only (Lanczos3), sRGB, EXIF stripped. No re-grading, no upscaling, no generative edits."
+    },
+    {
+      "id": "fossils-dsc-2034-l",
+      "original": "FOSSILS/DSC_2034 L.jpg",
+      "artist": "Fossils",
+      "project": "fossils",
+      "category": "On stage",
+      "tone": "colour",
+      "caption": "",
+      "alt": "Fossils' frontman leaning into the microphone under orange truss lights",
+      "credit": "Pritam Haldar",
+      "public": true,
+      "downloadable": false,
+      "width": 2800,
+      "height": 1863,
+      "originalSize": "6048x4024",
+      "widths": [
+        240,
+        480,
+        960,
+        1600,
+        2200
+      ],
+      "enhancement": "Resized only (Lanczos3), sRGB, EXIF stripped. No re-grading, no upscaling, no generative edits."
+    },
+    {
+      "id": "fossils-dsc-2043-l",
+      "original": "FOSSILS/DSC_2043 L.jpg",
+      "artist": "Fossils",
+      "project": "fossils",
+      "category": "On stage",
+      "tone": "colour",
+      "caption": "",
+      "alt": "Fossils' frontman pointing out into teal light",
+      "credit": "Pritam Haldar",
+      "public": true,
+      "downloadable": false,
+      "width": 2800,
+      "height": 1863,
+      "originalSize": "6048x4024",
+      "widths": [
+        240,
+        480,
+        960,
+        1600,
+        2200
+      ],
+      "enhancement": "Resized only (Lanczos3), sRGB, EXIF stripped. No re-grading, no upscaling, no generative edits."
+    },
+    {
+      "id": "fossils-dsc-2055-l",
+      "original": "FOSSILS/DSC_2055 L.jpg",
+      "artist": "Fossils",
+      "project": "fossils",
+      "category": "Band",
+      "tone": "colour",
+      "caption": "",
+      "alt": "Fossils guitarist playing under green-white backlight",
+      "credit": "Pritam Haldar",
+      "public": true,
+      "downloadable": false,
+      "width": 2800,
+      "height": 1863,
+      "originalSize": "6048x4024",
+      "widths": [
+        240,
+        480,
+        960,
+        1600,
+        2200
+      ],
+      "enhancement": "Resized only (Lanczos3), sRGB, EXIF stripped. No re-grading, no upscaling, no generative edits."
+    },
+    {
+      "id": "fossils-dsc-2074-l",
+      "original": "FOSSILS/DSC_2074 L.jpg",
+      "artist": "Fossils",
+      "project": "fossils",
+      "category": "Band",
+      "tone": "colour",
+      "caption": "",
+      "alt": "Fossils guitarist lit by a single spotlight",
+      "credit": "Pritam Haldar",
+      "public": true,
+      "downloadable": false,
+      "width": 2800,
+      "height": 1863,
+      "originalSize": "6048x4024",
+      "widths": [
+        240,
+        480,
+        960,
+        1600,
+        2200
+      ],
+      "enhancement": "Resized only (Lanczos3), sRGB, EXIF stripped. No re-grading, no upscaling, no generative edits."
+    },
+    {
+      "id": "fossils-dsc-2100-l",
+      "original": "FOSSILS/DSC_2100 L.jpg",
+      "artist": "Fossils",
+      "project": "fossils",
+      "category": "On stage",
+      "tone": "colour",
+      "caption": "",
+      "alt": "Fossils' frontman pointing upward into a burst of white light",
+      "credit": "Pritam Haldar",
+      "public": true,
+      "downloadable": false,
+      "width": 2800,
+      "height": 1863,
+      "originalSize": "6048x4024",
+      "widths": [
+        240,
+        480,
+        960,
+        1600,
+        2200
+      ],
+      "enhancement": "Resized only (Lanczos3), sRGB, EXIF stripped. No re-grading, no upscaling, no generative edits."
+    },
+    {
+      "id": "fossils-dsc-2114-l",
+      "original": "FOSSILS/DSC_2114 L.jpg",
+      "artist": "Fossils",
+      "project": "fossils",
+      "category": "Monochrome",
+      "tone": "mono",
+      "caption": "",
+      "alt": "Fossils' frontman with a fist raised, in black and white",
+      "credit": "Pritam Haldar",
+      "public": true,
+      "downloadable": false,
+      "width": 2800,
+      "height": 1863,
+      "originalSize": "5133x3415",
+      "widths": [
+        240,
+        480,
+        960,
+        1600,
+        2200
+      ],
+      "enhancement": "Resized only (Lanczos3), sRGB, EXIF stripped. No re-grading, no upscaling, no generative edits."
+    },
+    {
+      "id": "fossils-dsc-2214-l",
+      "original": "FOSSILS/DSC_2214 L.jpg",
+      "artist": "Fossils",
+      "project": "fossils",
+      "category": "On stage",
+      "tone": "colour",
+      "caption": "",
+      "alt": "Fossils' frontman reaching up beside a CO2 jet and confetti under blue light",
+      "credit": "Pritam Haldar",
+      "public": true,
+      "downloadable": false,
+      "width": 2800,
+      "height": 1863,
+      "originalSize": "4480x2981",
+      "widths": [
+        240,
+        480,
+        960,
+        1600,
+        2200
+      ],
+      "enhancement": "Resized only (Lanczos3), sRGB, EXIF stripped. No re-grading, no upscaling, no generative edits."
+    },
+    {
+      "id": "fossils-dsc-2221-l",
+      "original": "FOSSILS/DSC_2221 L.jpg",
+      "artist": "Fossils",
+      "project": "fossils",
+      "category": "Monochrome",
+      "tone": "mono",
+      "caption": "",
+      "alt": "Fossils' frontman raising the microphone on a dark stage, in black and white",
+      "credit": "Pritam Haldar",
+      "public": true,
+      "downloadable": false,
+      "width": 2800,
+      "height": 1863,
+      "originalSize": "4146x2759",
+      "widths": [
+        240,
+        480,
+        960,
+        1600,
+        2200
+      ],
+      "enhancement": "Resized only (Lanczos3), sRGB, EXIF stripped. No re-grading, no upscaling, no generative edits."
+    },
+    {
+      "id": "fossils-dsc-2287-l",
+      "original": "FOSSILS/DSC_2287 L.jpg",
+      "artist": "Fossils",
+      "project": "fossils",
+      "category": "Monochrome",
+      "tone": "mono",
+      "caption": "",
+      "alt": "Fossils' frontman and guitarist back to back, in black and white",
+      "credit": "Pritam Haldar",
+      "public": true,
+      "downloadable": false,
+      "width": 2800,
+      "height": 1863,
+      "originalSize": "4322x2876",
+      "widths": [
+        240,
+        480,
+        960,
+        1600,
+        2200
+      ],
+      "enhancement": "Resized only (Lanczos3), sRGB, EXIF stripped. No re-grading, no upscaling, no generative edits."
+    },
+    {
+      "id": "fossils-dsc-2360-l",
+      "original": "FOSSILS/DSC_2360 L.jpg",
+      "artist": "Fossils",
+      "project": "fossils",
+      "category": "Monochrome",
+      "tone": "mono",
+      "caption": "",
+      "alt": "Fossils guitarist playing beside the stage set, in black and white",
+      "credit": "Pritam Haldar",
+      "public": true,
+      "downloadable": false,
+      "width": 2800,
+      "height": 1863,
+      "originalSize": "3629x2415",
+      "widths": [
+        240,
+        480,
+        960,
+        1600,
+        2200
+      ],
+      "enhancement": "Resized only (Lanczos3), sRGB, EXIF stripped. No re-grading, no upscaling, no generative edits."
+    },
+    {
+      "id": "fossils-dsc-2508-l",
+      "original": "FOSSILS/DSC_2508 L.jpg",
+      "artist": "Fossils",
+      "project": "fossils",
+      "category": "Wide",
+      "tone": "colour",
+      "caption": "",
+      "alt": "Fossils on a dark stage scattered with small lights",
+      "credit": "Pritam Haldar",
+      "public": true,
+      "downloadable": false,
+      "width": 2800,
+      "height": 1863,
+      "originalSize": "5584x3715",
+      "widths": [
+        240,
+        480,
+        960,
+        1600,
+        2200
+      ],
+      "enhancement": "Resized only (Lanczos3), sRGB, EXIF stripped. No re-grading, no upscaling, no generative edits."
+    },
+    {
+      "id": "fossils-dsc-2522-l",
+      "original": "FOSSILS/DSC_2522 L.jpg",
+      "artist": "Fossils",
+      "project": "fossils",
+      "category": "On stage",
+      "tone": "colour",
+      "caption": "",
+      "alt": "Fossils' frontman with an arm raised under red lights",
+      "credit": "Pritam Haldar",
+      "public": true,
+      "downloadable": false,
+      "width": 2800,
+      "height": 1863,
+      "originalSize": "4766x3171",
+      "widths": [
+        240,
+        480,
+        960,
+        1600,
+        2200
+      ],
+      "enhancement": "Resized only (Lanczos3), sRGB, EXIF stripped. No re-grading, no upscaling, no generative edits."
+    },
+    {
+      "id": "jeet-ganguly-dsc-0002",
+      "original": "JEET GANGULY/DSC_0002.jpg",
+      "artist": "Jeet Ganguly",
+      "project": "jeet-ganguly",
+      "category": "Band",
+      "tone": "colour",
+      "caption": "",
+      "alt": "Guitarist playing in front of a red LED graphic as confetti falls",
+      "credit": "Pritam Haldar",
+      "public": true,
+      "downloadable": false,
+      "width": 2800,
+      "height": 1750,
+      "originalSize": "6000x3750",
+      "widths": [
+        240,
+        480,
+        960,
+        1600,
+        2200
+      ],
+      "enhancement": "Resized only (Lanczos3), sRGB, EXIF stripped. No re-grading, no upscaling, no generative edits."
+    },
+    {
+      "id": "jeet-ganguly-dsc-0022",
+      "original": "JEET GANGULY/DSC_0022.jpg",
+      "artist": "Jeet Ganguly",
+      "project": "jeet-ganguly",
+      "category": "Wide",
+      "tone": "colour",
+      "caption": "",
+      "alt": "Wide view of the stage under purple haze with the crowd in front",
+      "credit": "Pritam Haldar",
+      "public": true,
+      "downloadable": false,
+      "width": 2800,
+      "height": 1750,
+      "originalSize": "6000x3750",
+      "widths": [
+        240,
+        480,
+        960,
+        1600,
+        2200
+      ],
+      "enhancement": "Resized only (Lanczos3), sRGB, EXIF stripped. No re-grading, no upscaling, no generative edits."
+    },
+    {
+      "id": "jeet-ganguly-dsc-0032",
+      "original": "JEET GANGULY/DSC_0032.jpg",
+      "artist": "Jeet Ganguly",
+      "project": "jeet-ganguly",
+      "category": "Band",
+      "tone": "colour",
+      "caption": "",
+      "alt": "Keyboard player at his synthesiser in front of a heart-patterned screen",
+      "credit": "Pritam Haldar",
+      "public": true,
+      "downloadable": false,
+      "width": 2800,
+      "height": 1750,
+      "originalSize": "6000x3750",
+      "widths": [
+        240,
+        480,
+        960,
+        1600,
+        2200
+      ],
+      "enhancement": "Resized only (Lanczos3), sRGB, EXIF stripped. No re-grading, no upscaling, no generative edits."
+    },
+    {
+      "id": "jeet-ganguly-dsc-0034",
+      "original": "JEET GANGULY/DSC_0034.jpg",
+      "artist": "Jeet Ganguly",
+      "project": "jeet-ganguly",
+      "category": "Band",
+      "tone": "mono",
+      "caption": "",
+      "alt": "Drummer behind the kit, in black and white",
+      "credit": "Pritam Haldar",
+      "public": true,
+      "downloadable": false,
+      "width": 2800,
+      "height": 1750,
+      "originalSize": "5402x3376",
+      "widths": [
+        240,
+        480,
+        960,
+        1600,
+        2200
+      ],
+      "enhancement": "Resized only (Lanczos3), sRGB, EXIF stripped. No re-grading, no upscaling, no generative edits."
+    },
+    {
+      "id": "jeet-ganguly-dsc-0061",
+      "original": "JEET GANGULY/DSC_0061.jpg",
+      "artist": "Jeet Ganguly",
+      "project": "jeet-ganguly",
+      "category": "Close-up",
+      "tone": "colour",
+      "caption": "",
+      "alt": "Jeet Ganguly smiling and reaching out under white stage light",
+      "credit": "Pritam Haldar",
+      "public": true,
+      "downloadable": false,
+      "width": 2800,
+      "height": 1750,
+      "originalSize": "6000x3750",
+      "widths": [
+        240,
+        480,
+        960,
+        1600,
+        2200
+      ],
+      "enhancement": "Resized only (Lanczos3), sRGB, EXIF stripped. No re-grading, no upscaling, no generative edits."
+    },
+    {
+      "id": "jeet-ganguly-dsc-0075",
+      "original": "JEET GANGULY/DSC_0075.jpg",
+      "artist": "Jeet Ganguly",
+      "project": "jeet-ganguly",
+      "category": "On stage",
+      "tone": "colour",
+      "caption": "",
+      "alt": "Jeet Ganguly singing between two CO2 jets",
+      "credit": "Pritam Haldar",
+      "public": true,
+      "downloadable": false,
+      "width": 2800,
+      "height": 1750,
+      "originalSize": "5531x3457",
+      "widths": [
+        240,
+        480,
+        960,
+        1600,
+        2200
+      ],
+      "enhancement": "Resized only (Lanczos3), sRGB, EXIF stripped. No re-grading, no upscaling, no generative edits."
+    },
+    {
+      "id": "jeet-ganguly-dsc-0093",
+      "original": "JEET GANGULY/DSC_0093.jpg",
+      "artist": "Jeet Ganguly",
+      "project": "jeet-ganguly",
+      "category": "Wide",
+      "tone": "colour",
+      "caption": "",
+      "alt": "The full band on stage under red light",
+      "credit": "Pritam Haldar",
+      "public": true,
+      "downloadable": false,
+      "width": 2800,
+      "height": 1750,
+      "originalSize": "5673x3546",
+      "widths": [
+        240,
+        480,
+        960,
+        1600,
+        2200
+      ],
+      "enhancement": "Resized only (Lanczos3), sRGB, EXIF stripped. No re-grading, no upscaling, no generative edits."
+    },
+    {
+      "id": "jeet-ganguly-dsc-0120",
+      "original": "JEET GANGULY/DSC_0120.jpg",
+      "artist": "Jeet Ganguly",
+      "project": "jeet-ganguly",
+      "category": "On stage",
+      "tone": "colour",
+      "caption": "",
+      "alt": "Jeet Ganguly singing under red light and beams, with the keyboard player behind",
+      "credit": "Pritam Haldar",
+      "public": true,
+      "downloadable": false,
+      "width": 2800,
+      "height": 1750,
+      "originalSize": "5968x3730",
+      "widths": [
+        240,
+        480,
+        960,
+        1600,
+        2200
+      ],
+      "enhancement": "Resized only (Lanczos3), sRGB, EXIF stripped. No re-grading, no upscaling, no generative edits."
+    },
+    {
+      "id": "jeet-ganguly-dsc-0132",
+      "original": "JEET GANGULY/DSC_0132.jpg",
+      "artist": "Jeet Ganguly",
+      "project": "jeet-ganguly",
+      "category": "On stage",
+      "tone": "colour",
+      "caption": "",
+      "alt": "Jeet Ganguly raising the microphone high under purple light",
+      "credit": "Pritam Haldar",
+      "public": true,
+      "downloadable": false,
+      "width": 2800,
+      "height": 1750,
+      "originalSize": "6000x3750",
+      "widths": [
+        240,
+        480,
+        960,
+        1600,
+        2200
+      ],
+      "enhancement": "Resized only (Lanczos3), sRGB, EXIF stripped. No re-grading, no upscaling, no generative edits."
+    },
+    {
+      "id": "jeet-ganguly-dsc-0142",
+      "original": "JEET GANGULY/DSC_0142.jpg",
+      "artist": "Jeet Ganguly",
+      "project": "jeet-ganguly",
+      "category": "Band",
+      "tone": "mono",
+      "caption": "",
+      "alt": "Percussionist silhouetted behind his drums, in black and white",
+      "credit": "Pritam Haldar",
+      "public": true,
+      "downloadable": false,
+      "width": 2800,
+      "height": 1750,
+      "originalSize": "6000x3750",
+      "widths": [
+        240,
+        480,
+        960,
+        1600,
+        2200
+      ],
+      "enhancement": "Resized only (Lanczos3), sRGB, EXIF stripped. No re-grading, no upscaling, no generative edits."
+    },
+    {
+      "id": "jeet-ganguly-dsc-0144",
+      "original": "JEET GANGULY/DSC_0144.jpg",
+      "artist": "Jeet Ganguly",
+      "project": "jeet-ganguly",
+      "category": "Band",
+      "tone": "mono",
+      "caption": "",
+      "alt": "Drummer framed by cymbals and stands, in black and white",
+      "credit": "Pritam Haldar",
+      "public": true,
+      "downloadable": false,
+      "width": 2800,
+      "height": 1750,
+      "originalSize": "6000x3750",
+      "widths": [
+        240,
+        480,
+        960,
+        1600,
+        2200
+      ],
+      "enhancement": "Resized only (Lanczos3), sRGB, EXIF stripped. No re-grading, no upscaling, no generative edits."
+    },
+    {
+      "id": "jeet-ganguly-dsc-0145",
+      "original": "JEET GANGULY/DSC_0145.jpg",
+      "artist": "Jeet Ganguly",
+      "project": "jeet-ganguly",
+      "category": "Band",
+      "tone": "mono",
+      "caption": "",
+      "alt": "Drummer playing behind a silver kit, in black and white",
+      "credit": "Pritam Haldar",
+      "public": true,
+      "downloadable": false,
+      "width": 2800,
+      "height": 1750,
+      "originalSize": "6000x3750",
+      "widths": [
+        240,
+        480,
+        960,
+        1600,
+        2200
+      ],
+      "enhancement": "Resized only (Lanczos3), sRGB, EXIF stripped. No re-grading, no upscaling, no generative edits."
+    },
+    {
+      "id": "jeet-ganguly-dsc-0691",
+      "original": "JEET GANGULY/DSC_0691.jpg",
+      "artist": "Jeet Ganguly",
+      "project": "jeet-ganguly",
+      "category": "Band",
+      "tone": "colour",
+      "caption": "",
+      "alt": "Guitarist playing in low blue light",
+      "credit": "Pritam Haldar",
+      "public": true,
+      "downloadable": false,
+      "width": 2800,
+      "height": 1750,
+      "originalSize": "6000x3750",
+      "widths": [
+        240,
+        480,
+        960,
+        1600,
+        2200
+      ],
+      "enhancement": "Resized only (Lanczos3), sRGB, EXIF stripped. No re-grading, no upscaling, no generative edits."
+    },
+    {
+      "id": "jeet-ganguly-dsc-0740",
+      "original": "JEET GANGULY/DSC_0740.jpg",
+      "artist": "Jeet Ganguly",
+      "project": "jeet-ganguly",
+      "category": "On stage",
+      "tone": "colour",
+      "caption": "",
+      "alt": "Jeet Ganguly pointing the microphone out towards the crowd",
+      "credit": "Pritam Haldar",
+      "public": true,
+      "downloadable": false,
+      "width": 2800,
+      "height": 1750,
+      "originalSize": "6000x3750",
+      "widths": [
+        240,
+        480,
+        960,
+        1600,
+        2200
+      ],
+      "enhancement": "Resized only (Lanczos3), sRGB, EXIF stripped. No re-grading, no upscaling, no generative edits."
+    },
+    {
+      "id": "jeet-ganguly-dsc-0741",
+      "original": "JEET GANGULY/DSC_0741.jpg",
+      "artist": "Jeet Ganguly",
+      "project": "jeet-ganguly",
+      "category": "On stage",
+      "tone": "colour",
+      "caption": "",
+      "alt": "Jeet Ganguly singing on the stage edge between two CO2 jets",
+      "credit": "Pritam Haldar",
+      "public": true,
+      "downloadable": false,
+      "width": 2800,
+      "height": 1750,
+      "originalSize": "6000x3750",
+      "widths": [
+        240,
+        480,
+        960,
+        1600,
+        2200
+      ],
+      "enhancement": "Resized only (Lanczos3), sRGB, EXIF stripped. No re-grading, no upscaling, no generative edits."
+    },
+    {
+      "id": "jeet-ganguly-dsc-0775",
+      "original": "JEET GANGULY/DSC_0775.jpg",
+      "artist": "Jeet Ganguly",
+      "project": "jeet-ganguly",
+      "category": "Close-up",
+      "tone": "colour",
+      "caption": "",
+      "alt": "Jeet Ganguly singing with his head tilted back",
+      "credit": "Pritam Haldar",
+      "public": true,
+      "downloadable": false,
+      "width": 2800,
+      "height": 1750,
+      "originalSize": "6000x3750",
+      "widths": [
+        240,
+        480,
+        960,
+        1600,
+        2200
+      ],
+      "enhancement": "Resized only (Lanczos3), sRGB, EXIF stripped. No re-grading, no upscaling, no generative edits."
+    },
+    {
+      "id": "jeet-ganguly-dsc-0779",
+      "original": "JEET GANGULY/DSC_0779.jpg",
+      "artist": "Jeet Ganguly",
+      "project": "jeet-ganguly",
+      "category": "Close-up",
+      "tone": "colour",
+      "caption": "",
+      "alt": "Jeet Ganguly singing with both hands on the microphone",
+      "credit": "Pritam Haldar",
+      "public": true,
+      "downloadable": false,
+      "width": 2800,
+      "height": 1750,
+      "originalSize": "6000x3750",
+      "widths": [
+        240,
+        480,
+        960,
+        1600,
+        2200
+      ],
+      "enhancement": "Resized only (Lanczos3), sRGB, EXIF stripped. No re-grading, no upscaling, no generative edits."
+    },
+    {
+      "id": "jeet-ganguly-dsc-0787",
+      "original": "JEET GANGULY/DSC_0787.jpg",
+      "artist": "Jeet Ganguly",
+      "project": "jeet-ganguly",
+      "category": "Band",
+      "tone": "colour",
+      "caption": "",
+      "alt": "Bassist playing a red bass in the stage haze",
+      "credit": "Pritam Haldar",
+      "public": true,
+      "downloadable": false,
+      "width": 2800,
+      "height": 1750,
+      "originalSize": "6000x3750",
+      "widths": [
+        240,
+        480,
+        960,
+        1600,
+        2200
+      ],
+      "enhancement": "Resized only (Lanczos3), sRGB, EXIF stripped. No re-grading, no upscaling, no generative edits."
+    },
+    {
+      "id": "jeet-ganguly-dsc-0789",
+      "original": "JEET GANGULY/DSC_0789.jpg",
+      "artist": "Jeet Ganguly",
+      "project": "jeet-ganguly",
+      "category": "Band",
+      "tone": "colour",
+      "caption": "",
+      "alt": "Percussionist playing the congas under purple light",
+      "credit": "Pritam Haldar",
+      "public": true,
+      "downloadable": false,
+      "width": 2800,
+      "height": 1750,
+      "originalSize": "6000x3750",
+      "widths": [
+        240,
+        480,
+        960,
+        1600,
+        2200
+      ],
+      "enhancement": "Resized only (Lanczos3), sRGB, EXIF stripped. No re-grading, no upscaling, no generative edits."
+    },
+    {
+      "id": "jeet-ganguly-dsc-0794",
+      "original": "JEET GANGULY/DSC_0794.jpg",
+      "artist": "Jeet Ganguly",
+      "project": "jeet-ganguly",
+      "category": "Band",
+      "tone": "colour",
+      "caption": "",
+      "alt": "Bassist playing a red bass in front of the LED screen",
+      "credit": "Pritam Haldar",
+      "public": true,
+      "downloadable": false,
+      "width": 2800,
+      "height": 1750,
+      "originalSize": "6000x3750",
+      "widths": [
+        240,
+        480,
+        960,
+        1600,
+        2200
+      ],
+      "enhancement": "Resized only (Lanczos3), sRGB, EXIF stripped. No re-grading, no upscaling, no generative edits."
+    },
+    {
+      "id": "jeet-ganguly-dsc-0798",
+      "original": "JEET GANGULY/DSC_0798.jpg",
+      "artist": "Jeet Ganguly",
+      "project": "jeet-ganguly",
+      "category": "Band",
+      "tone": "mono",
+      "caption": "",
+      "alt": "Drummer playing, in black and white",
+      "credit": "Pritam Haldar",
+      "public": true,
+      "downloadable": false,
+      "width": 2800,
+      "height": 1750,
+      "originalSize": "6000x3750",
+      "widths": [
+        240,
+        480,
+        960,
+        1600,
+        2200
+      ],
+      "enhancement": "Resized only (Lanczos3), sRGB, EXIF stripped. No re-grading, no upscaling, no generative edits."
+    },
+    {
+      "id": "jeet-ganguly-dsc-0811",
+      "original": "JEET GANGULY/DSC_0811.jpg",
+      "artist": "Jeet Ganguly",
+      "project": "jeet-ganguly",
+      "category": "On stage",
+      "tone": "colour",
+      "caption": "",
+      "alt": "Jeet Ganguly singing under purple light in front of the LED screen",
+      "credit": "Pritam Haldar",
+      "public": true,
+      "downloadable": false,
+      "width": 2800,
+      "height": 1750,
+      "originalSize": "6000x3750",
+      "widths": [
+        240,
+        480,
+        960,
+        1600,
+        2200
+      ],
+      "enhancement": "Resized only (Lanczos3), sRGB, EXIF stripped. No re-grading, no upscaling, no generative edits."
+    },
+    {
+      "id": "jeet-ganguly-dsc-0890",
+      "original": "JEET GANGULY/DSC_0890.jpg",
+      "artist": "Jeet Ganguly",
+      "project": "jeet-ganguly",
+      "category": "On stage",
+      "tone": "colour",
+      "caption": "",
+      "alt": "Jeet Ganguly with an arm raised towards the crowd, in the stage haze",
+      "credit": "Pritam Haldar",
+      "public": true,
+      "downloadable": false,
+      "width": 2800,
+      "height": 1750,
+      "originalSize": "6000x3750",
+      "widths": [
+        240,
+        480,
+        960,
+        1600,
+        2200
+      ],
+      "enhancement": "Resized only (Lanczos3), sRGB, EXIF stripped. No re-grading, no upscaling, no generative edits."
+    },
+    {
+      "id": "jeet-ganguly-dsc-0893",
+      "original": "JEET GANGULY/DSC_0893.jpg",
+      "artist": "Jeet Ganguly",
+      "project": "jeet-ganguly",
+      "category": "Band",
+      "tone": "colour",
+      "caption": "",
+      "alt": "Guitarist playing beside a music stand under blue stage lights",
+      "credit": "Pritam Haldar",
+      "public": true,
+      "downloadable": false,
+      "width": 2800,
+      "height": 1750,
+      "originalSize": "6000x3750",
+      "widths": [
+        240,
+        480,
+        960,
+        1600,
+        2200
+      ],
+      "enhancement": "Resized only (Lanczos3), sRGB, EXIF stripped. No re-grading, no upscaling, no generative edits."
+    },
+    {
+      "id": "jeet-ganguly-dsc-0904",
+      "original": "JEET GANGULY/DSC_0904.jpg",
+      "artist": "Jeet Ganguly",
+      "project": "jeet-ganguly",
+      "category": "Wide",
+      "tone": "colour",
+      "caption": "",
+      "alt": "Jeet Ganguly singing under green light with the band behind",
+      "credit": "Pritam Haldar",
+      "public": true,
+      "downloadable": false,
+      "width": 2800,
+      "height": 1750,
+      "originalSize": "5181x3238",
+      "widths": [
+        240,
+        480,
+        960,
+        1600,
+        2200
+      ],
+      "enhancement": "Resized only (Lanczos3), sRGB, EXIF stripped. No re-grading, no upscaling, no generative edits."
+    },
+    {
+      "id": "jeet-ganguly-dsc-0913",
+      "original": "JEET GANGULY/DSC_0913.jpg",
+      "artist": "Jeet Ganguly",
+      "project": "jeet-ganguly",
+      "category": "On stage",
+      "tone": "colour",
+      "caption": "",
+      "alt": "Jeet Ganguly and the guitarist side by side under green light",
+      "credit": "Pritam Haldar",
+      "public": true,
+      "downloadable": false,
+      "width": 2800,
+      "height": 1867,
+      "originalSize": "6000x4000",
+      "widths": [
+        240,
+        480,
+        960,
+        1600,
+        2200
+      ],
+      "enhancement": "Resized only (Lanczos3), sRGB, EXIF stripped. No re-grading, no upscaling, no generative edits."
+    },
+    {
+      "id": "jeet-ganguly-dsc-0928",
+      "original": "JEET GANGULY/DSC_0928.jpg",
+      "artist": "Jeet Ganguly",
+      "project": "jeet-ganguly",
+      "category": "Band",
+      "tone": "mono",
+      "caption": "",
+      "alt": "Guitarist smiling while he plays, in black and white",
+      "credit": "Pritam Haldar",
+      "public": true,
+      "downloadable": false,
+      "width": 2800,
+      "height": 1750,
+      "originalSize": "6000x3750",
+      "widths": [
+        240,
+        480,
+        960,
+        1600,
+        2200
+      ],
+      "enhancement": "Resized only (Lanczos3), sRGB, EXIF stripped. No re-grading, no upscaling, no generative edits."
+    },
+    {
+      "id": "jeet-ganguly-dsc-1000",
+      "original": "JEET GANGULY/DSC_1000.jpg",
+      "artist": "Jeet Ganguly",
+      "project": "jeet-ganguly",
+      "category": "Wide",
+      "tone": "colour",
+      "caption": "",
+      "alt": "Confetti falling over the stage as Jeet Ganguly sings with the band",
+      "credit": "Pritam Haldar",
+      "public": true,
+      "downloadable": false,
+      "width": 2800,
+      "height": 1750,
+      "originalSize": "6000x3750",
+      "widths": [
+        240,
+        480,
+        960,
+        1600,
+        2200
+      ],
+      "enhancement": "Resized only (Lanczos3), sRGB, EXIF stripped. No re-grading, no upscaling, no generative edits."
+    },
+    {
+      "id": "monali-thakur-img-0786-l",
+      "original": "MONALI THAKUR/IMG_0786 L.jpg",
+      "artist": "Monali Thakur",
+      "project": "monali-thakur",
+      "category": "Monochrome",
+      "tone": "mono",
+      "caption": "",
+      "alt": "Monali Thakur singing with a hand raised in front of a curved light wall, in black and white",
+      "credit": "Pritam Haldar",
+      "public": true,
+      "downloadable": false,
+      "width": 2800,
+      "height": 1867,
+      "originalSize": "5606x3737",
+      "widths": [
+        240,
+        480,
+        960,
+        1600,
+        2200
+      ],
+      "enhancement": "Resized only (Lanczos3), sRGB, EXIF stripped. No re-grading, no upscaling, no generative edits."
+    },
+    {
+      "id": "monali-thakur-img-0792-l",
+      "original": "MONALI THAKUR/IMG_0792 L.jpg",
+      "artist": "Monali Thakur",
+      "project": "monali-thakur",
+      "category": "Monochrome",
+      "tone": "mono",
+      "caption": "",
+      "alt": "Monali Thakur laughing with a raised fist, framed at a tilt, in black and white",
+      "credit": "Pritam Haldar",
+      "public": true,
+      "downloadable": false,
+      "width": 2800,
+      "height": 1867,
+      "originalSize": "6000x4000",
+      "widths": [
+        240,
+        480,
+        960,
+        1600,
+        2200
+      ],
+      "enhancement": "Resized only (Lanczos3), sRGB, EXIF stripped. No re-grading, no upscaling, no generative edits."
+    },
+    {
+      "id": "monali-thakur-img-0812-l",
+      "original": "MONALI THAKUR/IMG_0812 L.jpg",
+      "artist": "Monali Thakur",
+      "project": "monali-thakur",
+      "category": "On stage",
+      "tone": "colour",
+      "caption": "",
+      "alt": "Monali Thakur singing with a hand raised under blue light",
+      "credit": "Pritam Haldar",
+      "public": true,
+      "downloadable": false,
+      "width": 2800,
+      "height": 1867,
+      "originalSize": "6000x4000",
+      "widths": [
+        240,
+        480,
+        960,
+        1600,
+        2200
+      ],
+      "enhancement": "Resized only (Lanczos3), sRGB, EXIF stripped. No re-grading, no upscaling, no generative edits."
+    },
+    {
+      "id": "monali-thakur-img-0887-l",
+      "original": "MONALI THAKUR/IMG_0887 L.jpg",
+      "artist": "Monali Thakur",
+      "project": "monali-thakur",
+      "category": "Monochrome",
+      "tone": "mono",
+      "caption": "",
+      "alt": "Close-up of Monali Thakur singing, in black and white",
+      "credit": "Pritam Haldar",
+      "public": true,
+      "downloadable": false,
+      "width": 2800,
+      "height": 1867,
+      "originalSize": "6000x4000",
+      "widths": [
+        240,
+        480,
+        960,
+        1600,
+        2200
+      ],
+      "enhancement": "Resized only (Lanczos3), sRGB, EXIF stripped. No re-grading, no upscaling, no generative edits."
+    },
+    {
+      "id": "monali-thakur-img-0897-l",
+      "original": "MONALI THAKUR/IMG_0897 L.jpg",
+      "artist": "Monali Thakur",
+      "project": "monali-thakur",
+      "category": "Monochrome",
+      "tone": "mono",
+      "caption": "",
+      "alt": "Monali Thakur holding the microphone out to the crowd, in black and white",
+      "credit": "Pritam Haldar",
+      "public": true,
+      "downloadable": false,
+      "width": 2800,
+      "height": 1867,
+      "originalSize": "5807x3871",
+      "widths": [
+        240,
+        480,
+        960,
+        1600,
+        2200
+      ],
+      "enhancement": "Resized only (Lanczos3), sRGB, EXIF stripped. No re-grading, no upscaling, no generative edits."
+    },
+    {
+      "id": "monali-thakur-img-0924-l",
+      "original": "MONALI THAKUR/IMG_0924 L.jpg",
+      "artist": "Monali Thakur",
+      "project": "monali-thakur",
+      "category": "Monochrome",
+      "tone": "mono",
+      "caption": "",
+      "alt": "Monali Thakur and the guitarist on stage, framed at a tilt, in black and white",
+      "credit": "Pritam Haldar",
+      "public": true,
+      "downloadable": false,
+      "width": 2800,
+      "height": 1867,
+      "originalSize": "6000x4000",
+      "widths": [
+        240,
+        480,
+        960,
+        1600,
+        2200
+      ],
+      "enhancement": "Resized only (Lanczos3), sRGB, EXIF stripped. No re-grading, no upscaling, no generative edits."
+    },
+    {
+      "id": "monali-thakur-img-0935-l",
+      "original": "MONALI THAKUR/IMG_0935 L.jpg",
+      "artist": "Monali Thakur",
+      "project": "monali-thakur",
+      "category": "Monochrome",
+      "tone": "mono",
+      "caption": "",
+      "alt": "Monali Thakur smiling as confetti falls, in black and white",
+      "credit": "Pritam Haldar",
+      "public": true,
+      "downloadable": false,
+      "width": 2800,
+      "height": 1867,
+      "originalSize": "5425x3617",
+      "widths": [
+        240,
+        480,
+        960,
+        1600,
+        2200
+      ],
+      "enhancement": "Resized only (Lanczos3), sRGB, EXIF stripped. No re-grading, no upscaling, no generative edits."
+    },
+    {
+      "id": "monali-thakur-img-0945-l",
+      "original": "MONALI THAKUR/IMG_0945 L.jpg",
+      "artist": "Monali Thakur",
+      "project": "monali-thakur",
+      "category": "Monochrome",
+      "tone": "mono",
+      "caption": "",
+      "alt": "Monali Thakur dancing in front of a patterned LED wall, in black and white",
+      "credit": "Pritam Haldar",
+      "public": true,
+      "downloadable": false,
+      "width": 2800,
+      "height": 1867,
+      "originalSize": "4972x3315",
+      "widths": [
+        240,
+        480,
+        960,
+        1600,
+        2200
+      ],
+      "enhancement": "Resized only (Lanczos3), sRGB, EXIF stripped. No re-grading, no upscaling, no generative edits."
+    },
+    {
+      "id": "monali-thakur-img-0957-l",
+      "original": "MONALI THAKUR/IMG_0957 L.jpg",
+      "artist": "Monali Thakur",
+      "project": "monali-thakur",
+      "category": "Monochrome",
+      "tone": "mono",
+      "caption": "",
+      "alt": "Monali Thakur pointing out over the crowd while singing, in black and white",
+      "credit": "Pritam Haldar",
+      "public": true,
+      "downloadable": false,
+      "width": 2800,
+      "height": 1867,
+      "originalSize": "5248x3499",
+      "widths": [
+        240,
+        480,
+        960,
+        1600,
+        2200
+      ],
+      "enhancement": "Resized only (Lanczos3), sRGB, EXIF stripped. No re-grading, no upscaling, no generative edits."
+    },
+    {
+      "id": "monali-thakur-img-0973-l",
+      "original": "MONALI THAKUR/IMG_0973 L.jpg",
+      "artist": "Monali Thakur",
+      "project": "monali-thakur",
+      "category": "Monochrome",
+      "tone": "mono",
+      "caption": "",
+      "alt": "Monali Thakur singing under crossing light beams, in black and white",
+      "credit": "Pritam Haldar",
+      "public": true,
+      "downloadable": false,
+      "width": 2800,
+      "height": 1866,
+      "originalSize": "5534x3689",
+      "widths": [
+        240,
+        480,
+        960,
+        1600,
+        2200
+      ],
+      "enhancement": "Resized only (Lanczos3), sRGB, EXIF stripped. No re-grading, no upscaling, no generative edits."
+    },
+    {
+      "id": "monali-thakur-img-0990-l",
+      "original": "MONALI THAKUR/IMG_0990 L.jpg",
+      "artist": "Monali Thakur",
+      "project": "monali-thakur",
+      "category": "Monochrome",
+      "tone": "mono",
+      "caption": "",
+      "alt": "Monali Thakur raising both arms in front of the LED wall, in black and white",
+      "credit": "Pritam Haldar",
+      "public": true,
+      "downloadable": false,
+      "width": 2800,
+      "height": 1867,
+      "originalSize": "5662x3775",
+      "widths": [
+        240,
+        480,
+        960,
+        1600,
+        2200
+      ],
+      "enhancement": "Resized only (Lanczos3), sRGB, EXIF stripped. No re-grading, no upscaling, no generative edits."
+    },
+    {
+      "id": "monali-thakur-img-0991-l",
+      "original": "MONALI THAKUR/IMG_0991 L.jpg",
+      "artist": "Monali Thakur",
+      "project": "monali-thakur",
+      "category": "On stage",
+      "tone": "colour",
+      "caption": "",
+      "alt": "Monali Thakur singing with an arm raised in front of a blue and gold LED graphic",
+      "credit": "Pritam Haldar",
+      "public": true,
+      "downloadable": false,
+      "width": 2800,
+      "height": 1867,
+      "originalSize": "6000x4000",
+      "widths": [
+        240,
+        480,
+        960,
+        1600,
+        2200
+      ],
+      "enhancement": "Resized only (Lanczos3), sRGB, EXIF stripped. No re-grading, no upscaling, no generative edits."
+    },
+    {
+      "id": "monali-thakur-img-1046-l",
+      "original": "MONALI THAKUR/IMG_1046 L.jpg",
+      "artist": "Monali Thakur",
+      "project": "monali-thakur",
+      "category": "Monochrome",
+      "tone": "mono",
+      "caption": "",
+      "alt": "Monali Thakur singing with eyes closed, in black and white",
+      "credit": "Pritam Haldar",
+      "public": true,
+      "downloadable": false,
+      "width": 2800,
+      "height": 1867,
+      "originalSize": "6000x4000",
+      "widths": [
+        240,
+        480,
+        960,
+        1600,
+        2200
+      ],
+      "enhancement": "Resized only (Lanczos3), sRGB, EXIF stripped. No re-grading, no upscaling, no generative edits."
+    },
+    {
+      "id": "monali-thakur-img-1264-l",
+      "original": "MONALI THAKUR/IMG_1264 L.jpg",
+      "artist": "Monali Thakur",
+      "project": "monali-thakur",
+      "category": "On stage",
+      "tone": "colour",
+      "caption": "",
+      "alt": "Monali Thakur singing under a beam of white light and purple haze",
+      "credit": "Pritam Haldar",
+      "public": true,
+      "downloadable": false,
+      "width": 2800,
+      "height": 1867,
+      "originalSize": "5785x3857",
+      "widths": [
+        240,
+        480,
+        960,
+        1600,
+        2200
+      ],
+      "enhancement": "Resized only (Lanczos3), sRGB, EXIF stripped. No re-grading, no upscaling, no generative edits."
+    },
+    {
+      "id": "monali-thakur-img-1292-l",
+      "original": "MONALI THAKUR/IMG_1292 L.jpg",
+      "artist": "Monali Thakur",
+      "project": "monali-thakur",
+      "category": "Monochrome",
+      "tone": "mono",
+      "caption": "",
+      "alt": "Monali Thakur laughing with a hand raised, in black and white",
+      "credit": "Pritam Haldar",
+      "public": true,
+      "downloadable": false,
+      "width": 2800,
+      "height": 1867,
+      "originalSize": "6000x4000",
+      "widths": [
+        240,
+        480,
+        960,
+        1600,
+        2200
       ],
       "enhancement": "Resized only (Lanczos3), sRGB, EXIF stripped. No re-grading, no upscaling, no generative edits."
     }

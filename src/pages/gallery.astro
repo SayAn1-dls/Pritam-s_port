@@ -1,24 +1,24 @@
 ---
 import Base from '../layouts/Base.astro';
 import Photo from '../components/Photo.astro';
-import { photos } from '../data/photos';
+import { photos, SELF } from '../data/photos';
 import { published } from '../data/projects';
 
 const artists = published.map((p) => ({ slug: p.slug, name: p.artist }));
 const categories = [...new Set(photos.map((p) => p.category))].sort();
-// Interleave artists so the archive reads as a mixed contact sheet, not six blocks.
-const byArtist = artists.map((a) => photos.filter((p) => p.project === a.slug));
+// Interleave artists so the gallery reads as a mixed contact sheet, not six blocks.
+const byArtist = artists.map((a) => photos.filter((p) => p.project === a.slug && p.project !== SELF));
 const mixed: typeof photos = [];
 for (let i = 0; byArtist.some((l) => l[i]); i++) byArtist.forEach((l) => l[i] && mixed.push(l[i]));
 ---
-<Base title="Archive" description={`${mixed.length} concert photographs by Pritam Haldar: Fakira, Cactus, Jeet Ganguly, Fossils, Monali Thakur and Anupam Roy.`}>
+<Base title="Gallery" description={`${mixed.length} concert photographs by Pritam Haldar: Fakira, Cactus, Jeet Ganguly, Fossils, Monali Thakur and Anupam Roy.`}>
   <section class="wrap head">
-    <p class="meta">The archive — {mixed.length} frames, {artists.length} artists</p>
-    <h1 class="display h">A selection from <em>every set.</em></h1>
+    <p class="meta">The gallery — {mixed.length} frames, {artists.length} artists</p>
+    <h1 class="display h">Frames from <em>every set.</em></h1>
     <p class="lede">Every frame is from a live show I photographed. Select one to see it at full resolution; use the arrow keys or swipe to move through the series.</p>
   </section>
 
-  <section class="wrap tools" aria-label="Filter the archive" hidden data-tools>
+  <section class="wrap tools" aria-label="Filter the gallery" data-tools>
     <div class="row">
       <label class="search">
         <span class="meta">Search</span>
@@ -47,26 +47,24 @@ for (let i = 0; byArtist.some((l) => l[i]); i++) byArtist.forEach((l) => l[i] &&
           data-cat={p.category}
           data-text={`${p.artist} ${p.caption} ${p.alt} ${p.category}`.toLowerCase()}
         >
-          <Photo id={p.id} sizes="(max-width: 700px) 50vw, (max-width: 980px) 33vw, 25vw" lightbox />
-          <p class="meta acap"><b>{p.artist}</b> {p.caption}</p>
+          <Photo id={p.id} sizes="(max-width: 700px) 50vw, (max-width: 980px) 33vw, 25vw" lightbox defer />
         </div>
       ))}
     </div>
     <div class="empty" hidden data-empty>
-      <p class="display">Nothing in the archive matches that.</p>
+      <p class="display">Nothing in the gallery matches that.</p>
       <button type="button" class="btn ghost" data-reset>Clear filters</button>
     </div>
   </section>
 </Base>
 
 <script>
-  const tools = document.querySelector<HTMLElement>('[data-tools]')!;
+  const tools = document.querySelector<HTMLElement>('[data-tools]')!; // shown from first paint when JS runs (see CSS)
   const cells = [...document.querySelectorAll<HTMLElement>('.cell')];
   const q = document.querySelector<HTMLInputElement>('[data-q]')!;
   const count = document.querySelector<HTMLElement>('[data-count]')!;
   const empty = document.querySelector<HTMLElement>('[data-empty]')!;
   const state: Record<string, string> = { artist: '', cat: '' };
-  tools.hidden = false; // filters only appear once they can work
 
   const params = new URLSearchParams(location.search);
   state.artist = params.get('artist') ?? '';
@@ -107,6 +105,9 @@ for (let i = 0; byArtist.some((l) => l[i]); i++) byArtist.forEach((l) => l[i] &&
   .h { font-size: clamp(48px, 8vw, 140px); margin: 18px 0 22px; }
   .h em { color: inherit; }
 
+  /* Filters only work with JavaScript. The <head> script marks html.js before first paint, so the bar is laid out
+     from the start instead of being revealed later (which pushed the whole grid down). */
+  :global(html:not(.js)) .tools { display: none; }
   .tools { position: sticky; top: 64px; z-index: 20; background: var(--paper); padding-top: 14px; padding-bottom: 14px; border-top: 6px solid var(--ink); margin-bottom: 24px; }
   .row { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 10px; }
   .row + .row { margin-top: 10px; }
@@ -128,8 +129,6 @@ for (let i = 0; byArtist.some((l) => l[i]); i++) byArtist.forEach((l) => l[i] &&
   .grid { columns: 4; column-gap: 12px; }
   .cell { break-inside: avoid; margin-bottom: 14px; min-width: 0; }
   .cell[hidden] { display: none; }
-  .acap { margin: 6px 0 0; }
-  .acap b { color: var(--ink); font-weight: 650; }
   .empty { padding: 60px 0; text-align: left; }
   .empty .display { font-size: clamp(30px, 4vw, 56px); margin-bottom: 20px; }
 

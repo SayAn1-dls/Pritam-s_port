@@ -10,19 +10,18 @@ const year = new Date().getFullYear();
         <div>
           <p class="meta">Contact</p>
           <ul>
-            {links.email && <li><a class="link-u" href={links.email}>{site.contact.email}</a></li>}
-            {links.whatsapp && <li><a class="link-u" href={links.whatsapp} target="_blank" rel="noopener">WhatsApp {site.contact.phoneDisplay}</a></li>}
-            {links.phone && <li><a class="link-u" href={links.phone}>Call {site.contact.phoneDisplay}</a></li>}
-          </ul>
-        </div>
-        <div>
-          <p class="meta">Elsewhere</p>
-          <ul>
-            {links.linkedin && <li><a class="link-u" href={links.linkedin} target="_blank" rel="noopener">LinkedIn</a></li>}
             {links.instagram && <li><a class="link-u" href={links.instagram} target="_blank" rel="noopener">Instagram</a></li>}
-            {links.resume && <li><a class="link-u" href={links.resume}>Resume</a></li>}
+            {links.whatsapp && <li><a class="link-u" href={links.whatsapp} target="_blank" rel="noopener">WhatsApp {site.contact.phoneDisplay}</a></li>}
           </ul>
         </div>
+        {links.resume && (
+          <div>
+            <p class="meta">Elsewhere</p>
+            <ul>
+              <li><a class="link-u" href={links.resume}>Resume</a></li>
+            </ul>
+          </div>
+        )}
         <div>
           <p class="meta">Index</p>
           <ul>

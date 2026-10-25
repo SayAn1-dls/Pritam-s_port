@@ -3,14 +3,11 @@ import Base from '../layouts/Base.astro';
 import { site, links } from '../data/site';
 const rows = [
   { k: 'WhatsApp', v: site.contact.phoneDisplay, href: links.whatsapp, ext: true },
-  { k: 'Call', v: site.contact.phoneDisplay, href: links.phone },
-  { k: 'Email', v: site.contact.email, href: links.email },
-  { k: 'LinkedIn', v: 'in/pritam-haldar', href: links.linkedin, ext: true },
   { k: 'Instagram', v: site.contact.instagram.replace(/^https?:\/\/(www\.)?/, ''), href: links.instagram, ext: true },
   { k: 'Resume', v: 'Download', href: links.resume },
 ].filter((r) => r.href);
 ---
-<Base title="Contact" description={`Contact ${site.name}: WhatsApp, phone, email and LinkedIn.`}>
+<Base title="Contact" description={`Contact ${site.name}: WhatsApp and Instagram.`}>
   <section class="wrap c">
     <p class="meta">Contact</p>
     <h1 class="display h">Say hello.</h1>

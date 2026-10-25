@@ -6,11 +6,11 @@ import { site, companies, links } from '../data/site';
 import { published } from '../data/projects';
 import { photosFor } from '../data/photos';
 ---
-<Base title="About" description={`About ${site.name}: concert photographer and show marketer working with ${companies.map((c) => c.name).join(' and ')}.`}>
+<Base title="About" description={`About ${site.name}: concert and artist photographer.`}>
   <section class="wrap ab-head">
     <p class="meta">Profile</p>
     <h1 class="display h">{site.name}</h1>
-    <p class="sub">Concert photographer. Event marketer. Usually at the front of the stage.</p>
+    <p class="sub">Concert and artist photographer. Usually at the front of the stage.</p>
   </section>
 
   <section class="wrap ab-body">
@@ -18,37 +18,35 @@ import { photosFor } from '../data/photos';
       <Photo id="pritam-haldar-portrait" maxH="80svh" sizes="(max-width: 860px) 100vw, 40vw" lightbox caption />
     </div>
     <div class="ab-text prose">
-      <p class="lede">I photograph live music, and I think about every frame as something with a job to do once the show is over.</p>
+      <p class="lede">I photograph live music: the artists, the performance and the energy of the night.</p>
       <p>
         I work with production companies {companies.map((c, i) => <>{i > 0 && ' and '}<strong>{c.name}</strong></>)},
         and I’ve photographed concerts by {published.map((p) => p.artist).join(', ').replace(/, ([^,]*)$/, ' and $1')}.
       </p>
       <p>
-        That puts me close to everyone who needs something from a show. The artist wants to look like themselves on their best night.
-        The sponsor wants proof they were there. The organiser needs a reason to sell the next ticket.
+        An artist on stage is at their most honest. My job is to catch that: the expression mid-song, the band locked in,
+        the light cutting through the haze.
       </p>
       <p>
-        So I don’t just shoot what’s in front of me. Before the show I think about who will use the pictures.
-        During it I work the three angles that matter: the face, the stage, the crowd.
+        During a show I work the three angles that matter: the face, the stage, the crowd.
       </p>
       <p>
         Afterwards I edit the night into one consistent set, so the frames read as a single series and still hold up
         long after the show.
       </p>
       <p>
-        That’s the part I enjoy most, and why I’m moving further into marketing: working out what makes people show up, and then
-        making sure the people who weren’t there wish they had been.
+        The goal is simple: the people who weren’t there should feel the show, and wish they had been.
       </p>
 
       <h2 class="meta sec">How I think about it</h2>
       <ul class="beliefs">
-        <li><b>Attention is earned in the first frame.</b> If a photo doesn’t stop the scroll, it doesn’t matter how good the show was.</li>
-        <li><b>Sponsors are partners, not logos.</b> Their branding should be in the shots people share, without turning them into adverts.</li>
-        <li><b>The crowd is the proof.</b> A packed field sells the next show better than any caption.</li>
+        <li><b>The moment comes once.</b> A chorus, a jump, a burst of confetti: be ready before it happens.</li>
+        <li><b>The artist comes first.</b> The light, the stage and the effects are there to frame the performer.</li>
+        <li><b>The crowd is part of the show.</b> A field of raised hands says as much about a night as the stage does.</li>
         <li><b>Consistency is a brand.</b> A set should look like one night and one point of view, not fifty separate photos.</li>
       </ul>
 
-      <h2 class="meta sec">Shows in the archive</h2>
+      <h2 class="meta sec">Shows in the gallery</h2>
       <ul class="shows">
         {published.map((p) => (
           <li><a href={`/work/${p.slug}/`}><span>{p.artist}</span><span class="meta">{[p.year, `${photosFor(p.slug).length} frames online`].filter(Boolean).join(' · ')}</span></a></li>
@@ -56,10 +54,10 @@ import { photosFor } from '../data/photos';
       </ul>
 
       <h2 class="meta sec">What I’m looking for</h2>
-      <p>Marketing, event and partnership roles with music, entertainment and lifestyle brands; concert and festival photography; and collaborations with artists and production houses who care how their shows are seen.</p>
+      <p>Concert and festival photography, artist shoots, and collaborations with artists and production houses who care how their shows are seen.</p>
       <div class="btns">
         <a class="btn" href="/hire/">Work with me <span class="arr">→</span></a>
-        {links.linkedin && <a class="btn ghost" href={links.linkedin} target="_blank" rel="noopener">LinkedIn</a>}
+        {links.instagram && <a class="btn ghost" href={links.instagram} target="_blank" rel="noopener">Instagram</a>}
       </div>
     </div>
   </section>

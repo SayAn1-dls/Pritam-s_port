@@ -18,7 +18,7 @@ import { photosFor } from '../../data/photos';
           <a href={`/work/${p.slug}/`} class="row-a">
             <span class="t">{p.artist}</span>
             <span class="k">{p.about}</span>
-            <span class="meta c">{[p.year, p.category].filter(Boolean).join(' · ')}</span>
+            <span class="meta c">{[p.year, p.genre].filter(Boolean).join(' · ')}</span>
             <span class="meta f">{photosFor(p.slug).length} frames online</span>
             <span class="img" aria-hidden="true"><Photo id={p.cover} sizes="(max-width: 860px) 100vw, 320px" /></span>
           </a>

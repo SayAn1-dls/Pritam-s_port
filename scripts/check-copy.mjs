@@ -14,6 +14,8 @@ const PLACEHOLDERS = /\b(lorem|ipsum|todo|tbd)\b|\[object Object\]|>\s*(undefine
 const HERO_REQUIRED = [/Pritam Haldar/, /Concert and Artist Photographer/, /photograph/i, /concert/i];
 // The site is a photography portfolio: no sponsor / promoter positioning and no LinkedIn anywhere.
 const FORBIDDEN = [/\bsponsor/i, /\bpromoter/i, /three audiences/i, /linkedin/i];
+// Pages talk about the artists, the photographer and how he works, never about what is in a photo or how it was lit.
+const PICTURE_TALK = /\b(haze|co2|confetti|smoke|backlit|backlight|led (screen|wall|visuals)|beams?|monochrome|lighting rig|flame effects?)\b/i;
 const HERO_CATEGORY = /\b(concert|photo|photos|photographer)\b/i;
 
 const pages = [];
@@ -52,6 +54,8 @@ for (const file of pages) {
   }
   if (/\p{Emoji_Presentation}/u.test(visible)) fail(page, 'emoji in page text');
   for (const re of FORBIDDEN) if (re.test(html)) fail(page, `forbidden reference ${re}`);
+  const pic = visible.match(PICTURE_TALK);
+  if (pic) fail(page, `describes the photo ("${pic[0]}"): keep copy about the artist`);
   if (PLACEHOLDERS.test(html.replace(/<(script|style)[\s\S]*?<\/\1>/g, ''))) fail(page, 'placeholder text');
 }
 

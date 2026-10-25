@@ -33,16 +33,16 @@ const sheet = ['cactus-dsc-0393', 'fossils-dsc-2352-l', 'monali-thakur-img-0908-
 
     {featured.map((p, i) => (
       <article class:list={['wk', layouts[i], 'rv']}>
-        <a href={`/work/${p.slug}/`} class="wk-img" aria-label={`${p.title}: read the case study`}>
+        <a href={`/work/${p.slug}/`} class="wk-img" aria-label={`${p.artist}: read more`}>
           <Photo id={p.cover} maxH="82svh" sizes="(max-width: 860px) 100vw, 60vw" />
         </a>
         <div class="wk-txt">
-          <p class="meta wk-n">{p.category}</p>
+          <p class="meta wk-n">{p.genre}</p>
           <h2 class="h2"><a href={`/work/${p.slug}/`}>{p.artist}</a></h2>
           <p class="wk-kick">{p.kicker}</p>
           <p class="wk-sum">{p.summary}</p>
           <p class="meta">{[p.role, p.year].filter(Boolean).join(' · ')}</p>
-          <a class="link-u wk-more" href={`/work/${p.slug}/`}>Read the case study →</a>
+          <a class="link-u wk-more" href={`/work/${p.slug}/`}>About {p.kind === 'band' ? 'the band' : 'the artist'} →</a>
         </div>
       </article>
     ))}
@@ -59,19 +59,19 @@ const sheet = ['cactus-dsc-0393', 'fossils-dsc-2352-l', 'monali-thakur-img-0908-
           <Photo id="monali-thakur-img-0886-l" sizes="(max-width: 860px) 100vw, 30vw" />
           <p class="meta">The face</p>
           <h3 class="h3">The artist</h3>
-          <p>Emotion, a sharp frame, a flattering angle. The moment the song lands.</p>
+          <p>I follow the artist through the whole set, ready for the moments that matter.</p>
         </li>
         <li class="rv">
           <Photo id="jeet-ganguly-dsc-0100" sizes="(max-width: 860px) 100vw, 30vw" />
           <p class="meta">The stage</p>
           <h3 class="h3">The performance</h3>
-          <p>Scale, light and production: the whole stage in one frame.</p>
+          <p>The band and the show as a whole, from the first song to the encore.</p>
         </li>
         <li class="rv">
           <Photo id="fakira-dsc-0823" sizes="(max-width: 860px) 100vw, 30vw" />
           <p class="meta">The crowd</p>
           <h3 class="h3">The energy</h3>
-          <p>The crowd singing back, hands up, the room at full volume.</p>
+          <p>The people who came, singing every word back to the stage.</p>
         </li>
       </ol>
     </div>
@@ -84,7 +84,7 @@ const sheet = ['cactus-dsc-0393', 'fossils-dsc-2352-l', 'monali-thakur-img-0908-
       <p class="display ab-quote rv">I stand where the crowd can’t, so the people who weren’t there <em>wish they had been.</em></p>
       <div class="ab-txt rv">
         <p>I photograph concerts and the artists who play them, from the front of the stage to the back of the crowd.</p>
-        <p>The face mid-song, the band locked in, the light hitting the haze, the crowd singing every word.</p>
+        <p>I stay close to the performance and out of the way of the show.</p>
         <p>Every show is different, and every set gets photographed as one story, from the first song to the encore.</p>
         <a class="link-u" href="/about/">More about me →</a>
       </div>

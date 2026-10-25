@@ -11,7 +11,9 @@ const BANNED = [
 ];
 const PLACEHOLDERS = /\b(lorem|ipsum|todo|tbd)\b|\[object Object\]|>\s*(undefined|NaN)\s*</i;
 // What a visitor must be able to read inside the home hero (who, what, proof).
-const HERO_REQUIRED = [/Pritam Haldar/, /photograph/i, /market/i, /concert/i, /Eventures Entertainment/, /Hottogol/];
+const HERO_REQUIRED = [/Pritam Haldar/, /Concert and Artist Photographer/, /photograph/i, /concert/i];
+// The site is a photography portfolio: no sponsor / promoter positioning and no LinkedIn anywhere.
+const FORBIDDEN = [/\bsponsor/i, /\bpromoter/i, /three audiences/i, /linkedin/i];
 const HERO_CATEGORY = /\b(concert|photo|photos|photographer)\b/i;
 
 const pages = [];
@@ -49,6 +51,7 @@ for (const file of pages) {
     if (new RegExp(`\\b${w}\\b`, 'i').test(visible)) fail(page, `banned word "${w}"`);
   }
   if (/\p{Emoji_Presentation}/u.test(visible)) fail(page, 'emoji in page text');
+  for (const re of FORBIDDEN) if (re.test(html)) fail(page, `forbidden reference ${re}`);
   if (PLACEHOLDERS.test(html.replace(/<(script|style)[\s\S]*?<\/\1>/g, ''))) fail(page, 'placeholder text');
 }
 

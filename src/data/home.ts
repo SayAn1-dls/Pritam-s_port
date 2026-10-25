@@ -3,7 +3,7 @@
  * Rules (docs/plan/first-3-seconds.plan.xml): the hero must say who, what and the proof in the first screen;
  * every number is computed from the content files; nothing claims turnaround or reach.
  */
-import { site, companies, links } from './site';
+import { site, links } from './site';
 import { published, editedFrames } from './projects';
 
 const WORDS = ['zero', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine', 'ten'];
@@ -19,8 +19,8 @@ export const totalFrames = published.reduce((n, p) => n + editedFrames(p), 0);
 export const hero = {
   name: site.name,
   role: site.role,
-  title: 'Concert photos that sell the next show.',
-  sub: `I shoot live shows with ${listOf(companies.map((c) => c.name))}, framing every set for three audiences: the artist, the sponsor and the promoter.`,
+  title: 'Concert photos with the energy of the night.',
+  sub: 'I photograph artists and live performances, from the first song to the encore, capturing the energy of the show as it happens.',
   proofLabel: 'Shot live',
   primary: { label: `See the ${say(published.length)} shows`, href: '#shows' },
   secondary: links.whatsapp ? { label: 'WhatsApp me', href: links.whatsapp } : { label: 'Hire me', href: '/hire/' },
@@ -35,15 +35,11 @@ export interface FrameMark {
   job: string;
 }
 
-/** The hero infographic: one real frame, annotated with who each part of it works for. */
+/** The hero frame: one real concert photograph (Fossils, DSC_2189 L.jpg). No numbered marks. */
 export const frame = {
-  photo: 'cactus-dsc-0350',
-  caption: 'One frame, three jobs. Cactus, open air.',
-  marks: [
-    { n: 1, x: 64.5, y: 30, side: 'right', who: 'The face', job: 'for the artist' },
-    { n: 2, x: 90, y: 13, side: 'left', who: 'The stage', job: 'the production, at full scale' },
-    { n: 3, x: 21, y: 87, side: 'right', who: 'The crowd', job: 'proof people came' },
-  ] satisfies FrameMark[],
+  photo: 'fossils-dsc-2189-l',
+  caption: 'Fossils, live, 2024.',
+  marks: [] as FrameMark[],
   pass: { photo: 'pritam-haldar-portrait', label: 'Photo' },
 };
 

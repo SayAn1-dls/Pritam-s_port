@@ -5,12 +5,12 @@ import { site, links } from '../data/site';
   <div class="label"><span class="meta">Hiring</span><span class="meta">{site.availability.open ? site.availability.label : site.availability.closedLabel}</span></div>
   <h2 id="cta-h" class="display cta-h rv">Have something worth <em>putting into the world?</em></h2>
   <div class="cta-row rv">
-    <p class="lede">A show to shoot, a campaign to run, a sponsor to land, or a role on your team. Email, call or message me on WhatsApp.</p>
+    <p class="lede">A concert, an artist or a festival to photograph. Message me on WhatsApp or Instagram.</p>
     <div class="btns">
       <a class="btn red" href="/hire/">Hire {site.shortName} <span class="arr">→</span></a>
       {links.whatsapp && <a class="btn" href={links.whatsapp} target="_blank" rel="noopener">WhatsApp {site.contact.phoneDisplay}</a>}
       {links.resume && <a class="btn ghost" href={links.resume}>View my resume</a>}
-      {links.email && <a class="btn ghost" href={links.email}>Get in touch</a>}
+      {links.instagram && <a class="btn ghost" href={links.instagram} target="_blank" rel="noopener">Instagram</a>}
     </div>
   </div>
 </section>

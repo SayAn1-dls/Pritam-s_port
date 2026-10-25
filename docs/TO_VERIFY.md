@@ -9,8 +9,9 @@ The site only states what the files and your message confirm. These gaps are hid
    but doesn't attach either company to a specific concert. Add `company` per project in `src/data/projects.ts`.
 3. **Your role on each show.** Currently "Concert photographer", based on your signature on every frame. If you also
    handled marketing, sponsorship or operations on a show, add it to `role` and `execution`.
-4. **Dates and venues.** Fossils and Monali Thakur are dated 2023 from the camera data. The Cactus, Fakira and Jeet
-   Ganguly cameras had their clock set to the year 2000, and the Anupam Roy files have no date, so those years are hidden.
+4. **Dates and venues.** Years now follow the dates you supplied (October 2026): Fakira, Cactus and Jeet Ganguly 2026,
+   Fossils and Monali Thakur 2024, Anupam Roy 2023. Note the Fossils and Monali Thakur camera data says December 2023;
+   if the shows were on New Year's Eve or the camera clock was off, 2024 may still be right. Please double-check.
    The Fossils stage branding reads "Englishbazar"; confirm before it is used as a venue.
 5. **Case-study wording.** Checked line by line in October 2026: every sentence now describes what the photos show or
    what the file metadata says (camera, date, Lightroom/Photoshop). The `idea` and `notes` lines describe an approach and
@@ -23,14 +24,16 @@ The site only states what the files and your message confirm. These gaps are hid
    project to `draft: true` to hide it.
 7b. **Anupam Roy files** have no camera metadata at all (they look like 2048 px Facebook downloads). Your signature is on
    them; confirm they are yours.
-8. **Positioning label.** The home page and page titles now call you a **"Concert photographer & event marketer"**
-   (`site.role` in `src/data/site.ts`). It matches the hire categories, but change it if you'd describe yourself differently.
-9. **Sponsor branding.** The Jeet Ganguly set shows a school's branding and phone numbers on the LED screen. It is
-   public stage advertising, but check the sponsor is happy to be shown.
+8. **Positioning label.** The site calls you a **"Concert and Artist Photographer"** (`site.role` in `src/data/site.ts`).
+   Sponsor, promoter and LinkedIn references were removed; public contact is WhatsApp and Instagram only.
+9. **Stage screens in photos.** Some Jeet Ganguly frames show a school's advertising on the LED screen behind the stage.
+   The site text no longer mentions it; the photos are shown as taken.
 
 ## Please supply
 - **Resume PDF** → `public/resume.pdf`, then set `resume: '/resume.pdf'`.
-- **Instagram** URL (optional) and the **location** you want shown (optional).
+- **Instagram profile URL (needed).** It is one of the two contact options, but no URL was supplied and none could be found
+  online. Set `instagram` in `src/data/site.ts` (e.g. `https://www.instagram.com/<handle>/`); the links appear everywhere at once.
+- The **location** you want shown (optional).
 - **Verified outcomes**: shows covered for each company, any sponsorship amounts you worked on (and whether they
   were team totals), and any reach or engagement numbers you can document.
 - **Final domain**, then update `site.url`, `astro.config.mjs` and `public/robots.txt`.

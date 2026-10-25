@@ -17,6 +17,7 @@ export interface Project {
   artist: string;
   title: string;
   kicker: string; // one-line poster tagline
+  about: string; // one line on the artist or band and their music (researched, no biography)
   year: string; // '' = unknown, hidden
   venue: string; // '' = hidden
   company: string; // production partner for this show, '' = hidden
@@ -31,7 +32,7 @@ export interface Project {
   // verified: facts that can be checked (counts, file metadata). shows: what the photos show.
   outcomes: { verified: string[]; shows: string[] };
   notes: string; // "what I took from it": an opinion, in Pritam's voice
-  sequence: string[]; // photo ids shown in the case study, in order
+  sequence: string[]; // photo ids shown in the case study, in order (landscape frames only)
   draft?: boolean;
   featured?: boolean;
 }
@@ -42,7 +43,8 @@ export const projects: Project[] = [
     artist: 'Fakira',
     title: 'Fakira, live',
     kicker: 'Fire on the screen, white kurtas on stage.',
-    year: '',
+    about: 'Kolkata folk-fusion band that sets Baul and Fakiri songs, from Lalon Fakir onwards, to rock instrumentation.',
+    year: '2026',
     venue: '',
     company: '',
     role: 'Concert photographer',
@@ -72,9 +74,9 @@ export const projects: Project[] = [
     notes:
       'The crowd shots are the ones people stop on. A wall of fire is impressive; a fan holding up a hand-drawn portrait is convincing.',
     sequence: [
-      'fakira-dsc-0600', 'fakira-dsc-0621', 'fakira-dsc-0637', 'fakira-dsc-0823', 'fakira-dsc-0858',
-      'fakira-dsc-0872', 'fakira-dsc-0972', 'fakira-dsc-0833', 'fakira-dsc-0910', 'fakira-dsc-0918',
-      'fakira-dsc-0489', 'fakira-dsc-0611', 'fakira-dsc-0786', 'fakira-dsc-0751',
+      'fakira-dsc-0621', 'fakira-dsc-0637', 'fakira-dsc-0823', 'fakira-dsc-0858', 'fakira-dsc-0872',
+      'fakira-dsc-0833', 'fakira-dsc-0918', 'fakira-dsc-0611', 'fakira-dsc-0786', 'fakira-dsc-0751',
+      'fakira-dsc-0888', 'fakira-dsc-0959', 'fakira-dsc-0656', 'fakira-dsc-0902',
     ],
     featured: true,
   },
@@ -83,12 +85,13 @@ export const projects: Project[] = [
     artist: 'Cactus',
     title: 'Cactus, open air',
     kicker: 'Confetti, flame effects and phones in the air.',
-    year: '',
+    about: 'One of Bengal’s longest-running Bangla rock bands, playing out of Kolkata since 1992.',
+    year: '2026',
     venue: '',
     company: '',
     role: 'Concert photographer',
     category: 'Live music · Production',
-    cover: 'cactus-dsc-0241',
+    cover: 'cactus-dsc-0336',
     summary:
       'An open-air Cactus show with CO2, flame effects, confetti and a big LED rig, covered wide and close.',
     context:
@@ -113,33 +116,34 @@ export const projects: Project[] = [
     notes:
       'A wide shot of the whole stage and crowd says more about a show than ten close-ups. Close-ups are for the artist; wides show the scale.',
     sequence: [
-      'cactus-dsc-0267', 'cactus-dsc-0114', 'cactus-dsc-0350', 'cactus-dsc-0129', 'cactus-dsc-0336',
-      'cactus-dsc-0393', 'cactus-dsc-0136', 'cactus-dsc-0113', 'cactus-dsc-0361', 'cactus-dsc-0230',
-      'cactus-dsc-0370', 'cactus-dsc-0161', 'cactus-dsc-0402', 'cactus-dsc-0275',
+      'cactus-dsc-0267', 'cactus-dsc-0350', 'cactus-dsc-0336', 'cactus-dsc-0393', 'cactus-dsc-0136',
+      'cactus-dsc-0113', 'cactus-dsc-0402', 'cactus-dsc-0275', 'cactus-dsc-0412', 'cactus-dsc-0166',
+      'cactus-dsc-0339', 'cactus-dsc-0263', 'cactus-dsc-0152', 'cactus-dsc-0242',
     ],
     featured: true,
   },
   {
     slug: 'jeet-ganguly',
     artist: 'Jeet Ganguly',
-    title: 'Jeet Ganguly, with the sponsor on screen',
-    kicker: 'The artist, the band, and the sponsor on the LED wall.',
-    year: '',
+    title: 'Jeet Ganguly, live',
+    kicker: 'Smoke jets, a full band, and a composer singing his own songs.',
+    about: 'Composer and singer behind a long run of Bengali and Hindi film soundtracks, including Aashiqui 2.',
+    year: '2026',
     venue: '',
     company: '',
     role: 'Concert photographer',
-    category: 'Live music · Sponsor visibility',
-    cover: 'jeet-ganguly-dsc-0084',
+    category: 'Live music · Artist content',
+    cover: 'jeet-ganguly-dsc-0076',
     summary:
-      'A Jeet Ganguly concert with sponsor branding on the LED wall, framed so the branding stays readable behind the artist.',
+      'A Jeet Ganguly concert on a big open-air stage, with CO2 jets, confetti and a full live band.',
     context:
-      'The sponsor’s branding ran on the LED screens behind the stage. A sponsor wants to be seen in the photos; an artist wants photos that look like a concert, not an advert.',
+      'Jeet Ganguly performed his songs with a full band: guitar, keys, drums and percussion, under a large lighting rig.',
     challenge:
-      'Keeping the sponsor’s name readable while the artist stays the clear subject of the frame.',
+      'Bright LED screens behind the stage and fast-changing light made it hard to keep the artist the clear subject of the frame.',
     idea:
-      'Use the branded screen as the backdrop, not the subject. Frame the artist in front of it, and let the wide shots show the whole stage.',
+      'Frame the artist against the light, go wide for the CO2 and confetti, and give the band its own frames.',
     execution: [
-      'Mid shots of the artist with the branding readable behind.',
+      'Mid shots of the artist under blue and white beams.',
       'Wide frames of the full stage and crowd.',
       'CO2 and confetti moments.',
       'The band: guitar, keys, drums and percussion.',
@@ -148,18 +152,16 @@ export const projects: Project[] = [
     outcomes: {
       verified: [
         '54 frames in the edited set',
-        'Sponsor branding readable in several wide and mid shots',
         'Shot on a Nikon D5300, edited in Adobe Lightroom Classic (file metadata)',
       ],
-      shows: ['Frames for the artist, frames that show the sponsor, and wide frames of the whole show.'],
+      shows: ['Frames of the artist, the band, and wide frames of the whole show.'],
     },
     notes:
-      'A sponsor’s logo matters most in the frames people actually share. Get the artist right first, then make sure the brand is in the frame.',
+      'A composer on stage is singing songs the crowd already knows by heart. The best frames catch both sides of that.',
     sequence: [
-      'jeet-ganguly-dsc-0100', 'jeet-ganguly-dsc-0026', 'jeet-ganguly-dsc-0908', 'jeet-ganguly-dsc-0103',
-      'jeet-ganguly-dsc-0076', 'jeet-ganguly-dsc-0835', 'jeet-ganguly-dsc-0838', 'jeet-ganguly-dsc-0136',
-      'jeet-ganguly-dsc-0001', 'jeet-ganguly-dsc-0931', 'jeet-ganguly-dsc-0780', 'jeet-ganguly-dsc-0756',
-      'jeet-ganguly-dsc-0149', 'jeet-ganguly-dsc-0880',
+      'jeet-ganguly-dsc-0100', 'jeet-ganguly-dsc-0908', 'jeet-ganguly-dsc-0103', 'jeet-ganguly-dsc-0076', 'jeet-ganguly-dsc-0835',
+      'jeet-ganguly-dsc-0136', 'jeet-ganguly-dsc-0001', 'jeet-ganguly-dsc-0149', 'jeet-ganguly-dsc-0880', 'jeet-ganguly-dsc-0075',
+      'jeet-ganguly-dsc-1000', 'jeet-ganguly-dsc-0120', 'jeet-ganguly-dsc-0794', 'jeet-ganguly-dsc-0928',
     ],
     featured: true,
   },
@@ -168,14 +170,15 @@ export const projects: Project[] = [
     artist: 'Fossils',
     title: 'Fossils, in black and gold',
     kicker: 'A rock frontman, a striped scarf, and a lot of truss.',
-    year: '2023',
+    about: 'Kolkata hard-rock band formed in 1998, among the acts that brought Bangla rock to big stages.',
+    year: '2024',
     venue: '',
     company: '',
     role: 'Concert photographer',
     category: 'Live music · Artist content',
-    cover: 'fossils-dsc-2132-l',
+    cover: 'fossils-dsc-2123-l',
     summary:
-      'Fossils on a big stage in December 2023, shot in colour and monochrome under hard backlight.',
+      'Fossils on a big stage, shot in colour and monochrome under hard backlight.',
     context:
       'Fossils are one of the best-known Bengali rock bands. The frontman’s look, with curls, glasses and a striped scarf, is instantly recognisable on stage.',
     challenge:
@@ -191,16 +194,16 @@ export const projects: Project[] = [
     outcomes: {
       verified: [
         '38 frames in the edited set',
-        'Shot on a Nikon Z 6II in December 2023, edited in Adobe Lightroom Classic and Photoshop (file metadata)',
+        'Shot on a Nikon Z 6II, edited in Adobe Lightroom Classic and Photoshop (file metadata)',
       ],
       shows: ['One consistent look across the colour and monochrome frames.'],
     },
     notes:
       'Monochrome isn’t there to rescue a bad shot. It’s a choice about what the band stands for.',
     sequence: [
-      'fossils-dsc-2016-l', 'fossils-dsc-2023-l', 'fossils-dsc-2046-l', 'fossils-dsc-2189-l', 'fossils-dsc-2123-l',
-      'fossils-dsc-2184-l', 'fossils-dsc-2240-l', 'fossils-dsc-2026-l', 'fossils-dsc-2288-l', 'fossils-dsc-2339-l',
-      'fossils-dsc-2352-l', 'fossils-dsc-2365-l',
+      'fossils-dsc-2189-l', 'fossils-dsc-2123-l', 'fossils-dsc-2288-l', 'fossils-dsc-2339-l', 'fossils-dsc-2352-l',
+      'fossils-dsc-2365-l', 'fossils-dsc-2034-l', 'fossils-dsc-2214-l', 'fossils-dsc-2100-l', 'fossils-dsc-2287-l',
+      'fossils-dsc-2055-l', 'fossils-dsc-2522-l',
     ],
     featured: true,
   },
@@ -209,14 +212,15 @@ export const projects: Project[] = [
     artist: 'Monali Thakur',
     title: 'Monali Thakur, in colour',
     kicker: 'Kaleidoscope screens and a performer in constant motion.',
-    year: '2023',
+    about: 'Playback singer behind Hindi and Bengali film songs such as “Sawaar Loon” and “Moh Moh Ke Dhaage”.',
+    year: '2024',
     venue: '',
     company: '',
     role: 'Concert photographer',
     category: 'Live music · Artist content',
-    cover: 'monali-thakur-img-0947-l',
+    cover: 'monali-thakur-img-0952-l',
     summary:
-      'A Monali Thakur concert in December 2023 with very graphic LED visuals, framed so the artist and the screen design read as one image.',
+      'A Monali Thakur concert with very graphic LED visuals, framed so the artist and the screen design read as one image.',
     context:
       'Monali Thakur is a playback singer and live performer. The screen content that night was bold: mandalas, starbursts and stars.',
     challenge:
@@ -229,15 +233,15 @@ export const projects: Project[] = [
       'Band frames with the guitarists.',
     ],
     outcomes: {
-      verified: ['31 frames in the edited set', 'Shot in December 2023 (file metadata)'],
+      verified: ['31 frames in the edited set'],
       shows: ['The show’s visual design as much as the singer.'],
     },
     notes:
       'Laughter photographs better than perfect poses. The frames people remember are the ones where the joy on stage is obvious.',
     sequence: [
-      'monali-thakur-img-0952-l', 'monali-thakur-img-0769-l', 'monali-thakur-img-0941-l', 'monali-thakur-img-0886-l',
-      'monali-thakur-img-0808-l', 'monali-thakur-img-0917-l', 'monali-thakur-img-0981-l', 'monali-thakur-img-0949-l',
-      'monali-thakur-img-0908-l', 'monali-thakur-img-0826-l', 'monali-thakur-img-1018-l', 'monali-thakur-img-0778-l',
+      'monali-thakur-img-0952-l', 'monali-thakur-img-0886-l', 'monali-thakur-img-0808-l', 'monali-thakur-img-0981-l', 'monali-thakur-img-0908-l',
+      'monali-thakur-img-1018-l', 'monali-thakur-img-0778-l', 'monali-thakur-img-0991-l', 'monali-thakur-img-0812-l', 'monali-thakur-img-0945-l',
+      'monali-thakur-img-1264-l', 'monali-thakur-img-0973-l',
     ],
     featured: true,
   },
@@ -246,7 +250,8 @@ export const projects: Project[] = [
     artist: 'Anupam Roy',
     title: 'The Anupam Roy Band',
     kicker: 'A singer-songwriter, an electric guitar, and beams in every colour.',
-    year: '',
+    about: 'Kolkata singer-songwriter known for Bengali film songs and the Piku soundtrack, on stage with the Anupam Roy Band.',
+    year: '2023',
     venue: '',
     company: '',
     role: 'Concert photographer',
@@ -271,9 +276,9 @@ export const projects: Project[] = [
     },
     notes: 'Symmetry is a cheap way to make a busy stage look intentional.',
     sequence: [
-      'anupam-roy-874559', 'anupam-roy-901965', 'anupam-roy-890887', 'anupam-roy-209750', 'anupam-roy-905730',
-      'anupam-roy-023191', 'anupam-roy-025633', 'anupam-roy-220569', 'anupam-roy-042660', 'anupam-roy-219633',
-      'anupam-roy-853178',
+      'anupam-roy-874559', 'anupam-roy-901965', 'anupam-roy-905730', 'anupam-roy-023191', 'anupam-roy-042660',
+      'anupam-roy-219633', 'anupam-roy-169508', 'anupam-roy-183334', 'anupam-roy-211841', 'anupam-roy-053478',
+      'anupam-roy-031362',
     ],
     featured: false,
   },

@@ -12,8 +12,11 @@ interface Props {
   class?: string;
   lightbox?: boolean; // open the shared full-resolution viewer on click
   caption?: boolean;
+  // Load only when scrolled near (see the loader in Base.astro). The browser's own lazy loading starts
+  // far ahead of the viewport, which on a long grid still downloads dozens of photos up front.
+  defer?: boolean;
 }
-const { id, sizes = '100vw', maxH, eager = false, class: cls, lightbox = false, caption = false } = Astro.props;
+const { id, sizes = '100vw', maxH, eager = false, class: cls, lightbox = false, caption = false, defer = false } = Astro.props;
 const p = photoById(id);
 const style = `aspect-ratio:${p?.width}/${p?.height};`;
 const fit = p && maxH ? `width:min(100%, calc(${maxH} * ${p.width} / ${p.height}));margin-inline:auto;` : undefined;
@@ -37,8 +40,7 @@ const Tag = lightbox ? 'button' : 'div';
       } : {})}
     >
       <img
-        src={fullSrc(p, 960)}
-        srcset={srcset(p)}
+        {...(defer ? { 'data-src': fullSrc(p, 960), 'data-srcset': srcset(p) } : { src: fullSrc(p, 960), srcset: srcset(p) })}
         sizes={sizes}
         width={p.width}
         height={p.height}
@@ -48,6 +50,9 @@ const Tag = lightbox ? 'button' : 'div';
         decoding="async"
         style={p.focus ? `object-position:${p.focus}` : undefined}
       />
+      {defer && (
+        <noscript><img src={fullSrc(p, 960)} srcset={srcset(p)} sizes={sizes} width={p.width} height={p.height} alt={lightbox ? '' : p.alt} loading="lazy" decoding="async" /></noscript>
+      )}
     </Tag>
     {caption && (
       <figcaption class="cap meta">
@@ -66,5 +71,7 @@ const Tag = lightbox ? 'button' : 'div';
   .ph-btn { display: block; width: 100%; padding: 0; border: 0; cursor: zoom-in; }
   .ph-btn:hover img { transform: scale(1.025); }
   .ph-missing { display: grid; place-items: center; }
+  /* Without JavaScript the <noscript> copy is shown instead of the deferred image. */
+  :global(html:not(.js)) img[data-src] { display: none; }
   .cap b { font-weight: 500; color: var(--ink); }
 </style>

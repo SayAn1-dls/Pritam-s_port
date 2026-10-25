@@ -1,6 +1,6 @@
 # Pritam Haldar — portfolio
 
-Concert photography and show marketing. A static, photo-led portfolio built with [Astro](https://astro.build).
+Concert and artist photography. A static, photo-led portfolio built with [Astro](https://astro.build).
 No database and no API keys, with minimal JavaScript. It deploys to any static host.
 
 ## Run it locally
@@ -25,12 +25,12 @@ Other commands:
 ## Where things live
 
 ```
-src/data/site.ts         ← name, availability, phone/WhatsApp, email, LinkedIn, resume, hire categories
+src/data/site.ts         ← name, availability, WhatsApp, Instagram, resume, hire categories
 src/data/projects.ts     ← case studies (one entry = one /work/<slug>/ page)
 src/data/photos.json     ← photo manifest: captions, alt text, artist, category, public/private
-src/pages/               ← routes: / · /work/ · /work/[slug]/ · /about/ · /archive/ · /hire/ · /contact/ · 404
+src/pages/               ← routes: / · /work/ · /work/[slug]/ · /about/ · /gallery/ (/archive/ redirects here) · /hire/ · /contact/ · 404
 src/components/          ← Header, Footer, Photo (responsive image), Lightbox (shared viewer), HireCta
-public/assets/photos/    ← generated web images (full/ for the viewer, w/ for thumbnails)
+public/assets/photos/    ← generated web images (full/ for the viewer, w/ for responsive sizes)
 scripts/                 ← image pipeline + site checker
 docs/                    ← creative direction, asset inventory, list of things still to verify
 ```
@@ -63,18 +63,14 @@ It says so on the page; there is no fake "sent!" message.
 
 ## Tests that were run
 
-- `astro check`: 0 errors, 0 warnings, 0 hints across 21 files.
-- `astro build`: 13 pages built.
-- `scripts/check-site.mjs`: 1,391 internal references (links, `src`, `srcset`, viewer images) checked, 0 broken.
-  Contact destinations confirmed: `https://wa.me/918240680176`, `tel:+918240680176`,
-  `mailto:pritamhaldar.my@gmail.com`, `https://www.linkedin.com/in/pritam-haldar/`.
-- Browser (Chromium in the Claude desktop app):
-  - No horizontal overflow on any of the 13 routes at 320, 390, 768, 1024 and 1440 px.
-  - Archive filters (artist, frame type), search, the empty state, reset and URL sync (`?artist=fossils`) all work.
-  - Viewer: opens the full-resolution file, keeps aspect ratio with `contain`, prev/next with buttons and arrow keys,
-    Escape closes and returns focus to the photo that opened it, swipe left/right/down works, the sequence follows
-    the active filter.
-  - Mobile menu opens and closes, and updates `aria-expanded`.
-  - Hire form: all four errors flag and focus moves to the first invalid field, the budget field appears only for
-    project-type enquiries, and a valid submit produces the honest mailto hand-off message.
-- Not measured: Lighthouse / Core Web Vitals scores. Run Lighthouse on the deployed URL.
+October 2026 update (content, gallery and performance pass):
+
+- `astro check`: 0 errors, 0 warnings, 0 hints. `astro build`: 13 pages (+ the `/archive/` → `/gallery/` redirect).
+- `scripts/check-site.mjs`: 2,378 internal references checked, 0 broken; no portrait-orientation photo on any page
+  (only the photographer's own portrait on About / the photo pass); no text under gallery photos.
+  The only contact destination is `https://wa.me/918240680176`; Instagram appears once its URL is set.
+- `scripts/check-copy.mjs`: 0 failures, including the new rule that no page mentions sponsors, promoters or LinkedIn.
+- Browser (Playwright/Chromium, 1440 px and 390 px): no console errors, failed requests or horizontal overflow on any page;
+  all 151 gallery photos load after scrolling (also with JavaScript off); filters, viewer and the Work list without hover
+  popups checked.
+- Performance was measured locally (throttled Chromium), not on the deployed site. Run Lighthouse on the deployed URL.

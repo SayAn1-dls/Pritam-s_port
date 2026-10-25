@@ -8,10 +8,10 @@ export const site = {
   name: 'Pritam Haldar',
   shortName: 'Pritam',
   // Shown in <title>, Open Graph and the footer.
-  role: 'Concert photographer & event marketer',
+  role: 'Concert and Artist Photographer',
   url: 'https://pritam-haldar.vercel.app', // change to your final domain before deploying
   description:
-    'Pritam Haldar shoots concerts for marketing: frames for the artist, the sponsor and the promoter. Working with Eventures Entertainment and Hottogol.',
+    'Pritam Haldar is a concert and artist photographer, capturing artists, live performances and the energy of the show.',
 
   availability: {
     // Set `open` to false and the header / hire page will stop saying you are available.
@@ -20,8 +20,8 @@ export const site = {
     closedLabel: 'Not taking new work right now',
   },
 
+  // Public contact options are Instagram and WhatsApp only.
   contact: {
-    email: 'pritamhaldar.my@gmail.com',
     // Human-readable phone number, shown on the page.
     phoneDisplay: '+91 82406 80176',
     // E.164 digits only, no "+" or spaces. Used for tel: and WhatsApp links.
@@ -29,7 +29,7 @@ export const site = {
     // The same number is on WhatsApp. Set to false to hide WhatsApp buttons.
     whatsapp: true,
     whatsappMessage: "Hi Pritam, I found your portfolio and I'd like to talk about an opportunity.",
-    linkedin: 'https://www.linkedin.com/in/pritam-haldar/',
+    // Full profile URL, e.g. https://www.instagram.com/<handle>/. Empty = Instagram links hidden.
     instagram: '',
     // Put your resume at public/resume.pdf and set this to '/resume.pdf'. Empty = all resume buttons hidden.
     resume: '',
@@ -44,7 +44,7 @@ export const site = {
 export const nav = [
   { href: '/work/', label: 'Work' },
   { href: '/about/', label: 'About' },
-  { href: '/archive/', label: 'Archive' },
+  { href: '/gallery/', label: 'Gallery' },
   { href: '/hire/', label: 'Hire me' },
 ] as const;
 
@@ -58,32 +58,22 @@ export const companies = [
 export const opportunities = [
   {
     title: 'Concert & event photography',
-    body: 'Full-show coverage for artists, promoters and events: stage, crowd, production and sponsor frames, edited as one series.',
+    body: 'Full-show coverage for artists, bands and events: performance, stage, band and crowd frames, edited as one series.',
     offered: true,
   },
   {
-    title: 'Marketing internships & entry roles',
-    body: 'Brand, growth or event marketing teams that want someone who has worked live shows from the front of the stage.',
+    title: 'Concert photography for festivals & college fests',
+    body: 'Concerts, artist nights and college fests, covered from the first song to the last.',
     offered: true,
   },
   {
-    title: 'Event marketing & operations',
-    body: 'Concerts, artist nights, college fests — promotion before the show and coordination on the day.',
-    offered: true,
-  },
-  {
-    title: 'Sponsorships & partnerships',
-    body: 'Finding brands that fit an audience, pitching them, and making sure they are visible on the night.',
-    offered: true,
-  },
-  {
-    title: 'Artist & show promotion',
-    body: 'Campaigns that turn an announcement into a full room: content calendars, on-ground activations, community push.',
+    title: 'Artist photography',
+    body: 'Portraits and live frames of artists and bands, on stage and around the show.',
     offered: true,
   },
   {
     title: 'Creative collaborations',
-    body: 'Photographers, designers, production houses and independent artists looking for a marketing partner.',
+    body: 'Photographers, designers, production houses and independent artists looking for a photographer.',
     offered: true,
   },
 ] as const;
@@ -91,13 +81,10 @@ export const opportunities = [
 // ---- derived helpers (no need to edit) ----
 const c = site.contact;
 export const links = {
-  email: c.email ? `mailto:${c.email}` : '',
-  phone: c.phoneE164 ? `tel:+${c.phoneE164}` : '',
   whatsapp:
     c.whatsapp && c.phoneE164
       ? `https://wa.me/${c.phoneE164}?text=${encodeURIComponent(c.whatsappMessage)}`
       : '',
-  linkedin: c.linkedin,
   instagram: c.instagram,
   resume: c.resume,
 };

@@ -7,4 +7,6 @@ export default defineConfig({
   site: 'https://pritam-haldar.vercel.app',
   trailingSlash: 'always',
   integrations: [sitemap()],
+  // The archive was renamed to the gallery; keep old links working.
+  redirects: { '/archive': '/gallery/' },
 });

@@ -2,22 +2,23 @@
 import Base from '../layouts/Base.astro';
 import Photo from '../components/Photo.astro';
 import { site, links, opportunities, companies } from '../data/site';
+// Without a form endpoint, the form hands the message to WhatsApp (pre-filled chat).
+const waNumber = site.contact.whatsapp ? site.contact.phoneE164 : '';
 import { published } from '../data/projects';
 
 const offered = opportunities.filter((o) => o.offered);
 const av = site.availability;
 const proof = published.filter((p) => p.featured).slice(0, 3);
 ---
-<Base title="Hire me" description={`Hire ${site.name} for concert photography, event marketing, sponsorships and partnerships. Email, call or WhatsApp.`}>
+<Base title="Hire me" description={`Hire ${site.name} for concert and artist photography. Message on WhatsApp or Instagram.`}>
   <section class="wrap hd">
     <p class:list={['meta', 'st', { closed: !av.open }]}>{av.open ? av.label : av.closedLabel}</p>
     <h1 class="display h">Good work starts with a <em>good conversation.</em></h1>
     <div class="hd-row">
-      <p class="lede">Concert coverage, event marketing, sponsorship and partnership work, or a role on your marketing team. Tell me what you’re putting together and I’ll tell you honestly how I can help.</p>
+      <p class="lede">Concert coverage, artist photography, festivals and collaborations. Tell me what you’re putting together and I’ll tell you honestly how I can help.</p>
       <div class="quick" aria-label="Contact directly">
         {links.whatsapp && <a class="btn red" href={links.whatsapp} target="_blank" rel="noopener">Chat on WhatsApp <span class="arr">→</span></a>}
-        {links.phone && <a class="btn" href={links.phone}>Call {site.contact.phoneDisplay}</a>}
-        {links.email && <a class="btn ghost" href={links.email}>Email me</a>}
+        {links.instagram && <a class="btn ghost" href={links.instagram} target="_blank" rel="noopener">Instagram</a>}
         {links.resume && <a class="btn ghost" href={links.resume}>Download resume</a>}
       </div>
     </div>
@@ -27,7 +28,7 @@ const proof = published.filter((p) => p.featured).slice(0, 3);
     <dl>
       <div><dt class="meta">Status</dt><dd>{av.open ? 'Open to opportunities' : 'Not available right now'}</dd></div>
       <div><dt class="meta">Works with</dt><dd>{companies.map((c) => c.name).join(', ')}</dd></div>
-      <div><dt class="meta">Strengths</dt><dd>Live-show photography: artist, stage, crowd and sponsor frames</dd></div>
+      <div><dt class="meta">Strengths</dt><dd>Live-show photography: artist, stage, band and crowd frames</dd></div>
       {site.contact.location && <div><dt class="meta">Based in</dt><dd>{site.contact.location}</dd></div>}
     </dl>
   </section>
@@ -55,32 +56,30 @@ const proof = published.filter((p) => p.featured).slice(0, 3);
   </section>
 
   <section class="wrap form-wrap" id="contact">
-    <div class="label"><span class="meta">Discuss an opportunity</span><span class="meta">Replies come from {site.contact.email}</span></div>
+    <div class="label"><span class="meta">Discuss an opportunity</span><span class="meta">{site.formEndpoint ? 'Sent straight to me' : 'Sent over WhatsApp'}</span></div>
     <div class="f-grid">
       <div class="f-side">
         <p class="display f-h">Tell me about it.</p>
         <p class="f-note">
           {site.formEndpoint
-            ? 'This form sends your message straight to my inbox.'
-            : 'This form opens your email app with the message filled in. You press send, and it comes straight to me. Prefer to skip email? Use WhatsApp.'}
+            ? 'This form sends your message straight to me.'
+            : 'This form opens WhatsApp with your message filled in. You press send, and it comes straight to me.'}
         </p>
         <ul class="direct">
-          {links.email && <li><span class="meta">Email</span><a class="link-u" href={links.email}>{site.contact.email}</a></li>}
           {links.whatsapp && <li><span class="meta">WhatsApp</span><a class="link-u" href={links.whatsapp} target="_blank" rel="noopener">{site.contact.phoneDisplay}</a></li>}
-          {links.phone && <li><span class="meta">Phone</span><a class="link-u" href={links.phone}>{site.contact.phoneDisplay}</a></li>}
-          {links.linkedin && <li><span class="meta">LinkedIn</span><a class="link-u" href={links.linkedin} target="_blank" rel="noopener">pritam-haldar</a></li>}
+          {links.instagram && <li><span class="meta">Instagram</span><a class="link-u" href={links.instagram} target="_blank" rel="noopener">{site.contact.instagram.replace(/^https?:\/\/(www\.)?instagram\.com\//, '@').replace(/\/$/, '')}</a></li>}
         </ul>
       </div>
 
-      <form class="form" novalidate data-endpoint={site.formEndpoint} data-email={site.contact.email}
-        action={site.formEndpoint || `mailto:${site.contact.email}`} method={site.formEndpoint ? 'post' : 'get'}>
+      <form class="form" novalidate data-endpoint={site.formEndpoint} data-wa={waNumber}
+        action={site.formEndpoint || `https://wa.me/${waNumber}`} method={site.formEndpoint ? 'post' : 'get'}>
         <div class="fld">
           <label for="f-name">Name</label>
           <input id="f-name" name="name" required autocomplete="name" />
           <p class="err" id="e-name" hidden>Please add your name.</p>
         </div>
         <div class="fld">
-          <label for="f-email">Work email</label>
+          <label for="f-email">Your email</label>
           <input id="f-email" name="email" type="email" required autocomplete="email" />
           <p class="err" id="e-email" hidden>Please add a valid email so I can reply.</p>
         </div>
@@ -118,7 +117,7 @@ const proof = published.filter((p) => p.featured).slice(0, 3);
   const status = form.querySelector<HTMLElement>('.status')!;
   const type = form.querySelector<HTMLSelectElement>('#f-type')!;
   const budget = form.querySelector<HTMLElement>('[data-budget]')!;
-  const projectish = /photography|promotion|collaboration|sponsorship|event/i;
+  const projectish = /photography|collaboration|fest/i;
   type.addEventListener('change', () => { budget.hidden = !projectish.test(type.value); });
 
   const checks: [string, (f: FormData) => boolean][] = [
@@ -166,23 +165,23 @@ const proof = published.filter((p) => p.featured).slice(0, 3);
         const r = await fetch(endpoint, { method: 'POST', body: f, headers: { Accept: 'application/json' } });
         if (!r.ok) throw new Error(String(r.status));
         form.reset();
-        say('Thank you. Your message has been sent and I’ll reply by email.', 'ok');
+        say('Thank you. Your message has been sent and I’ll reply soon.', 'ok');
       } catch {
-        say(`That didn’t go through. Please email ${form.dataset.email} directly, or try again.`, 'bad');
+        say('That didn’t go through. Please message me on WhatsApp directly, or try again.', 'bad');
       } finally { btn.disabled = false; }
       return;
     }
-    // Honest fallback: hand the message to the visitor's own email app.
+    // Honest fallback: hand the message to WhatsApp, pre-filled.
     const body = [
+      `${f.get('type')}`, '',
       String(f.get('message')).trim(), '',
       `— ${String(f.get('name')).trim()}`,
       f.get('organisation') ? String(f.get('organisation')) : '',
       String(f.get('email')).trim(),
       f.get('budget') ? `Budget: ${f.get('budget')}` : '',
-    ].filter((l, i) => l || i === 1).join('\n');
-    const subject = `${f.get('type')} — from ${String(f.get('name')).trim()}`;
-    location.href = `mailto:${form.dataset.email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-    say(`Your email app should now open with this message ready. Press send there. If nothing opened, write to ${form.dataset.email}.`, 'ok');
+    ].filter((l, i) => l || i === 1 || i === 3).join('\n');
+    window.open(`https://wa.me/${form.dataset.wa}?text=${encodeURIComponent(body)}`, '_blank', 'noopener');
+    say('WhatsApp should now open with this message ready. Press send there. If nothing opened, use the WhatsApp link on this page.', 'ok');
   });
 </script>
 

@@ -22,7 +22,7 @@ const strips = rows.map((r) => ({ ...r, share: r.frames / max, tiles: photosFor(
           <span class="lg-track">
             <span class="lg-bar" style={`--share:${r.share}`} aria-hidden="true">
               {r.tiles.map((p) => (
-                <img src={fullSrc(p, 480)} alt="" width={p.width} height={p.height} loading="lazy" decoding="async"
+                <img src={fullSrc(p, 240)} alt="" width={p.width} height={p.height} loading="lazy" decoding="async"
                   style={p.focus ? `object-position:${p.focus}` : undefined} />
               ))}
             </span>

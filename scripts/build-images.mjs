@@ -5,7 +5,7 @@
 //
 // For each entry it writes, without ever touching the original file:
 //   public/assets/photos/full/<id>.webp        viewer copy, long edge ≤ 2800px, never upscaled
-//   public/assets/photos/w/<id>-<width>.webp   responsive thumbnails (480 / 960 / 1600)
+//   public/assets/photos/w/<id>-<width>.webp   responsive sizes (240 / 480 / 960 / 1600 / 2200)
 // and records the real pixel dimensions back into photos.json.
 //
 // No re-grading is applied: Pritam already colour-graded these in Lightroom,
@@ -20,7 +20,9 @@ const ORIGINALS = path.resolve(process.env.ORIGINALS ?? path.join(ROOT, 'origina
 const MANIFEST = path.join(ROOT, 'src/data/photos.json');
 const OUT = path.join(ROOT, 'public/assets/photos');
 const FULL_EDGE = 2800;
-const WIDTHS = [480, 960, 1600];
+// 240: the small strip tiles on the home page. 2200: large photos on high-density screens,
+// so they don't fall through to the 2800px viewer copy.
+const WIDTHS = [240, 480, 960, 1600, 2200];
 
 const manifest = JSON.parse(await fs.readFile(MANIFEST, 'utf8'));
 await fs.mkdir(path.join(OUT, 'full'), { recursive: true });

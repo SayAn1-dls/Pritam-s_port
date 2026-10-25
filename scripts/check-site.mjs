@@ -40,6 +40,22 @@ for (const page of pages) {
     if (!existsSync(f)) { bad++; console.log(`✗ ${path.relative(DIST, page)} → ${u}`); }
   }
 }
-console.log(`${pages.length} pages, ${checked} internal references checked, ${bad} broken`);
+// Portfolio photos are landscape only (the photographer's own portrait on the About page / photo pass excepted).
+let tall = 0;
+for (const page of pages) {
+  const html = await fs.readFile(page, 'utf8');
+  for (const m of html.matchAll(/<img\b[^>]*>/g)) {
+    const tag = m[0];
+    const w = Number(tag.match(/\swidth="(\d+)"/)?.[1]), h = Number(tag.match(/\sheight="(\d+)"/)?.[1]);
+    if (w && h && h > w && !tag.includes('pritam-haldar-portrait')) { tall++; console.log(`✗ portrait photo on ${path.relative(DIST, page)}: ${tag.match(/src="([^"]+)"/)?.[1]}`); }
+  }
+}
+// The gallery is pictures only: no caption or text under individual photos.
+const gallery = path.join(DIST, 'gallery/index.html');
+if (existsSync(gallery) && /class="cell"[^>]*>(?:(?!<\/figure>)[\s\S])*<\/figure>\s*<(p|figcaption)\b/.test(await fs.readFile(gallery, 'utf8'))) {
+  tall++; console.log('✗ text found under a gallery photo');
+}
+bad += tall;
+console.log(`${pages.length} pages, ${checked} internal references checked, ${bad} broken or disallowed`);
 console.log('external / contact destinations:\n  ' + [...external].sort().join('\n  '));
 process.exit(bad ? 1 : 0);

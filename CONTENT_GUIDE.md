@@ -5,7 +5,7 @@ Everything on the site comes from three files. You never need to touch the page 
 | File | Controls |
 | --- | --- |
 | `src/data/site.ts` | Name, availability, WhatsApp, Instagram, resume, location, hire categories, production partners |
-| `src/data/projects.ts` | Case studies (`/work/<slug>/`) and which ones are featured on the home page |
+| `src/data/projects.ts` | Artist pages (`/work/<slug>/`) and which ones are featured on the home page |
 | `src/data/photos.json` | Every photo: artist, project, caption, alt text, category, public/private |
 | `src/data/home.ts` | Home page first screen: headline, sub-line, the annotated hero frame, the show ledger |
 
@@ -41,7 +41,7 @@ After editing, run `npm run dev` to check, then commit and push. The host rebuil
   "project": "fakira",
   "category": "Crowd",
   "tone": "colour",
-  "caption": "Short, human caption",
+  "caption": "",
   "alt": "What is in the photo, for screen readers",
   "focus": "50% 30%",
   "credit": "Pritam Haldar",
@@ -52,10 +52,10 @@ After editing, run `npm run dev` to check, then commit and push. The host rebuil
 
    - `id`: lowercase, dashes, unique. It becomes the file name.
    - `project`: the `slug` of a case study in `projects.ts`. It drives the gallery's artist filter.
-   - `category`: any label. New labels automatically become gallery filter chips
-     (current ones: On stage, Band, Crowd, Wide, Monochrome).
+   - `category`: an internal label for sorting (not shown on the site).
    - Only landscape photos (wider than tall) are shown anywhere on the site; portrait-orientation entries stay in the
      manifest but never reach a page.
+   - `caption`: leave empty. The site does not describe its photos. `alt` is read by screen readers only.
    - `focus`: optional crop anchor used when a layout crops the photo (`x% y%`). The viewer always shows the full frame.
 3. Run `npm run images`. This writes `public/assets/photos/full/<id>.webp` (long edge up to 2800 px, never upscaled)
    and responsive sizes at 240/480/960/1600/2200 px. It also fills in `width`, `height` and `widths` in the manifest.
@@ -75,28 +75,22 @@ automatically).
 To review a new batch before choosing, run `npm run scan -- /path/to/folder /tmp/scan`. It writes labelled contact
 sheets and an `inventory.json` with size, sharpness score and near-duplicate detection.
 
-## Add or edit a case study (`src/data/projects.ts`)
+## Add or edit an artist page (`src/data/projects.ts`)
 
 Copy an existing entry and change:
 
-- `slug` (URL), `artist`, `title`, `kicker` (one-line poster tagline), `category`, `cover` (a photo id).
-- `about`: one researched line on the artist or band and their music, shown on the Work page. No biography, no hype.
-- `cover` must be a landscape photo.
-- `year`, `venue`, `company`: **leave as `''` until confirmed.** Empty fields are hidden on the page.
-- Story fields: `summary`, `context`, `challenge`, `idea`, `execution` (list),
-  `outcomes.verified` (only facts you can back up: counts, file metadata, confirmed numbers),
-  `outcomes.shows` (what the photos visibly show), `notes` (your opinion).
-- Write only what the photos or the files prove. Don't say who used the photos, what was delivered, or what it achieved,
-  unless you can back it up.
-- `sequence`: photo ids in the order they appear on the page. The first two form the pair after "The context",
+- `slug` (URL), `artist`, `kind` (`'band'` or `'artist'`), `cover` (a landscape photo id).
+- `year`: the year you photographed the show. `frames`: photos in the edited set (drives the home-page ledger).
+- About the artist, researched from reliable sources (Wikipedia, Rolling Stone India, The Telegraph):
+  `kicker` (one-line tagline), `about` (one line for the Work page), `origin`, `genre`, `summary`, `intro`,
+  `sound` (their musical identity), `statement` (one big line), `known` (best-known songs, albums, soundtracks),
+  `milestones` (dated facts: formation, debut, awards).
+- Write about the band or artist and their music only: no biographies of members, no invented stories, no hype,
+  and nothing about the photos, the stage, the lights or how the show was shot. If sources disagree, leave the fact out.
+  `npm run check` fails on stage-and-lighting words (haze, CO2, confetti, LED screen, beams, monochrome…).
+- `sequence`: photo ids in the order they appear on the page. The first two form the pair after "About the band",
   the next three the trio, then one full-width image, and the rest become the contact sheet.
 - `featured: true` puts it on the home page (the first five featured are shown). `draft: true` hides it everywhere.
-
-## Verified achievements
-
-Add them to `outcomes.verified` on the relevant project, written exactly as true:
-"Photographed for Eventures Entertainment", "Set used in the artist's tour recap".
-Separate team results from your own contribution.
 
 ## Home page first screen (`src/data/home.ts`)
 

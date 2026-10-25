@@ -1,38 +1,34 @@
 /**
- * Case studies. One entry = one page at /work/<slug>/.
+ * Artists and bands. One entry = one page at /work/<slug>/.
  *
- * Honesty rules used for this file (checked against the photos and their file metadata, October 2026):
- * - Every sentence describes something visible in the photos, something in the file metadata
- *   (camera, date, editing software), or the approach the photos show. No claims about who used
- *   the photos afterwards, what was delivered to whom, or results.
- * - Every frame carries the "Pritam Haldar Photography" signature. The Monali Thakur files also list
- *   another creator in their metadata: see docs/TO_VERIFY.md before sharing that set widely.
- * - Facts that are not confirmed yet (exact date, venue, which production company, numbers)
- *   are left as '' or []. Empty fields are hidden on the page. Fill them in when confirmed.
- * - `draft: true` hides a whole project from the site.
+ * Content rules (October 2026):
+ * - Pages are about the artist or band and their music, researched from Wikipedia and music press
+ *   (Rolling Stone India, The Telegraph t2). No descriptions of the photographs, the stage or how they were shot.
+ * - No biographies of individual members, no invented stories, no hype. If sources disagree (e.g. Fakira's
+ *   founding year), leave it out.
+ * - `year` is when Pritam photographed the show. `frames` is the number of photos in the edited set.
+ * - `draft: true` hides a whole entry from the site.
  */
 
 export interface Project {
   slug: string;
   artist: string;
-  title: string;
-  kicker: string; // one-line poster tagline
-  about: string; // one line on the artist or band and their music (researched, no biography)
-  year: string; // '' = unknown, hidden
-  venue: string; // '' = hidden
-  company: string; // production partner for this show, '' = hidden
-  role: string;
-  category: string;
-  cover: string; // photo id
+  kind: 'band' | 'artist';
+  kicker: string; // one-line tagline about the artist
+  about: string; // one line on the artist and their music (Work page list)
+  year: string; // year photographed; '' = hidden
+  frames: number; // photos in the edited set
+  origin: string;
+  genre: string;
+  role: string; // Pritam's role at the show
+  cover: string; // photo id (landscape)
   summary: string;
-  context: string;
-  challenge: string;
-  idea: string;
-  execution: string[];
-  // verified: facts that can be checked (counts, file metadata). shows: what the photos show.
-  outcomes: { verified: string[]; shows: string[] };
-  notes: string; // "what I took from it": an opinion, in Pritam's voice
-  sequence: string[]; // photo ids shown in the case study, in order (landscape frames only)
+  intro: string;
+  sound: string;
+  statement: string;
+  known: string[]; // best-known songs, albums or soundtracks
+  milestones: string[];
+  sequence: string[]; // photo ids shown on the page, in order (landscape frames only)
   draft?: boolean;
   featured?: boolean;
 }
@@ -41,38 +37,36 @@ export const projects: Project[] = [
   {
     slug: 'fakira',
     artist: 'Fakira',
-    title: 'Fakira, live',
-    kicker: 'Fire on the screen, white kurtas on stage.',
-    about: 'Kolkata folk-fusion band that sets Baul and Fakiri songs, from Lalon Fakir onwards, to rock instrumentation.',
+    kind: 'band',
+    kicker: 'Bengali folk songs, carried onto the rock stage.',
+    about: 'Kolkata folk-fusion band that brings Bengali folk and Baul songs, including Lalon Fakir’s, into rock.',
     year: '2026',
-    venue: '',
-    company: '',
+    frames: 45,
+    origin: 'Kolkata',
+    genre: 'Folk fusion',
     role: 'Concert photographer',
-    category: 'Live music · Artist content',
     cover: 'fakira-dsc-0817',
     summary:
-      'A Fakira set shot from the front of the stage: the band, the LED visuals behind them, and fans holding up their own signs.',
-    context:
-      'Fakira perform in white kurtas in front of big LED graphics, from Bengali lettering to walls of fire. At this show, fans held up hand-made posters and signs.',
-    challenge:
-      'The light swung from near-dark to a full screen of fire within the set. The frames still had to hold together as one series.',
-    idea:
-      'Work three layers through the set: the face (emotion), the stage (scale and production) and the crowd (people who showed up).',
-    execution: [
-      'Portraits timed with the screen graphics, so the artist and the visuals share the frame.',
-      'Monochrome versions where the colour distracted from the expression.',
-      'Crowd frames of the fan-made posters and signs.',
-      'Edited in Adobe Lightroom Classic as one series.',
+      'Fakira is a Kolkata folk-fusion band that reworks Bengali folk songs for a rock line-up.',
+    intro:
+      'The band built its repertoire by researching folk songs at ashrams and akhras across Bengal, then arranging them for guitars, bass, drums and keys.',
+    sound:
+      'The songs come from Bengal’s folk tradition, with lyrics by Lalon Fakir, Radharomon and others, set against electric guitars and a rock rhythm section. One track, “Somoy Gele Shadhon”, doubles as a tribute to Pink Floyd.',
+    statement:
+      'Old Bengali folk songs, played as rock.',
+    known: [
+      'Debut album Itorpona (2014)',
+      '“Chander Gaye Chand”',
+      '“Nizamuddin Auliya”',
+      '“Bhromor Koyo Giya”',
+      '“Somoy Gele Shadhon”',
     ],
-    outcomes: {
-      verified: ['45 frames in the edited set', 'Shot on a Nikon D5300, edited in Adobe Lightroom Classic (file metadata)'],
-      shows: [
-        'Band members on stage, wide stage frames and crowd frames.',
-        'Fan-made posters held up in the crowd.',
-      ],
-    },
-    notes:
-      'The crowd shots are the ones people stop on. A wall of fire is impressive; a fan holding up a hand-drawn portrait is convincing.',
+    milestones: [
+      '2013: first concerts in the United States',
+      '2014: debut album Itorpona released in Kolkata',
+      '2015: Special Jury Award at the Mirchi Music Awards Bangla for Itorpona',
+      'Concerts and television sessions in Bangladesh',
+    ],
     sequence: [
       'fakira-dsc-0621', 'fakira-dsc-0637', 'fakira-dsc-0823', 'fakira-dsc-0858', 'fakira-dsc-0872',
       'fakira-dsc-0833', 'fakira-dsc-0918', 'fakira-dsc-0611', 'fakira-dsc-0786', 'fakira-dsc-0751',
@@ -83,38 +77,35 @@ export const projects: Project[] = [
   {
     slug: 'cactus',
     artist: 'Cactus',
-    title: 'Cactus, open air',
-    kicker: 'Confetti, flame effects and phones in the air.',
+    kind: 'band',
+    kicker: 'One of the first professional Bangla rock bands.',
     about: 'One of Bengal’s longest-running Bangla rock bands, playing out of Kolkata since 1992.',
     year: '2026',
-    venue: '',
-    company: '',
+    frames: 51,
+    origin: 'Kolkata',
+    genre: 'Bangla rock',
     role: 'Concert photographer',
-    category: 'Live music · Production',
     cover: 'cactus-dsc-0336',
     summary:
-      'An open-air Cactus show with CO2, flame effects, confetti and a big LED rig, covered wide and close.',
-    context:
-      'Cactus are a long-running Bengali rock band. This show had a large outdoor stage with a full lighting rig, LED screens and stage effects.',
-    challenge:
-      'Confetti and flame effects last a second or two. Miss the moment and you miss the frame that shows the scale of the production.',
-    idea:
-      'Stay wide for the effects, go tight on the vocalists in between, and come back to the crowd at the peaks.',
-    execution: [
-      'Wide frames of the full stage, rig and crowd.',
-      'Confetti and flame moments.',
-      'Close frames of both vocalists under green, magenta, blue and orange light.',
-      'Crowd silhouettes and phones in the air, with no identifiable faces.',
+      'Cactus is a Bangla rock band from Kolkata, formed in 1992 and counted among the first professional bands of the genre.',
+    intro:
+      'The band played its first professional show in Kolkata in March 1993. Since then it has released five studio albums and played thousands of concerts in India and abroad.',
+    sound:
+      'Cactus writes and sings rock songs in Bengali, and has stayed part of Kolkata’s live music scene for more than three decades. The band also scored and performed the soundtrack of the Bengali film Nil Nirjane (2002).',
+    statement:
+      'Bangla rock, from almost the very beginning.',
+    known: [
+      '“Mon”, from the Nil Nirjane soundtrack',
+      '“Bhalo Theko” and “Rater Pari”, from Tuccho',
+      'Debut album Cactus (1999)',
     ],
-    outcomes: {
-      verified: ['51 frames in the edited set', 'Shot on a Nikon D5300, edited in Adobe Lightroom Classic (file metadata)'],
-      shows: [
-        'The production at full scale: stage, rig, effects and crowd.',
-        'A range of looks of the vocalists from a single night.',
-      ],
-    },
-    notes:
-      'A wide shot of the whole stage and crowd says more about a show than ten close-ups. Close-ups are for the artist; wides show the scale.',
+    milestones: [
+      '1992: formed in Kolkata',
+      '1993: first professional show',
+      '1999: debut album Cactus',
+      '2002: soundtrack for the film Nil Nirjane',
+      '2004, 2008, 2013: Rajar Raja, Tuccho and Blah Blah Blah',
+    ],
     sequence: [
       'cactus-dsc-0267', 'cactus-dsc-0350', 'cactus-dsc-0336', 'cactus-dsc-0393', 'cactus-dsc-0136',
       'cactus-dsc-0113', 'cactus-dsc-0402', 'cactus-dsc-0275', 'cactus-dsc-0412', 'cactus-dsc-0166',
@@ -125,39 +116,34 @@ export const projects: Project[] = [
   {
     slug: 'jeet-ganguly',
     artist: 'Jeet Ganguly',
-    title: 'Jeet Ganguly, live',
-    kicker: 'Smoke jets, a full band, and a composer singing his own songs.',
+    kind: 'artist',
+    kicker: 'The composer behind Aashiqui 2.',
     about: 'Composer and singer behind a long run of Bengali and Hindi film soundtracks, including Aashiqui 2.',
     year: '2026',
-    venue: '',
-    company: '',
+    frames: 54,
+    origin: 'Kolkata',
+    genre: 'Film music · Bengali and Hindi',
     role: 'Concert photographer',
-    category: 'Live music · Artist content',
     cover: 'jeet-ganguly-dsc-0076',
     summary:
-      'A Jeet Ganguly concert on a big open-air stage, with CO2 jets, confetti and a full live band.',
-    context:
-      'Jeet Ganguly performed his songs with a full band: guitar, keys, drums and percussion, under a large lighting rig.',
-    challenge:
-      'Bright LED screens behind the stage and fast-changing light made it hard to keep the artist the clear subject of the frame.',
-    idea:
-      'Frame the artist against the light, go wide for the CO2 and confetti, and give the band its own frames.',
-    execution: [
-      'Mid shots of the artist under blue and white beams.',
-      'Wide frames of the full stage and crowd.',
-      'CO2 and confetti moments.',
-      'The band: guitar, keys, drums and percussion.',
-      'Monochrome frames where the colour wasn’t needed.',
+      'Jeet Ganguly is a composer and playback singer who writes for Bengali and Hindi cinema.',
+    intro:
+      'In Bengali cinema his soundtracks run from Chirodini Tumi Je Amar and Challenge to the Paglu and Boss films. In Hindi films he is best known for Aashiqui 2, Citylights and Hamari Adhuri Kahani.',
+    sound:
+      'He writes melody-led film songs, from romantic ballads such as “Chahun Main Ya Naa” and “Muskurane” to the songs of mainstream Bengali hits, and performs them live with a full band.',
+    statement:
+      'Film songs, sung live by the man who wrote them.',
+    known: [
+      '“Chahun Main Ya Naa” (Aashiqui 2)',
+      '“Muskurane” (Citylights)',
+      '“Suno Na Sangemarmar” (Youngistaan)',
+      'Soundtracks for Chirodini Tumi Je Amar, Paglu and Boss: Born to Rule',
     ],
-    outcomes: {
-      verified: [
-        '54 frames in the edited set',
-        'Shot on a Nikon D5300, edited in Adobe Lightroom Classic (file metadata)',
-      ],
-      shows: ['Frames of the artist, the band, and wide frames of the whole show.'],
-    },
-    notes:
-      'A composer on stage is singing songs the crowd already knows by heart. The best frames catch both sides of that.',
+    milestones: [
+      '2005: Filmfare Award East for Best Music Director, Yuddho',
+      '2014: Filmfare Award for Best Music Director, Aashiqui 2 (shared)',
+      '2015: Mirchi Music Award for Music Composer of the Year, “Muskurane”',
+    ],
     sequence: [
       'jeet-ganguly-dsc-0100', 'jeet-ganguly-dsc-0908', 'jeet-ganguly-dsc-0103', 'jeet-ganguly-dsc-0076', 'jeet-ganguly-dsc-0835',
       'jeet-ganguly-dsc-0136', 'jeet-ganguly-dsc-0001', 'jeet-ganguly-dsc-0149', 'jeet-ganguly-dsc-0880', 'jeet-ganguly-dsc-0075',
@@ -168,38 +154,37 @@ export const projects: Project[] = [
   {
     slug: 'fossils',
     artist: 'Fossils',
-    title: 'Fossils, in black and gold',
-    kicker: 'A rock frontman, a striped scarf, and a lot of truss.',
+    kind: 'band',
+    kicker: 'Kolkata hard rock, since 1998.',
     about: 'Kolkata hard-rock band formed in 1998, among the acts that brought Bangla rock to big stages.',
     year: '2024',
-    venue: '',
-    company: '',
+    frames: 38,
+    origin: 'Kolkata',
+    genre: 'Bangla rock · Hard rock',
     role: 'Concert photographer',
-    category: 'Live music · Artist content',
     cover: 'fossils-dsc-2123-l',
     summary:
-      'Fossils on a big stage, shot in colour and monochrome under hard backlight.',
-    context:
-      'Fossils are one of the best-known Bengali rock bands. The frontman’s look, with curls, glasses and a striped scarf, is instantly recognisable on stage.',
-    challenge:
-      'Strong backlight and haze, very little light on faces, and a busy stage set behind the band.',
-    idea:
-      'Use monochrome where the light was harsh, keep colour where it helped (the red and gold frames), and use wide frames to show the stage.',
-    execution: [
-      'Colour frames in red, gold and teal light.',
-      'A monochrome series for the hardest-lit moments.',
-      'Wide frames with confetti, CO2 and the full stage.',
-      'Band details, like the drum kit in front of the Fossils emblem.',
+      'Fossils is a Kolkata hard-rock band formed in 1998 by Rupam Islam, and one of the pioneering acts of Bengali rock.',
+    intro:
+      'The band played its first show at Nazrul Mancha, Kolkata, in January 1999 and released its debut album in 2002. A run of albums followed, from Fossils 2 and Mission F to Fossils 6.',
+    sound:
+      'Fossils mix hard rock with blues and psychedelia, sung in Bengali, and are known for lyrics with social commentary. The band has also spoken up for causes such as the welfare of HIV-positive people.',
+    statement:
+      'Bengali hard rock with something to say.',
+    known: [
+      '“Hasnuhana”',
+      '“Bishakto Manush”',
+      '“Ekla Ghor”',
+      '“Acid”',
+      '“Bicycle Chor”',
     ],
-    outcomes: {
-      verified: [
-        '38 frames in the edited set',
-        'Shot on a Nikon Z 6II, edited in Adobe Lightroom Classic and Photoshop (file metadata)',
-      ],
-      shows: ['One consistent look across the colour and monochrome frames.'],
-    },
-    notes:
-      'Monochrome isn’t there to rescue a bad shot. It’s a choice about what the band stands for.',
+    milestones: [
+      '1999: first concert, at Nazrul Mancha, Kolkata',
+      '2002: debut album Fossils',
+      '2006: Mission F, Kolkata’s best-selling album of the year in a Radio Mirchi survey',
+      '2009: Fossils 3 wins Best Non-Film Album at the Anandalok Awards',
+      '2023: 25th-anniversary concert in Kolkata',
+    ],
     sequence: [
       'fossils-dsc-2189-l', 'fossils-dsc-2123-l', 'fossils-dsc-2288-l', 'fossils-dsc-2339-l', 'fossils-dsc-2352-l',
       'fossils-dsc-2365-l', 'fossils-dsc-2034-l', 'fossils-dsc-2214-l', 'fossils-dsc-2100-l', 'fossils-dsc-2287-l',
@@ -210,34 +195,35 @@ export const projects: Project[] = [
   {
     slug: 'monali-thakur',
     artist: 'Monali Thakur',
-    title: 'Monali Thakur, in colour',
-    kicker: 'Kaleidoscope screens and a performer in constant motion.',
+    kind: 'artist',
+    kicker: 'The voice of “Moh Moh Ke Dhaage”.',
     about: 'Playback singer behind Hindi and Bengali film songs such as “Sawaar Loon” and “Moh Moh Ke Dhaage”.',
     year: '2024',
-    venue: '',
-    company: '',
+    frames: 31,
+    origin: 'Kolkata',
+    genre: 'Playback · Hindi and Bengali',
     role: 'Concert photographer',
-    category: 'Live music · Artist content',
     cover: 'monali-thakur-img-0952-l',
     summary:
-      'A Monali Thakur concert with very graphic LED visuals, framed so the artist and the screen design read as one image.',
-    context:
-      'Monali Thakur is a playback singer and live performer. The screen content that night was bold: mandalas, starbursts and stars.',
-    challenge:
-      'The singer kept moving, and so did the screens. A sharp frame with the right graphic behind it meant timing both at once.',
-    idea:
-      'Pick the background first: find the angle where the screen design frames the singer, then wait for the moment.',
-    execution: [
-      'Colour frames built around the screen graphics.',
-      'Close monochrome portraits.',
-      'Band frames with the guitarists.',
+      'Monali Thakur is a playback singer and live performer who sings in Hindi, Bengali and other Indian languages.',
+    intro:
+      'She came to wide notice on Indian Idol and had her breakthrough with “Zara Zara Touch Me” from Race (2008). She has since sung for films including Lootera, Dum Laga Ke Haisha and Badrinath Ki Dulhania.',
+    sound:
+      'Her film songs range from upbeat dance tracks to slower, melodic songs like “Sawaar Loon”. Alongside playback she releases independent singles, and she has acted in films such as Lakshmi (2014).',
+    statement:
+      'A National Award-winning voice, live on stage.',
+    known: [
+      '“Moh Moh Ke Dhaage” (Dum Laga Ke Haisha)',
+      '“Sawaar Loon” (Lootera)',
+      '“Zara Zara Touch Me” (Race)',
+      '“Cham Cham” (Baaghi)',
     ],
-    outcomes: {
-      verified: ['31 frames in the edited set'],
-      shows: ['The show’s visual design as much as the singer.'],
-    },
-    notes:
-      'Laughter photographs better than perfect poses. The frames people remember are the ones where the joy on stage is obvious.',
+    milestones: [
+      '2008: breakthrough with “Zara Zara Touch Me”',
+      '2014: Filmfare Award for Best Female Playback Singer, “Sawaar Loon”',
+      '63rd National Film Awards: Best Female Playback Singer, “Moh Moh Ke Dhaage”',
+      'IIFA Award for Best Female Playback Singer, “Moh Moh Ke Dhaage”',
+    ],
     sequence: [
       'monali-thakur-img-0952-l', 'monali-thakur-img-0886-l', 'monali-thakur-img-0808-l', 'monali-thakur-img-0981-l', 'monali-thakur-img-0908-l',
       'monali-thakur-img-1018-l', 'monali-thakur-img-0778-l', 'monali-thakur-img-0991-l', 'monali-thakur-img-0812-l', 'monali-thakur-img-0945-l',
@@ -248,33 +234,35 @@ export const projects: Project[] = [
   {
     slug: 'anupam-roy',
     artist: 'Anupam Roy',
-    title: 'The Anupam Roy Band',
-    kicker: 'A singer-songwriter, an electric guitar, and beams in every colour.',
+    kind: 'artist',
+    kicker: 'A songwriter’s songs, played as a band.',
     about: 'Kolkata singer-songwriter known for Bengali film songs and the Piku soundtrack, on stage with the Anupam Roy Band.',
     year: '2023',
-    venue: '',
-    company: '',
+    frames: 35,
+    origin: 'Kolkata',
+    genre: 'Singer-songwriter · Bengali',
     role: 'Concert photographer',
-    category: 'Live music · Artist content',
     cover: 'anupam-roy-856828',
     summary:
-      'The Anupam Roy Band live, with the band’s logo on stage, LED landscapes and saturated beams.',
-    context:
-      'Anupam Roy is a Bengali singer-songwriter who performs with The Anupam Roy Band. The band’s logo and screen visuals are part of the stage.',
-    challenge:
-      'The light changed colour from song to song. The set needed variety without looking like it came from different shows.',
-    idea:
-      'Let the light change and keep the composition steady: centred frames for the frontman, looser frames for the band.',
-    execution: [
-      'Frames of Anupam Roy in front of the band logo and the LED landscapes.',
-      'Band frames: guitar, keys and drums.',
-      'Monochrome close portraits.',
+      'Anupam Roy is a Kolkata singer-songwriter and composer who performs live with the Anupam Roy Band.',
+    intro:
+      'His first songs reached listeners through the Bengali film Autograph (2010). He has since written soundtracks for films such as Baishe Srabon, Hemlock Society and Praktan, and composed the music for the Hindi film Piku (2015).',
+    sound:
+      'He writes the words as well as the music, and his songs are known for their lyrics as much as their melodies. He also releases independent albums, from Durbine Chokh Rakhbo Na (2012) to Adrishyo Nagordolar Trip (2023).',
+    statement:
+      'Songs where the words matter as much as the tune.',
+    known: [
+      '“Amake Amar Moto Thakte Dao” (Autograph)',
+      '“Benche Thakar Gaan” (Autograph)',
+      '“Tumi Jaake Bhalobasho” (Praktan)',
+      'The Piku soundtrack and score',
     ],
-    outcomes: {
-      verified: ['35 frames in the edited set', 'Supplied as 2048 px web exports, so shown at that size'],
-      shows: ['The frontman and the band, together and apart.'],
-    },
-    notes: 'Symmetry is a cheap way to make a busy stage look intentional.',
+    milestones: [
+      '2010: debut with songs in the film Autograph',
+      '2015: Bollywood debut with Piku',
+      '2016: Filmfare Award for Best Background Score, Piku',
+      '64th National Film Awards: Best Lyrics, “Tumi Jaake Bhalobasho”',
+    ],
     sequence: [
       'anupam-roy-874559', 'anupam-roy-901965', 'anupam-roy-905730', 'anupam-roy-023191', 'anupam-roy-042660',
       'anupam-roy-219633', 'anupam-roy-169508', 'anupam-roy-183334', 'anupam-roy-211841', 'anupam-roy-053478',
@@ -286,6 +274,3 @@ export const projects: Project[] = [
 
 export const published = projects.filter((p) => !p.draft);
 export const projectBySlug = (slug: string) => published.find((p) => p.slug === slug);
-
-/** Edited frames for a show, read from its first verified outcome ("54 frames in the …"). 0 if not stated. */
-export const editedFrames = (p: Project) => Number(p.outcomes.verified[0]?.match(/^(\d+) frames\b/)?.[1] ?? 0);

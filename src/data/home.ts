@@ -4,7 +4,7 @@
  * every number is computed from the content files; nothing claims turnaround or reach.
  */
 import { site, links } from './site';
-import { published, editedFrames } from './projects';
+import { published } from './projects';
 
 const WORDS = ['zero', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine', 'ten'];
 /** 6 → "six"; numbers above ten stay as digits. */
@@ -14,7 +14,7 @@ export const cap = (s: string) => s.charAt(0).toUpperCase() + s.slice(1);
 export const listOf = (xs: readonly string[]) => (xs.length < 2 ? xs.join('') : `${xs.slice(0, -1).join(', ')} and ${xs.at(-1)}`);
 
 export const artists = published.map((p) => p.artist);
-export const totalFrames = published.reduce((n, p) => n + editedFrames(p), 0);
+export const totalFrames = published.reduce((n, p) => n + p.frames, 0);
 
 export const hero = {
   name: site.name,
@@ -48,5 +48,5 @@ export const ledger = {
   label: 'On record',
   note: 'Bar length = frames in each edited set',
   heading: `${cap(say(artists.length))} artists. ${totalFrames}\u00a0edited\u00a0frames.`, // number stays with its noun when wrapping
-  rows: published.map((p) => ({ slug: p.slug, artist: p.artist, year: p.year, frames: editedFrames(p) })),
+  rows: published.map((p) => ({ slug: p.slug, artist: p.artist, year: p.year, frames: p.frames })),
 };

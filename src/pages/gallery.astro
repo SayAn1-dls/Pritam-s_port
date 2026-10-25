@@ -5,7 +5,6 @@ import { photos, SELF } from '../data/photos';
 import { published } from '../data/projects';
 
 const artists = published.map((p) => ({ slug: p.slug, name: p.artist }));
-const categories = [...new Set(photos.map((p) => p.category))].sort();
 // Interleave artists so the gallery reads as a mixed contact sheet, not six blocks.
 const byArtist = artists.map((a) => photos.filter((p) => p.project === a.slug && p.project !== SELF));
 const mixed: typeof photos = [];
@@ -22,7 +21,7 @@ for (let i = 0; byArtist.some((l) => l[i]); i++) byArtist.forEach((l) => l[i] &&
     <div class="row">
       <label class="search">
         <span class="meta">Search</span>
-        <input type="search" placeholder="Artist, mood, ‘crowd’, ‘smoke’…" data-q autocomplete="off" />
+        <input type="search" placeholder="Artist or band…" data-q autocomplete="off" />
       </label>
       <p class="meta count" aria-live="polite" data-count></p>
     </div>
@@ -30,11 +29,6 @@ for (let i = 0; byArtist.some((l) => l[i]); i++) byArtist.forEach((l) => l[i] &&
       <span class="meta lab">Artist</span>
       <button type="button" class="chip" aria-pressed="true" data-f="artist" data-v="">All</button>
       {artists.map((a) => <button type="button" class="chip" aria-pressed="false" data-f="artist" data-v={a.slug}>{a.name}</button>)}
-    </div>
-    <div class="row chips" role="group" aria-label="Type of frame">
-      <span class="meta lab">Frame</span>
-      <button type="button" class="chip" aria-pressed="true" data-f="cat" data-v="">All</button>
-      {categories.map((c) => <button type="button" class="chip" aria-pressed="false" data-f="cat" data-v={c}>{c}</button>)}
     </div>
   </section>
 
@@ -44,8 +38,7 @@ for (let i = 0; byArtist.some((l) => l[i]); i++) byArtist.forEach((l) => l[i] &&
         <div
           class="cell"
           data-artist={p.project}
-          data-cat={p.category}
-          data-text={`${p.artist} ${p.caption} ${p.alt} ${p.category}`.toLowerCase()}
+          data-text={`${p.artist} ${p.alt}`.toLowerCase()}
         >
           <Photo id={p.id} sizes="(max-width: 700px) 50vw, (max-width: 980px) 33vw, 25vw" lightbox defer />
         </div>
@@ -64,18 +57,17 @@ for (let i = 0; byArtist.some((l) => l[i]); i++) byArtist.forEach((l) => l[i] &&
   const q = document.querySelector<HTMLInputElement>('[data-q]')!;
   const count = document.querySelector<HTMLElement>('[data-count]')!;
   const empty = document.querySelector<HTMLElement>('[data-empty]')!;
-  const state: Record<string, string> = { artist: '', cat: '' };
+  const state: Record<string, string> = { artist: '' };
 
   const params = new URLSearchParams(location.search);
   state.artist = params.get('artist') ?? '';
-  state.cat = params.get('frame') ?? '';
   q.value = params.get('q') ?? '';
 
   function apply() {
     const term = q.value.trim().toLowerCase();
     let n = 0;
     for (const c of cells) {
-      const ok = (!state.artist || c.dataset.artist === state.artist) && (!state.cat || c.dataset.cat === state.cat) && (!term || c.dataset.text!.includes(term));
+      const ok = (!state.artist || c.dataset.artist === state.artist) && (!term || c.dataset.text!.includes(term));
       c.hidden = !ok;
       if (ok) n++;
     }
@@ -84,7 +76,6 @@ for (let i = 0; byArtist.some((l) => l[i]); i++) byArtist.forEach((l) => l[i] &&
     document.querySelectorAll<HTMLButtonElement>('.chip').forEach((b) => b.setAttribute('aria-pressed', String(state[b.dataset.f!] === b.dataset.v)));
     const u = new URLSearchParams();
     if (state.artist) u.set('artist', state.artist);
-    if (state.cat) u.set('frame', state.cat);
     if (term) u.set('q', term);
     history.replaceState(null, '', u.size ? `?${u}` : location.pathname);
   }
@@ -96,7 +87,7 @@ for (let i = 0; byArtist.some((l) => l[i]); i++) byArtist.forEach((l) => l[i] &&
     apply();
   });
   q.addEventListener('input', apply);
-  document.querySelector('[data-reset]')!.addEventListener('click', () => { state.artist = ''; state.cat = ''; q.value = ''; apply(); });
+  document.querySelector('[data-reset]')!.addEventListener('click', () => { state.artist = ''; q.value = ''; apply(); });
   apply();
 </script>
 

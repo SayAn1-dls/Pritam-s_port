@@ -43,13 +43,13 @@ const proof = published.filter((p) => p.featured).slice(0, 3);
   </section>
 
   <section class="wrap proof">
-    <div class="label"><span class="meta">Proof of work</span><a class="meta link-u" href="/work/">All case studies →</a></div>
+    <div class="label"><span class="meta">Proof of work</span><a class="meta link-u" href="/work/">All work →</a></div>
     <div class="pr-grid">
       {proof.map((p) => (
         <a href={`/work/${p.slug}/`} class="pr rv">
           <Photo id={p.cover} sizes="(max-width: 860px) 100vw, 33vw" />
           <p class="h3">{p.artist}</p>
-          <p class="meta">{p.category}</p>
+          <p class="meta">{p.genre}</p>
         </a>
       ))}
     </div>

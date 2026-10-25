@@ -2,8 +2,9 @@
 import Base from '../../layouts/Base.astro';
 import Photo from '../../components/Photo.astro';
 import HireCta from '../../components/HireCta.astro';
-import { published, editedFrames, type Project } from '../../data/projects';
+import { published, type Project } from '../../data/projects';
 import { photoById, fullSrc } from '../../data/photos';
+import { site } from '../../data/site';
 
 export function getStaticPaths() {
   return published.map((p) => ({ params: { slug: p.slug }, props: { p } }));
@@ -14,20 +15,18 @@ const next = published[(idx + 1) % published.length];
 const prev = published[(idx - 1 + published.length) % published.length];
 const cover = photoById(p.cover);
 const seq = p.sequence.filter((id) => photoById(id));
-const frames = editedFrames(p);
-// The spec a buyer of event photography reads first: who, what, how much, for whom.
+const who = p.kind === 'band' ? 'the band' : 'the artist';
+// The artist first, then the show Pritam photographed.
 const facts = [
-  ['Role', p.role],
-  ['Edited frames', frames ? String(frames) : ''],
-  ['Production', p.company],
-  ['Year', p.year],
-  ['Venue', p.venue],
-  ['Type', p.category],
+  ['From', p.origin],
+  ['Genre', p.genre],
+  ['Photographed', p.year],
+  ['Edited frames', p.frames ? String(p.frames) : ''],
 ].filter(([, v]) => v);
 // split the sequence into the editorial blocks of the page
 const s = (a: number, b?: number) => seq.slice(a, b);
 ---
-<Base title={p.title} description={p.summary} image={cover ? fullSrc(cover, 1600) : undefined}>
+<Base title={p.artist} description={p.summary} image={cover ? fullSrc(cover, 1600) : undefined}>
   <article>
     <header class="cs-head wrap">
       <p class="meta crumbs"><a class="link-u" href="/work/">Work</a> / {p.artist}</p>
@@ -47,37 +46,37 @@ const s = (a: number, b?: number) => seq.slice(a, b);
     </section>
 
     <section class="wrap chap">
-      <p class="meta chap-n">The context</p>
-      <div class="prose"><p>{p.context}</p></div>
+      <p class="meta chap-n">About {who}</p>
+      <div class="prose"><p>{p.intro}</p></div>
     </section>
 
     <section class="wrap duo">
-      {s(0, 2).map((id) => <Photo id={id} sizes="(max-width: 860px) 100vw, 50vw" lightbox caption />)}
+      {s(0, 2).map((id) => <Photo id={id} sizes="(max-width: 860px) 100vw, 50vw" lightbox />)}
     </section>
 
     <section class="wrap chap">
-      <p class="meta chap-n">The challenge</p>
-      <div class="prose"><p>{p.challenge}</p></div>
+      <p class="meta chap-n">The sound</p>
+      <div class="prose"><p>{p.sound}</p></div>
     </section>
 
     <section class="wrap chap chap-idea">
-      <p class="meta chap-n">The idea</p>
-      <p class="display idea">{p.idea}</p>
+      <p class="meta chap-n">In one line</p>
+      <p class="display idea">{p.statement}</p>
     </section>
 
     <section class="wrap trio">
-      {s(2, 5).map((id) => <Photo id={id} sizes="(max-width: 860px) 100vw, 33vw" lightbox caption />)}
+      {s(2, 5).map((id) => <Photo id={id} sizes="(max-width: 860px) 100vw, 33vw" lightbox />)}
     </section>
 
     <section class="wrap chap">
-      <p class="meta chap-n">The execution</p>
+      <p class="meta chap-n">Known for</p>
       <ol class="exec">
-        {p.execution.map((e) => <li><span class="meta" aria-hidden="true">—</span><span>{e}</span></li>)}
+        {p.known.map((e) => <li><span class="meta" aria-hidden="true">—</span><span>{e}</span></li>)}
       </ol>
     </section>
 
     <section class="wrap wide">
-      {s(5, 6).map((id) => <Photo id={id} sizes="100vw" lightbox caption />)}
+      {s(5, 6).map((id) => <Photo id={id} sizes="100vw" lightbox />)}
     </section>
 
     <section class="wrap sheet" aria-label="Contact sheet">
@@ -85,22 +84,20 @@ const s = (a: number, b?: number) => seq.slice(a, b);
     </section>
 
     <section class="wrap chap outcome">
-      <p class="meta chap-n">The outcome</p>
+      <p class="meta chap-n">On record</p>
       <div class="out-grid">
         <div>
-          <h2 class="meta">On record</h2>
-          <ul>{p.outcomes.verified.map((o) => <li>{o}</li>)}</ul>
+          <h2 class="meta">Milestones</h2>
+          <ul>{p.milestones.map((o) => <li>{o}</li>)}</ul>
         </div>
         <div>
-          <h2 class="meta">What the set shows</h2>
-          <ul>{p.outcomes.shows.map((o) => <li>{o}</li>)}</ul>
+          <h2 class="meta">Photographed by {site.name}</h2>
+          <ul>
+            {p.year && <li>Live, {p.year}</li>}
+            {p.frames > 0 && <li>{p.frames} frames in the edited set</li>}
+          </ul>
         </div>
       </div>
-    </section>
-
-    <section class="wrap chap">
-      <p class="meta chap-n">What I took from it</p>
-      <p class="display note">{p.notes}</p>
     </section>
 
     <nav class="wrap pn" aria-label="More work">
@@ -129,7 +126,6 @@ const s = (a: number, b?: number) => seq.slice(a, b);
   .chap-n { margin: 6px 0 0; color: var(--ink); border-top: 6px solid var(--ink); padding-top: 10px; align-self: start; }
   .chap .prose p { font-size: clamp(19px, 1.6vw, 23px); line-height: 1.5; margin: 0; }
   .idea { font-size: clamp(32px, 3.8vw, 60px); line-height: 1; }
-  .note { font-size: clamp(30px, 3.4vw, 52px); line-height: 1; }
 
   .duo { display: grid; grid-template-columns: 1.3fr 1fr; gap: 16px; align-items: start; padding-top: clamp(50px, 6vw, 90px); }
   .duo > :nth-child(2) { margin-top: 15%; }
